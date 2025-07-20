@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cv6h2m5ixuesa"]
 
-[ext_resource type="Script" uid="uid://b1jscqjw2qqg0" path="res://tarot/card.gd" id="1_oqjuu"]
-[ext_resource type="Shader" uid="uid://cjshive8k27ob" path="res://tarot/card.gdshader" id="2_3xum1"]
+[ext_resource type="Script" uid="uid://b1jscqjw2qqg0" path="res://cards/card.gd" id="1_oqjuu"]
+[ext_resource type="Shader" uid="uid://cjshive8k27ob" path="res://cards/card.gdshader" id="2_3xum1"]
 [ext_resource type="Texture2D" uid="uid://ct3dvkpgxjbeo" path="res://assets/cards/tarot back.png" id="2_s7ip6"]
 [ext_resource type="Texture2D" uid="uid://doxaq3xcywghc" path="res://assets/cards/card face.png" id="3_oqjuu"]
 

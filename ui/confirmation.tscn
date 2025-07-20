@@ -1,0 +1,110 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2ktbd0tvbyst"]
+
+[ext_resource type="Script" uid="uid://dle4bt45dkbhd" path="res://ui/confirmation.gd" id="1_fsnue"]
+
+[sub_resource type="Animation" id="Animation_fsnue"]
+resource_name = "slide"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(860, -0.25, 0, 0.25, 0, 240, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="Animation" id="Animation_nmp0d"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(860, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_covxo"]
+_data = {
+&"RESET": SubResource("Animation_nmp0d"),
+&"slide": SubResource("Animation_fsnue")
+}
+
+[node name="Confirmation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fsnue")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = 459.991
+offset_right = 280.0
+offset_bottom = 779.991
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 0.5
+offset_top = 32.5
+offset_right = 0.5
+offset_bottom = 99.5
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "Are you sure?"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HScrollBar" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = 4.00854
+offset_right = 280.0
+offset_bottom = 100.009
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="BtnNo" type="Button" parent="Panel/HScrollBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = " DUMP "
+
+[node name="BtnYes" type="Button" parent="Panel/HScrollBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = " SERVE "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_covxo")
+}
+
+[connection signal="pressed" from="Panel/HScrollBar/BtnNo" to="." method="_on_btn_no_pressed"]
+[connection signal="pressed" from="Panel/HScrollBar/BtnYes" to="." method="_on_btn_yes_pressed"]

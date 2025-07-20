@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4au0b3vrrin7"]
+
+[ext_resource type="PackedScene" uid="uid://102qrwkosfhk" path="res://drinks/bar.tscn" id="1_o5efi"]
+
+[node name="TestDrink" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Bar" parent="." instance=ExtResource("1_o5efi")]

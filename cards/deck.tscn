@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cp56oh7japm27"]
 
-[ext_resource type="Script" uid="uid://cxskbeum7t07i" path="res://tarot/deck.gd" id="1_clobp"]
+[ext_resource type="Script" uid="uid://cxskbeum7t07i" path="res://cards/deck.gd" id="1_clobp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clobp"]
 size = Vector2(140, 240)

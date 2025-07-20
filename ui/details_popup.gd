@@ -1,4 +1,4 @@
-class_name CardDetailsUI
+class_name DetailsPopup
 extends Control
 
 

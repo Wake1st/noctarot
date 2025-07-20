@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://it3n5j7femgi"]
 
-[ext_resource type="Script" uid="uid://ym5p64mu0bdu" path="res://tarot/table.gd" id="1_8ut1t"]
-[ext_resource type="PackedScene" uid="uid://chvyuttgmu8ix" path="res://tarot/placemat.tscn" id="1_tp2ew"]
-[ext_resource type="PackedScene" uid="uid://cp56oh7japm27" path="res://tarot/deck.tscn" id="2_8ut1t"]
+[ext_resource type="Script" uid="uid://ym5p64mu0bdu" path="res://cards/table.gd" id="1_8ut1t"]
+[ext_resource type="PackedScene" uid="uid://chvyuttgmu8ix" path="res://cards/placemat.tscn" id="1_tp2ew"]
+[ext_resource type="PackedScene" uid="uid://cp56oh7japm27" path="res://cards/deck.tscn" id="2_8ut1t"]
 
 [node name="Table" type="Node2D"]
 script = ExtResource("1_8ut1t")

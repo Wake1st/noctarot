@@ -5,7 +5,7 @@ extends Area2D
 signal selected(card: Card, value: bool)
 
 @onready var animation: AnimationPlayer = $AnimationPlayer
-@onready var details: CardDetailsUI = %CardDetailsUI
+@onready var details: DetailsPopup = %DetailsPopup
 
 var card: Card
 var focused: bool

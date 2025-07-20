@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://8j2egssl3aa5"]
+
+[ext_resource type="Script" uid="uid://bi17sxg1gsi5b" path="res://drinks/shelf.gd" id="1_uxxa7"]
+[ext_resource type="PackedScene" uid="uid://vvkmu82u31a0" path="res://drinks/ingredient.tscn" id="2_35cgi"]
+
+[node name="Shelf" type="Node2D"]
+script = ExtResource("1_uxxa7")
+
+[node name="Ingredient1" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(-164, -129)
+
+[node name="Ingredient2" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(-168, 140)
+
+[node name="Ingredient3" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(164, -131)
+
+[node name="Ingredient4" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(166, 144)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://vvkmu82u31a0"]
+
+[ext_resource type="Script" uid="uid://b68knofu8nd48" path="res://drinks/ingredient.gd" id="1_xggc7"]
+[ext_resource type="Texture2D" uid="uid://cebwpl0ybu5nt" path="res://assets/drinks/can o thing.png" id="1_xmqeb"]
+[ext_resource type="PackedScene" uid="uid://c00eh2jeatrye" path="res://ui/details_popup.tscn" id="3_td5go"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmqeb"]
+size = Vector2(256, 220)
+
+[node name="Ingredient" type="Node2D"]
+script = ExtResource("1_xggc7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_xmqeb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_xmqeb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DetailsPopup" parent="CanvasLayer" instance=ExtResource("3_td5go")]
+unique_name_in_owner = true
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
