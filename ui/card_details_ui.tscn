@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://c00eh2jeatrye"]
+
+[ext_resource type="Script" uid="uid://b3qd7ys018vvv" path="res://ui/card_details_ui.gd" id="1_6g2or"]
+
+[sub_resource type="Animation" id="Animation_6g2or"]
+resource_name = "display"
+length = 0.4
+step = 0.04
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(923, -0.1, 0, 0.1, 0, 545, -0.1, 0, 0.1, 0, 545, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.28, 0.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Description:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(800, -0.1, 0, 0.1, 0, 800, -0.2, 0, 0.2, 0, 800, -0.2, 0, 0.2, 0, 677, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.12, 0.120429, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_pu1mb"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(545, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Description:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(677, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uiejn"]
+_data = {
+&"RESET": SubResource("Animation_pu1mb"),
+&"display": SubResource("Animation_6g2or")
+}
+
+[node name="CardDetailsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_6g2or")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 123.0
+offset_bottom = 255.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 96
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.000244141
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "DESCRIPTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uiejn")
+}

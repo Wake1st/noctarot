@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://t8prya4o10i"]
+
+[ext_resource type="PackedScene" uid="uid://it3n5j7femgi" path="res://tarot/table.tscn" id="1_u3gp4"]
+
+[node name="TestCards" type="Node2D"]
+
+[node name="Table" parent="." instance=ExtResource("1_u3gp4")]
+
+[node name="Camera2D" type="Camera2D" parent="."]

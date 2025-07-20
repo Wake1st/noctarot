@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://chvyuttgmu8ix"]
+
+[ext_resource type="PackedScene" uid="uid://bsa7wn3kw36cq" path="res://tarot/placeholder.tscn" id="1_bl4ah"]
+[ext_resource type="Script" uid="uid://bbmlxuyujnuxo" path="res://tarot/placemat.gd" id="1_ydgr6"]
+
+[node name="Placemat" type="Node2D"]
+script = ExtResource("1_ydgr6")
+
+[node name="Placeholder1" parent="." instance=ExtResource("1_bl4ah")]
+position = Vector2(-400, 21)
+
+[node name="Placeholder2" parent="." instance=ExtResource("1_bl4ah")]
+position = Vector2(-200, 12)
+
+[node name="Placeholder3" parent="." instance=ExtResource("1_bl4ah")]
+
+[node name="Placeholder4" parent="." instance=ExtResource("1_bl4ah")]
+position = Vector2(200, 12)
+
+[node name="Placeholder5" parent="." instance=ExtResource("1_bl4ah")]
+position = Vector2(400, 21)

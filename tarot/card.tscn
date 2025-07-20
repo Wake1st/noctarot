@@ -1,0 +1,201 @@
+[gd_scene load_steps=12 format=3 uid="uid://cv6h2m5ixuesa"]
+
+[ext_resource type="Script" uid="uid://b1jscqjw2qqg0" path="res://tarot/card.gd" id="1_oqjuu"]
+[ext_resource type="Shader" uid="uid://cjshive8k27ob" path="res://tarot/card.gdshader" id="2_3xum1"]
+[ext_resource type="Texture2D" uid="uid://ct3dvkpgxjbeo" path="res://assets/cards/tarot back.png" id="2_s7ip6"]
+[ext_resource type="Texture2D" uid="uid://doxaq3xcywghc" path="res://assets/cards/card face.png" id="3_oqjuu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3xum1"]
+shader = ExtResource("2_3xum1")
+shader_parameter/fov = 45.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oqjuu"]
+shader = ExtResource("2_3xum1")
+shader_parameter/fov = 45.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 180.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[sub_resource type="Animation" id="Animation_vde0w"]
+resource_name = "flip"
+length = 0.8
+step = 0.02
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:material:shader_parameter/y_rot")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0, -90, -0.2, 0, 0.2, 0, -180, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Face:material:shader_parameter/y_rot")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(180, -0.2, 0, 0.2, 0, 90, -0.2, 0, 0.2, 0, 8.55e-06, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8)
+}
+
+[sub_resource type="Animation" id="Animation_oqjuu"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:material:shader_parameter/y_rot")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Face:material:shader_parameter/y_rot")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(180, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Face:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Face:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Face:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_6twne"]
+resource_name = "hover"
+length = 0.2
+step = 0.02
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Face:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.1, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Face:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="Animation" id="Animation_6ygis"]
+resource_name = "slide"
+length = 0.4
+step = 0.02
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Face:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0, -80, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Face:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.1, -0.2, 0, 0.2, 0, 1.4, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Face:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.1, -0.2, 0, 0.2, 0, 1.4, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6twne"]
+_data = {
+&"RESET": SubResource("Animation_oqjuu"),
+&"flip": SubResource("Animation_vde0w"),
+&"hover": SubResource("Animation_6twne"),
+&"slide": SubResource("Animation_6ygis")
+}
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_oqjuu")
+
+[node name="Back" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3xum1")
+position = Vector2(-8.34465e-07, -2.26498e-06)
+texture = ExtResource("3_oqjuu")
+
+[node name="Face" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_oqjuu")
+texture = ExtResource("2_s7ip6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6twne")
+}
+speed_scale = 1.8
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
