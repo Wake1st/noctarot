@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tarot" load_steps=2 format=3 uid="uid://3gjwart8is6d"]
+
+[ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_dbu48"]
+
+[resource]
+script = ExtResource("1_dbu48")
+name = "Death"
+upright = "end of cycle, beginnings, change, metamorphosis"
+reversed = "fear of change, holding on, stagnation, decay"
+metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

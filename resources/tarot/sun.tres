@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tarot" load_steps=2 format=3 uid="uid://bd7yv68bv1fvt"]
+
+[ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_dags0"]
+
+[resource]
+script = ExtResource("1_dags0")
+name = "The Sun"
+upright = "joy, success, celebration, positivity"
+reversed = "negativity, depression, sadness"
+metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

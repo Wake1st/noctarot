@@ -2,6 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dle4bt45dkbhd" path="res://ui/confirmation.gd" id="1_fsnue"]
 
+[sub_resource type="Animation" id="Animation_nmp0d"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(860, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_fsnue"]
 resource_name = "slide"
 length = 0.2
@@ -15,20 +29,6 @@ tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(860, -0.25, 0, 0.25, 0, 240, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0, 0.2)
-}
-
-[sub_resource type="Animation" id="Animation_nmp0d"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(860, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_covxo"]
@@ -55,13 +55,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -280.0
-offset_top = 459.991
+offset_top = 460.0
 offset_right = 280.0
-offset_bottom = 779.991
+offset_bottom = 780.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -92,11 +93,13 @@ theme_override_constants/separation = 60
 alignment = 1
 
 [node name="BtnNo" type="Button" parent="Panel/HScrollBar"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = " DUMP "
 
 [node name="BtnYes" type="Button" parent="Panel/HScrollBar"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = " SERVE "

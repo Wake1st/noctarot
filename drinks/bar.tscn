@@ -18,3 +18,6 @@ position = Vector2(-399, 0)
 
 [node name="Confirmation" parent="CanvasLayer" instance=ExtResource("4_0g6c0")]
 unique_name_in_owner = true
+text = "Is this the drink?"
+deny = "DUMP"
+confirm = "SERVE"

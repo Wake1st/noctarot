@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tarot" load_steps=2 format=3 uid="uid://h1al614evk6g"]
+
+[ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_upc5l"]
+
+[resource]
+script = ExtResource("1_upc5l")
+name = "The Chariot"
+upright = "direction, control, willpower"
+reversed = "lack of control, lack of direction, aggression"
+metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Tarot" load_steps=2 format=3 uid="uid://cluooa10ad2sx"]
+
+[ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_g7rnc"]
+
+[resource]
+script = ExtResource("1_g7rnc")
+name = "The Moon"
+upright = "unconscious, illusions, intuition"
+reversed = "confusion, fear, misinterpretation"
+metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

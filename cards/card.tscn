@@ -21,33 +21,6 @@ shader_parameter/y_rot = 180.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
-[sub_resource type="Animation" id="Animation_vde0w"]
-resource_name = "flip"
-length = 0.8
-step = 0.02
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Back:material:shader_parameter/y_rot")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0, -90, -0.2, 0, 0.2, 0, -180, -0.2, 0, 0.2, 0),
-"times": PackedFloat32Array(0, 0.4, 0.8)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Face:material:shader_parameter/y_rot")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(180, -0.2, 0, 0.2, 0, 90, -0.2, 0, 0.2, 0, 8.55e-06, -0.2, 0, 0.2, 0),
-"times": PackedFloat32Array(0, 0.4, 0.8)
-}
-
 [sub_resource type="Animation" id="Animation_oqjuu"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -104,6 +77,33 @@ tracks/4/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.2, 0, 0.2, 0),
 "times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_vde0w"]
+resource_name = "flip"
+length = 0.8
+step = 0.02
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:material:shader_parameter/y_rot")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0, -90, -0.2, 0, 0.2, 0, -180, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Face:material:shader_parameter/y_rot")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(180, -0.2, 0, 0.2, 0, 90, -0.2, 0, 0.2, 0, 8.55e-06, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.4, 0.8)
 }
 
 [sub_resource type="Animation" id="Animation_6twne"]
