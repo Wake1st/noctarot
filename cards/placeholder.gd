@@ -2,7 +2,7 @@ class_name Placeholder
 extends Area2D
 
 
-signal selected(card: Card, value: bool)
+signal select_attempted(holder: Placeholder, value: bool)
 
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var details: DetailsPopup = %DetailsPopup
@@ -13,33 +13,28 @@ var isAnimating: bool
 var isSelected: bool 
 
 
-func select(up: bool) -> void:
-	# do not interrupt
-	if isAnimating:
-		return
-	
-	if up && !isSelected:
-		animation.play("slide")
-		isSelected = true
-	elif isSelected:
+func try_select() -> void:
+	if focused && !card.isAnimating:
+		select_attempted.emit(self, !isSelected)
+
+
+func select() -> void:
+	if isSelected:
 		animation.play_backwards("slide")
-		isSelected = false
+	else:
+		animation.play("slide")
 	
+	isSelected = !isSelected
 	isAnimating = true
+	
+	card.select(isSelected)
 
-
-func _input(event) -> void:
-	if focused && event.is_action_pressed("select") && !card.isAnimating:
-		var newSelection = !card.isSelected
-		select(newSelection)
-		card.select(newSelection)
-		selected.emit(card, newSelection)
 
 func _on_mouse_entered():
 	if card:
 		focused = true
 		card.hover(true)
-		details.open(card)
+		details.open(card.tarot)
 
 func _on_mouse_exited():
 	if card:

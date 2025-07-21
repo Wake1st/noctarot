@@ -25,6 +25,7 @@ folder_colors={
 "res://assets/": "gray",
 "res://cards/": "yellow",
 "res://drinks/": "yellow",
+"res://resources/": "gray",
 "res://tests/": "purple",
 "res://ui/": "orange"
 }
