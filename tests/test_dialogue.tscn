@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://80o64cv8r71c"]
+
+[ext_resource type="PackedScene" uid="uid://be8o2604ijvax" path="res://ui/dialogue/dialogue_ui.tscn" id="1_qjydh"]
+
+[node name="TestDialogue" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueUI" parent="CanvasLayer" instance=ExtResource("1_qjydh")]

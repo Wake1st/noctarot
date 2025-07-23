@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvm1i1o5bdhgb"]
+
+[ext_resource type="Script" uid="uid://dewc2upm7xobg" path="res://scenes/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bdqjg1ugjmcqn" path="res://ui/menus/main_menu.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://cbw3rs4182gtj" path="res://ui/menus/credits_menu.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cx2fp4d2uwxha" path="res://ui/menus/settings_menu.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://7tkqqg5c8h18" path="res://ui/menus/save_menu.tscn" id="5_tbgi4"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_jyhfs")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("1_sugp2")]
+unique_name_in_owner = true
+
+[node name="SaveMenu" parent="CanvasLayer" instance=ExtResource("5_tbgi4")]
+unique_name_in_owner = true
+
+[node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("3_tbgi4")]
+unique_name_in_owner = true
+
+[node name="CreditsMenu" parent="CanvasLayer" instance=ExtResource("2_jyhfs")]
+unique_name_in_owner = true

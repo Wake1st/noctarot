@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b68knofu8nd48" path="res://drinks/ingredient.gd" id="1_xggc7"]
 [ext_resource type="Texture2D" uid="uid://cebwpl0ybu5nt" path="res://assets/drinks/can o thing.png" id="1_xmqeb"]
-[ext_resource type="PackedScene" uid="uid://c00eh2jeatrye" path="res://ui/details_popup.tscn" id="3_td5go"]
+[ext_resource type="PackedScene" uid="uid://c00eh2jeatrye" path="res://ui/components/details_popup.tscn" id="3_td5go"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xmqeb"]
 size = Vector2(256, 220)

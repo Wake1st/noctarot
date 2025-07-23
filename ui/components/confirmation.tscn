@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2ktbd0tvbyst"]
+
+[ext_resource type="Script" uid="uid://dle4bt45dkbhd" path="res://ui/components/confirmation.gd" id="1_fsnue"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0k2k"]
+bg_color = Color(0.024, 0.1248, 0.24, 1)
+
+[sub_resource type="Animation" id="Animation_nmp0d"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(860, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_fsnue"]
+resource_name = "slide"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(860, -0.25, 0, 0.25, 0, 240, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_covxo"]
+_data = {
+&"RESET": SubResource("Animation_nmp0d"),
+&"slide": SubResource("Animation_fsnue")
+}
+
+[node name="Confirmation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fsnue")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -491.5
+offset_top = 460.0
+offset_right = 491.5
+offset_bottom = 910.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s0k2k")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 96
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Are you sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HScrollBar" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 256
+alignment = 1
+
+[node name="BtnNo" type="Button" parent="Panel/MarginContainer/VBoxContainer/HScrollBar"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = " DUMP "
+
+[node name="BtnYes" type="Button" parent="Panel/MarginContainer/VBoxContainer/HScrollBar"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = " SERVE "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_covxo")
+}
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HScrollBar/BtnNo" to="." method="_on_btn_no_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HScrollBar/BtnYes" to="." method="_on_btn_yes_pressed"]

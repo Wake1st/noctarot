@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=3 uid="uid://7tkqqg5c8h18"]
+
+[ext_resource type="Script" uid="uid://deyxk1a6djmvs" path="res://ui/menus/save_menu.gd" id="1_m414m"]
+[ext_resource type="PackedScene" uid="uid://d0sbgbrbr5er" path="res://ui/components/create_file_ui.tscn" id="2_y4jtn"]
+[ext_resource type="PackedScene" uid="uid://c2ktbd0tvbyst" path="res://ui/components/confirmation.tscn" id="3_u2uk6"]
+
+[sub_resource type="Animation" id="Animation_0dkrt"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1468, -0.25, 0, 0.25, 0, 1468, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0, 0.001)
+}
+
+[sub_resource type="Animation" id="Animation_t7e0r"]
+resource_name = "slide"
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1468, -0.25, 0, 0.25, 0, 319.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wk0pr"]
+_data = {
+&"RESET": SubResource("Animation_0dkrt"),
+&"slide": SubResource("Animation_t7e0r")
+}
+
+[node name="SaveMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_m414m")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 768.0
+offset_top = -341.0
+offset_right = 1529.0
+offset_bottom = 341.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.5
+offset_top = -296.0
+offset_right = 259.5
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 84
+text = "Save Files"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="CreateFileUI" parent="Panel/VBoxContainer" instance=ExtResource("2_y4jtn")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BtnReturn" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -259.5
+offset_top = -129.0
+offset_right = 259.5
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "RETURN"
+
+[node name="Confirmation" parent="." instance=ExtResource("3_u2uk6")]
+layout_mode = 1
+text = "Do you want to permanently delete your save data?"
+deny = "NO"
+confirm = "DELETE"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wk0pr")
+}
+
+[connection signal="pressed" from="Panel/BtnReturn" to="." method="_on_btn_return_pressed"]
+[connection signal="selection" from="Confirmation" to="." method="_on_confirmation_selection"]

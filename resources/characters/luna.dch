@@ -1,0 +1,19 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.545502, 0.825018, 0.976563, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "",
+&"description": "elegant and sophisticated",
+&"display_name": "Luna",
+&"mirror": false,
+&"nicknames": ["Luna Mothlady"],
+&"offset": Vector2(0, 0),
+&"portraits": {},
+&"scale": 1.0
+}
