@@ -2,6 +2,6 @@ class_name DialogueUI
 extends Control
 
 
-func _ready() -> void:
-	Dialogic.start('luna')
+func start(chapter: String) -> void:
+	Dialogic.start(chapter)
 	get_viewport().set_input_as_handled()

@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://dirb08f2akb60"]
+[gd_scene load_steps=6 format=3 uid="uid://dirb08f2akb60"]
 
 [ext_resource type="Script" uid="uid://cevo15rb243uq" path="res://scenes/trailer.gd" id="1_o4ax3"]
+[ext_resource type="PackedScene" uid="uid://c1cwtaih48s5y" path="res://scenes/booth.tscn" id="2_7wnag"]
+[ext_resource type="PackedScene" uid="uid://be8o2604ijvax" path="res://ui/dialogue/dialogue_ui.tscn" id="3_h23np"]
+[ext_resource type="PackedScene" uid="uid://ctf3cs5jqawcn" path="res://ui/menus/pause_menu.tscn" id="4_usyny"]
+[ext_resource type="PackedScene" uid="uid://cx2fp4d2uwxha" path="res://ui/menus/settings_menu.tscn" id="5_837no"]
 
 [node name="Trailer" type="Node"]
 script = ExtResource("1_o4ax3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Booth" parent="." instance=ExtResource("2_7wnag")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueUI" parent="CanvasLayer" instance=ExtResource("3_h23np")]
+unique_name_in_owner = true
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_usyny")]
+unique_name_in_owner = true
+
+[node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("5_837no")]
+unique_name_in_owner = true

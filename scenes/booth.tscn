@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://c1cwtaih48s5y"]
+[gd_scene load_steps=3 format=3 uid="uid://c1cwtaih48s5y"]
+
+[ext_resource type="Script" uid="uid://bkr75hgrqnm1t" path="res://scenes/booth.gd" id="1_mwq53"]
+[ext_resource type="PackedScene" uid="uid://it3n5j7femgi" path="res://cards/table.tscn" id="1_p2u3i"]
 
 [node name="Booth" type="Node2D"]
+script = ExtResource("1_mwq53")
+
+[node name="Table" parent="." instance=ExtResource("1_p2u3i")]
+position = Vector2(0, 946)
