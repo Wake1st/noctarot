@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://33oqo18ijqk1"]
+
+[ext_resource type="Script" uid="uid://cqvt2u7pjuiwe" path="res://components/slide_camera.gd" id="1_4n3u5"]
+
+[sub_resource type="Animation" id="Animation_4n3u5"]
+resource_name = "slide"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.8)
+}
+
+[sub_resource type="Animation" id="Animation_mtc0k"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5pgmj"]
+_data = {
+&"RESET": SubResource("Animation_mtc0k"),
+&"slide": SubResource("Animation_4n3u5")
+}
+
+[node name="SlideCamera" type="Node2D"]
+script = ExtResource("1_4n3u5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5pgmj")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

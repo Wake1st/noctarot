@@ -27,7 +27,9 @@ directories/dch_directory={
 "trainer": "res://dialog/characters/trainer.dch"
 }
 directories/dtl_directory={
-"card_training": "res://dialog/timelines/training.dtl",
+"card_training_end": "res://dialog/timelines/card_training_end.dtl",
+"card_training_hover": "res://dialog/timelines/training.dtl",
+"card_training_select": "res://dialog/timelines/card_training_select.dtl",
 "end_training": "res://dialog/timelines/end_training.dtl",
 "intro": "res://dialog/timelines/intro.dtl",
 "luna": "res://dialog/timelines/luna.dtl",
@@ -36,7 +38,9 @@ directories/dtl_directory={
 glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style="Default"
-variables={}
+variables={
+"next_chapter": ""
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -73,8 +77,10 @@ folder_colors={
 "res://addons/": "gray",
 "res://assets/": "gray",
 "res://cards/": "yellow",
+"res://components/": "yellow",
 "res://dialog/": "gray",
 "res://drinks/": "yellow",
+"res://globals/": "gray",
 "res://resources/": "gray",
 "res://scenes/": "pink",
 "res://tests/": "purple",

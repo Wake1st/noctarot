@@ -4,6 +4,7 @@ extends Node
 
 signal return_to_start()
 
+@onready var camera: SlideCamera = $SlideCamera
 @onready var booth: Booth = $Booth
 @onready var dialogue_ui: DialogueUI = %DialogueUI
 @onready var pause_menu: PauseMenu = %PauseMenu
@@ -31,7 +32,14 @@ func _ready() -> void:
 	settings_menu.return_selected.connect(_handle_settings_return)
 	settings_menu.setup()
 	
+	camera.transition_finished.connect(_handle_camera_transition_finished)
+	
 	dialogue_ui.start("intro")
+
+func _process(_delta) -> void:
+	if DialogueChecks.current_passed():
+		dialogue_ui.start(Dialogic.VAR.next_chapter)
+
 
 #region SettingsSignals
 func _handle_settings_selected() -> void:
@@ -44,9 +52,16 @@ func _handle_return_selected() -> void:
 	return_to_start.emit()
 #endregion
 
+
 #region DialogueSignals
 func _handle_dialogue_transition(args: Array[String]) -> void:
-	print("dialogue transition: ", args)
+	match args[0]:
+		"table":
+			camera.down()
+		"booth":
+			camera.up()
+		"kitchen":
+			pass
 
 func _handle_dialogue_activate(args: Array[String]) -> void:
 	print("dialogue activate: ", args)
@@ -61,9 +76,16 @@ func _handle_dialogue_enter(args: Array[String]) -> void:
 	print("dialogue enter: ", args)
 
 func _handle_dialogue_check(args: Array[String]) -> void:
-	print("dialogue check: ", args)
+	match args[0]:
+		"hovered":
+			DialogueChecks.currentCheck = DialogueChecks.Types.HOVERED
+		"selected":
+			DialogueChecks.currentCheck = DialogueChecks.Types.SELECTED
 
 func _handle_dialogue_ended() -> void:
 	print("dialogue ended")
-
 #endregion
+
+
+func _handle_camera_transition_finished() -> void:
+	dialogue_ui.resume()

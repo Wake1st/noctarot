@@ -28,6 +28,8 @@ func select() -> void:
 	isAnimating = true
 	
 	card.select(isSelected)
+	
+	DialogueChecks.set_check(DialogueChecks.Types.SELECTED, isSelected)
 
 
 func _on_mouse_entered():
@@ -35,12 +37,16 @@ func _on_mouse_entered():
 		focused = true
 		card.hover(true)
 		details.open(card.tarot)
+		
+		DialogueChecks.set_check(DialogueChecks.Types.HOVERED, true)
 
 func _on_mouse_exited():
 	if card:
 		focused = false
 		card.hover(false)
 		details.close()
+		
+		DialogueChecks.set_check(DialogueChecks.Types.HOVERED, false)
 
 func _on_animation_player_animation_finished(_anim_name):
 	isAnimating = false

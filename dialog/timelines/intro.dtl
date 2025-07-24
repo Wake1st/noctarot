@@ -60,4 +60,4 @@ trainer: ...
 trainer: Oh, we only had the cards.
 trainer: "Clients will be guided to you for Fate Altering Assistance. Why don't we practice some of that right now."
 
-jump card_training/
+jump card_training_hover/

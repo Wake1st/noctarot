@@ -10,17 +10,18 @@ signal enter(args: Array[String])
 signal check(args: Array[String])
 signal ended()
 
+
 func start(chapter: String) -> void:
 	Dialogic.start(chapter)
-	Dialogic.signal_event.connect(_handle_text_signal)
-	Dialogic.timeline_ended.connect(_handle_timeline_ended)
-	
-	get_viewport().set_input_as_handled()
 
 
-func check_passed() -> void:
+func resume() -> void:
 	Dialogic.paused = false
 
+
+func _ready() -> void:
+	Dialogic.signal_event.connect(_handle_text_signal)
+	Dialogic.timeline_ended.connect(_handle_timeline_ended)
 
 func _handle_text_signal(argument: String) -> void:
 	var args = argument.split("_")
@@ -29,6 +30,7 @@ func _handle_text_signal(argument: String) -> void:
 	
 	match command:
 		"transition":
+			Dialogic.paused = true
 			transition.emit(args)
 		"activate":
 			activate.emit(args)
@@ -39,7 +41,6 @@ func _handle_text_signal(argument: String) -> void:
 		"enter":
 			enter.emit(args)
 		"check":
-			Dialogic.paused = true
 			check.emit(args)
 
 func _handle_timeline_ended() -> void:
