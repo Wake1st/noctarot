@@ -23,10 +23,15 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "luna": "res://dialog/characters/luna.dch",
-"player": "res://dialog/characters/player.dch"
+"player": "res://dialog/characters/player.dch",
+"trainer": "res://dialog/characters/trainer.dch"
 }
 directories/dtl_directory={
-"luna": "res://dialog/timelines/luna.dtl"
+"card_training": "res://dialog/timelines/training.dtl",
+"end_training": "res://dialog/timelines/end_training.dtl",
+"intro": "res://dialog/timelines/intro.dtl",
+"luna": "res://dialog/timelines/luna.dtl",
+"potion_training": "res://dialog/timelines/potion_training.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]

@@ -1,0 +1,22 @@
+[signal arg="transition_kitchen"]
+join trainer left [animation="Bounce In"]:
+trainer: Oh, yeah! You've got everything you need!
+join player right [animation="Fade In"]:
+They indicate to my little barrista's corner - I guess it is like brewing potions.
+trainer: Ok, I don't have the instructions with me, but I kind of remember how it works. A few rules:
+trainer: 1) Every potion MUST have 3 ingredients - no more, no less.
+trainer: 2) A successful potion MUST provide the matching elements of the cards you wish to 'invoke'. Basically, every card represents one of the four elements: fire, air, water, and earth. If you want to alter the fate represented by a card, you need to include said card's 'element' in the potion. 
+trainer: Fire is spicy, air is minty, water is soothing, and earth is... well, earthy? I've never actually done it before, so you might need to experiment a bit.
+trainer: 3) A potion which FAILS to match the require element will damage the client's soul. Miss one ingredient, and they suffer a little. Miss all three ingredients, and they suffer a lot - like, you REALLY don't want to miss all three.
+
+- I really don't think I should be making potions without proper training.
+	trainer: You're getting proper training! Now, where was I...
+- Sounds simple enough.
+	trainer: That's the spirit!
+- ...
+	trainer: I hope you're paying attention, cause I'm not repeating these.
+
+trainer: 4) 'Safe' cards do not have an elemental requirement, and any ingredient will suffice. It's basically a freebe - you don't have to worry about getting an ingredient right if the card isn't 'unbalanced' - no wins, no losses.
+trainer: 5) If a potion is correctly brewed to match three 'unbalanced' cards, then that potion will cause a 'metamorphosis' - change so drastic, the client becomes a different person. I mean, it's still them, but they're doing much better.
+
+jump end_training/

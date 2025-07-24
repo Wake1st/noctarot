@@ -1,0 +1,35 @@
+[signal arg="transition_table"]
+join trainer left [animation="Bounce In"]:
+trainer: "In front of you are a deck of cards - commonly refered by Mortals as a Tarot deck. To read a clients fate, first, draw 5 cards and place them left to right."
+[signal arg="activate_deck"]
+trainer: "You can read more about a card by hovering the", uh...
+trainer: Mouse?
+trainer: ... "over the card."
+[signal arg="check_hover"]
+
+trainer: "Next, notice how some cards look different than others; this is because of your new Moiraily Sponsored Ability: Reader's Sight."
+trainer: Oh! Hold on...
+[signal arg="activate_sight"]
+trainer: "The shimmering cards are 'unbalanced', meaning that person's fate is in need of correction. Try selecting a card now."
+[signal arg="check_selection"]
+
+trainer: "Excellent! Up to 3 cards can be selected at once; click the"...
+*turns pages*
+trainer: 'Finalize' button?
+trainer: Whatever, ehem. "Once the 'Finalize' button has been selected, you can brew the appropriate potion allowing you to alter said client's fate."
+*turns page*
+*turns more pages*
+*flipping through pages frantically*
+trainer: Oh, gods. Uh...
+trainer: So, I may have forgotten the potions set, and the instructions that come with it... nuts.
+
+- What do we do now?
+	trainer: I know that one! Though witches are a different brand... sort of. Its complicated.
+	trainer: As far as your potions go...
+- Potions? Like a witch?
+- ...
+
+trainer: It's fine. I mean, there's nothing special about what you're making, as long as you're the one making it. 
+trainer: Wait, you're already got a brewing kit. 
+
+jump potion_training/

@@ -15,13 +15,11 @@ func bring_back() -> void:
 
 
 func _input(event) -> void:
-	if event.is_action_pressed("pause") && !paused:
-		animation.play("slide-in")
-	elif event.is_action_pressed("pause") && paused:
-		_unpause()
+	if event.is_action_pressed("pause"):
+		_toggle_pause()
 
-func _on_btn_resume_pressed():
-	_unpause()
+func _on_btn_resume_pressed() -> void:
+	_toggle_pause()
 
 func _on_btn_settings_pressed():
 	animation.play("slide-out")
@@ -30,5 +28,10 @@ func _on_btn_settings_pressed():
 func _on_btn_menu_pressed():
 	return_selected.emit()
 
-func _unpause() -> void:
-	animation.play_backwards("slide-in")
+func _toggle_pause() -> void:
+	if paused:
+		animation.play_backwards("slide-in")
+	else:
+		animation.play("slide-in")
+	
+	paused = !paused

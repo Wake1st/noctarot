@@ -1,0 +1,63 @@
+join player right [animation="Fade In"]
+A cool summer night breeze pours itself through the open window of my trailer, cooling the sweat on my fur.
+A package slips through the slot in the door, landing on the floor with a thud and a rattle.
+[signal arg="present_casset"]
+I open the package to find only a casset tape and a small note reading, "Play B side first!".
+After half of hour of digging through the same 6 boxes, I finally find my old tape player, pop the casset in, and give it a listen...
+[signal arg="activate_warp"]
+A bit of nausia sets in as I feel myself wobble with the room, as one feels the ebb and flow of the sea.
+
+[signal arg="enter_trainer"]
+join trainer left [animation="Bounce In"]
+trainer: Whoop! Easy, just a moment...
+Icy chills grip my soul as a ghostly figure appears before me.
+[signal arg="deactivate_warp"]
+trainer: Wow! They really ought to fix that...
+trainer: Oh! Right. Ehem...
+trainer: "Greetings, I am a Systems Training Specialist with the Moiraily Inc., and you have been chosen by our wonderful CSO to take part in the Great Fabrick as a Threading Specialist."
+
+- Who the hell are you?!
+	trainer: Look, I just work here - bare with me for a moment, please.
+- I'm not a seamstress.
+	trainer: Don't worry, you won't actually be sowing. It's just a title.
+- ...
+	trainer: ...
+
+trainer: Uh... 
+*turns page*
+trainer: "When you join the Moiraily Family, you're joining a tradition of Creators, Analysts, and Closers, all working together to weave the Great Fabrick of Life. Under the guidance of The Great Sisters (the CSO, the CMO, and the CCO), our Team is ever expanding, and thus, always in need of more 'Go Getters'. So don't delay - join the..."
+trainer: Oh, it's redacted, uh...
+trainer: "some number of specialists helping to build the Great Fabrick of Life."
+
+- I still don't know who you are or what you want.
+	trainer: Look, I'll trying to tell you, okay?
+- The what with who to what?
+	trainer: Just listen!
+- ...
+	trainer: ...
+
+trainer: Uh, this is where I'm supposed to offer you a deal, but technically, we're not doing those at the moment. We're kind of understaffed, so I'm just supposed to tell you that you're "on the Team", and you're supposed to accept these cards.
+[signal arg="present_cards"]
+
+- *take cards*
+- *take cards*
+- *take cards*
+
+trainer: "Great choice! You are now an official member of Moiraily Inc., and are entitled to"...
+*turns more pages*
+trainer: "You have selected the 'Readers Sight'. With this ability, you are able to discern the balance of a person's fate. A 'safe' card will appear ordinary, but an 'unbalanced' card will shimmer, telling you what parts of a client's fate need to be changed."
+
+- So, now what?
+	trainer: Uh... hold on.
+- Any more bombs to drop on me?
+	trainer: What's a bomb?
+- ...
+	trainer: ... Can't contain yourself, huh?
+
+*turns more pages*
+trainer: "Congratulations in your newest role as a Threading Specialist; you should expenct a daily shipment of fresh tea leaves"
+trainer: ...
+trainer: Oh, we only had the cards.
+trainer: "Clients will be guided to you for Fate Altering Assistance. Why don't we practice some of that right now."
+
+jump card_training/
