@@ -9,10 +9,10 @@
 "style": ""
 },
 &"default_portrait": "",
-&"description": "elegant and sophisticated",
+&"description": "Luna is an elegant luna moth from a well off family. She has fallen for a mint moth of lower stature. On top of which, the mint moth is a woman. Both of these displease Luna’s Family who care more about the family name than they do their daughter’s wellbeing. She is now faced with whether she should give in to her family's wishes or follow her heart at the risk of being disowned and cut off by her family.",
 &"display_name": "Luna",
 &"mirror": false,
-&"nicknames": ["Luna Mothlady"],
+&"nicknames": ["luna"],
 &"offset": Vector2(0, 0),
 &"portraits": {},
 &"scale": 1.0

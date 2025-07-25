@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Client" load_steps=4 format=3 uid="uid://c1ohibvxw67je"]
+
+[ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_ybau7"]
+[ext_resource type="Script" uid="uid://b0jof5go2nsd" path="res://resources/work/Client.gd" id="2_86phw"]
+[ext_resource type="Resource" uid="uid://cq1yam561itbi" path="res://dialog/characters/serith.dch" id="2_s7rmo"]
+
+[resource]
+script = ExtResource("2_86phw")
+character = ExtResource("2_s7rmo")
+cards = Array[ExtResource("1_ybau7")]([])
+metadata/_custom_type_script = "uid://b0jof5go2nsd"

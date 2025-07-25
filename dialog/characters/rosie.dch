@@ -1,0 +1,19 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "",
+&"description": "Rosie is a rosy maple moth with a love for all things pink and sparkly. She is happily settled with her moth wife and moth child but all is not well. There’s trouble in paradise as she wants to settle and build a home with her wife Sider (Sideridis Reticulata), her wife wants to spread her wings and progress in her career so she can provide better for both of them but Rosie thinks family time is more important.",
+&"display_name": "Rosie",
+&"mirror": false,
+&"nicknames": ["rosie"],
+&"offset": Vector2(0, 0),
+&"portraits": {},
+&"scale": 1.0
+}

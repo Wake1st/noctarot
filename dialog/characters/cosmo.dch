@@ -1,0 +1,19 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "",
+&"description": "Cosmo is a cosmosoma regia moth. They are a musician with a steadily growing audience. They are torn between doing what their fans and the label want and doing what they want to do creatively.",
+&"display_name": "Cosmo",
+&"mirror": false,
+&"nicknames": ["cosmo"],
+&"offset": Vector2(0, 0),
+&"portraits": {},
+&"scale": 1.0
+}

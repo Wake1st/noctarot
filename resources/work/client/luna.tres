@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Client" load_steps=9 format=3 uid="uid://c6fgrrr24lxr1"]
+
+[ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_mkahc"]
+[ext_resource type="Resource" uid="uid://cjwjxcvuif8lh" path="res://resources/tarot/hierophant.tres" id="2_e0hja"]
+[ext_resource type="Script" uid="uid://b0jof5go2nsd" path="res://resources/work/Client.gd" id="2_q5ayr"]
+[ext_resource type="Resource" uid="uid://bi6jtc0jyeyyc" path="res://resources/tarot/lovers.tres" id="3_60ors"]
+[ext_resource type="Resource" uid="uid://bp8hdm70fivdw" path="res://resources/tarot/judgement.tres" id="4_4mup5"]
+[ext_resource type="Resource" uid="uid://cisttsay7ix2y" path="res://resources/tarot/strength.tres" id="5_wbief"]
+[ext_resource type="Resource" uid="uid://bkdsx2wijeg05" path="res://resources/tarot/wheel.tres" id="6_ugrn5"]
+[ext_resource type="Resource" uid="uid://bqppb20lff5sk" path="res://dialog/characters/luna.dch" id="7_o1rpg"]
+
+[resource]
+script = ExtResource("2_q5ayr")
+character = ExtResource("7_o1rpg")
+cards = Array[ExtResource("1_mkahc")]([ExtResource("2_e0hja"), ExtResource("3_60ors"), ExtResource("4_4mup5"), ExtResource("5_wbief"), ExtResource("6_ugrn5")])
+metadata/_custom_type_script = "uid://b0jof5go2nsd"

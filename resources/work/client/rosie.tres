@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Client" load_steps=9 format=3 uid="uid://cafkyd0hit23t"]
+
+[ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_g2ady"]
+[ext_resource type="Script" uid="uid://b0jof5go2nsd" path="res://resources/work/Client.gd" id="2_0asco"]
+[ext_resource type="Resource" uid="uid://3gjwart8is6d" path="res://resources/tarot/death.tres" id="2_tahbx"]
+[ext_resource type="Resource" uid="uid://dkcdptbcbwr6j" path="res://resources/tarot/empress.tres" id="3_qcowj"]
+[ext_resource type="Resource" uid="uid://bq4bf48bsgchv" path="res://resources/tarot/world.tres" id="4_xij6g"]
+[ext_resource type="Resource" uid="uid://cisttsay7ix2y" path="res://resources/tarot/strength.tres" id="5_qcowj"]
+[ext_resource type="Resource" uid="uid://bi6jtc0jyeyyc" path="res://resources/tarot/lovers.tres" id="6_xij6g"]
+[ext_resource type="Resource" uid="uid://r1kebqem4m6a" path="res://dialog/characters/rosie.dch" id="7_kiejj"]
+
+[resource]
+script = ExtResource("2_0asco")
+character = ExtResource("7_kiejj")
+cards = Array[ExtResource("1_g2ady")]([ExtResource("2_tahbx"), ExtResource("3_qcowj"), ExtResource("4_xij6g"), ExtResource("5_qcowj"), ExtResource("6_xij6g")])
+metadata/_custom_type_script = "uid://b0jof5go2nsd"

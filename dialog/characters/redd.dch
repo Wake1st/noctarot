@@ -1,0 +1,19 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "",
+&"description": "Redd is a scarlet phaudid moth who is a semi professional climber who is having to completely reconsider his purpose and direction in life after a long term injury means he may not be able to climb competitively again.",
+&"display_name": "Redd",
+&"mirror": false,
+&"nicknames": ["redd"],
+&"offset": Vector2(0, 0),
+&"portraits": {},
+&"scale": 1.0
+}

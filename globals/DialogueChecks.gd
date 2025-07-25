@@ -17,9 +17,13 @@ static var Possible: Dictionary[Types, bool] ={
 static var currentCheck: Types
 
 
-static func set_check(type: Types, value: bool) -> void:
-	Possible[type] = value
+static func check_valid(type: Types) -> void:
+	Possible[type] = true
 
 
 static func current_passed() -> bool:
-	return Possible[currentCheck]
+	if Possible[currentCheck]:
+		Possible[currentCheck] = false
+		return true
+	else:
+		return false

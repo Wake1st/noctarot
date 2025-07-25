@@ -23,13 +23,12 @@ func select() -> void:
 		animation.play_backwards("slide")
 	else:
 		animation.play("slide")
+		DialogueChecks.check_valid(DialogueChecks.Types.SELECTED)
 	
 	isSelected = !isSelected
 	isAnimating = true
 	
 	card.select(isSelected)
-	
-	DialogueChecks.set_check(DialogueChecks.Types.SELECTED, isSelected)
 
 
 func _on_mouse_entered():
@@ -38,15 +37,13 @@ func _on_mouse_entered():
 		card.hover(true)
 		details.open(card.tarot)
 		
-		DialogueChecks.set_check(DialogueChecks.Types.HOVERED, true)
+		DialogueChecks.check_valid(DialogueChecks.Types.HOVERED)
 
 func _on_mouse_exited():
 	if card:
 		focused = false
 		card.hover(false)
 		details.close()
-		
-		DialogueChecks.set_check(DialogueChecks.Types.HOVERED, false)
 
 func _on_animation_player_animation_finished(_anim_name):
 	isAnimating = false
