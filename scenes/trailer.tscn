@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dirb08f2akb60"]
+[gd_scene load_steps=10 format=3 uid="uid://dirb08f2akb60"]
 
 [ext_resource type="Script" uid="uid://cevo15rb243uq" path="res://scenes/trailer.gd" id="1_o4ax3"]
 [ext_resource type="PackedScene" uid="uid://c1cwtaih48s5y" path="res://scenes/booth.tscn" id="2_7wnag"]
 [ext_resource type="PackedScene" uid="uid://33oqo18ijqk1" path="res://components/slide_camera.tscn" id="2_837no"]
 [ext_resource type="PackedScene" uid="uid://be8o2604ijvax" path="res://ui/dialogue/dialogue_ui.tscn" id="3_h23np"]
+[ext_resource type="PackedScene" uid="uid://it3n5j7femgi" path="res://cards/table.tscn" id="4_orp6n"]
 [ext_resource type="PackedScene" uid="uid://ctf3cs5jqawcn" path="res://ui/menus/pause_menu.tscn" id="4_usyny"]
 [ext_resource type="PackedScene" uid="uid://cx2fp4d2uwxha" path="res://ui/menus/settings_menu.tscn" id="5_837no"]
+[ext_resource type="PackedScene" uid="uid://bwfvid5lhnae2" path="res://scenes/kitchen.tscn" id="5_vryr4"]
+[ext_resource type="PackedScene" uid="uid://bf6167nndw3du" path="res://ui/components/title_ui.tscn" id="9_vryr4"]
 
 [node name="Trailer" type="Node"]
 script = ExtResource("1_o4ax3")
@@ -13,6 +16,12 @@ script = ExtResource("1_o4ax3")
 [node name="SlideCamera" parent="." instance=ExtResource("2_837no")]
 
 [node name="Booth" parent="." instance=ExtResource("2_7wnag")]
+
+[node name="Table" parent="." instance=ExtResource("4_orp6n")]
+position = Vector2(0, 960)
+
+[node name="Kitchen" parent="." instance=ExtResource("5_vryr4")]
+position = Vector2(-1500, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -23,4 +32,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("5_837no")]
+unique_name_in_owner = true
+
+[node name="TitleUI" parent="CanvasLayer" instance=ExtResource("9_vryr4")]
 unique_name_in_owner = true

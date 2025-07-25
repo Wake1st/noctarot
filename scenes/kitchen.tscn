@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://bwfvid5lhnae2"]
+[gd_scene load_steps=2 format=3 uid="uid://bwfvid5lhnae2"]
+
+[ext_resource type="PackedScene" uid="uid://102qrwkosfhk" path="res://drinks/bar.tscn" id="1_7ilqw"]
 
 [node name="Kitchen" type="Node2D"]
+
+[node name="Bar" parent="." instance=ExtResource("1_7ilqw")]

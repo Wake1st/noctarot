@@ -8,6 +8,8 @@ signal deactivate(args: Array[String])
 signal present(args: Array[String])
 signal enter(args: Array[String])
 signal check(args: Array[String])
+signal client(args: Array[String])
+signal training_ended()
 signal ended()
 
 
@@ -42,6 +44,10 @@ func _handle_text_signal(argument: String) -> void:
 			enter.emit(args)
 		"check":
 			check.emit(args)
+		"client":
+			client.emit(args)
+		"training":
+			training_ended.emit()
 
 func _handle_timeline_ended() -> void:
 	Dialogic.timeline_ended.disconnect(_handle_timeline_ended)

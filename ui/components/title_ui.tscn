@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf6167nndw3du"]
+
+[ext_resource type="Script" uid="uid://drqdwpe6ymxu4" path="res://ui/components/title_ui.gd" id="1_nkfot"]
+[ext_resource type="Texture2D" uid="uid://c7uljhngamq7o" path="res://assets/titles/chaper_1.png" id="2_wlqy8"]
+
+[sub_resource type="Animation" id="Animation_3aviy"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(940, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_rymab"]
+resource_name = "bounce_up"
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(940, -0.1, 0, 0.0333333, -272, 0, -0.177874, -552, 0.0440956, 142, 0, -0.0225711, -125, 0.0107623, 60, 0, -0.0225711, -40, 0.0440956, 0),
+"times": PackedFloat32Array(0, 0.3, 0.366667, 0.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xeewk"]
+_data = {
+&"RESET": SubResource("Animation_3aviy"),
+&"bounce_up": SubResource("Animation_rymab")
+}
+
+[node name="TitleUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_nkfot")
+
+[node name="Sprite2D" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 940.0
+offset_right = 1400.0
+offset_bottom = 1740.0
+texture = ExtResource("2_wlqy8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xeewk")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.2
+one_shot = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -6,18 +6,27 @@ signal return_to_start()
 
 @onready var camera: SlideCamera = $SlideCamera
 @onready var booth: Booth = $Booth
-@onready var dialogue_ui: DialogueUI = %DialogueUI
 @onready var pause_menu: PauseMenu = %PauseMenu
 @onready var settings_menu: SettingsMenu = %SettingsMenu
+@onready var dialogue_ui: DialogueUI = %DialogueUI
+@onready var title_ui: TitleUI = %TitleUI
 
 var file: String
+
+var passedTraining: bool
+var daily: DailyQuota
 
 
 func setup(fileName: String) -> void:
 	file = fileName
+	
+	daily = DailyQuota.new()
+	daily.appointments = WorkBuilder.daily_appointments()
 
 
 func _ready() -> void:
+	WorkBuilder.load()
+	
 	pause_menu.settings_selected.connect(_handle_settings_selected)
 	pause_menu.return_selected.connect(_handle_return_selected)
 	
@@ -27,7 +36,11 @@ func _ready() -> void:
 	dialogue_ui.present.connect(_handle_dialogue_present)
 	dialogue_ui.enter.connect(_handle_dialogue_enter)
 	dialogue_ui.check.connect(_handle_dialogue_check)
+	dialogue_ui.client.connect(_handle_dialogue_client)
+	dialogue_ui.training_ended.connect(_handle_training_ended)
 	dialogue_ui.ended.connect(_handle_dialogue_ended)
+	
+	title_ui.finished.connect(_handle_title_finished)
 	
 	settings_menu.return_selected.connect(_handle_settings_return)
 	settings_menu.setup()
@@ -57,11 +70,11 @@ func _handle_return_selected() -> void:
 func _handle_dialogue_transition(args: Array[String]) -> void:
 	match args[0]:
 		"table":
-			camera.down()
+			camera.to_table()
 		"booth":
-			camera.up()
+			camera.to_booth()
 		"kitchen":
-			pass
+			camera.to_kitchen()
 
 func _handle_dialogue_activate(args: Array[String]) -> void:
 	print("dialogue activate: ", args)
@@ -82,6 +95,16 @@ func _handle_dialogue_check(args: Array[String]) -> void:
 		"selected":
 			DialogueChecks.currentCheck = DialogueChecks.Types.SELECTED
 
+func _handle_dialogue_client(args: Array[String]) -> void:
+	match args[0]:
+		"ended":
+			# display some kind of "CHAPTER 1" title screen
+			pass
+
+func _handle_training_ended() -> void:
+	passedTraining = true
+	title_ui.display()
+
 func _handle_dialogue_ended() -> void:
 	print("dialogue ended")
 #endregion
@@ -89,3 +112,8 @@ func _handle_dialogue_ended() -> void:
 
 func _handle_camera_transition_finished() -> void:
 	dialogue_ui.resume()
+
+
+func _handle_title_finished() -> void:
+	# start day
+	dialogue_ui.start(daily.appointments.pop_front().chapter)
