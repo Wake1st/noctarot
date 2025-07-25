@@ -11,6 +11,7 @@
 
 [resource]
 script = ExtResource("2_rwjys")
+name = "redd"
 character = ExtResource("2_n0vgi")
 cards = Array[ExtResource("1_18apo")]([ExtResource("2_fu8nv"), ExtResource("3_o7v6j"), ExtResource("4_23wfr"), ExtResource("5_pikko"), ExtResource("6_ixjrr")])
 metadata/_custom_type_script = "uid://b0jof5go2nsd"

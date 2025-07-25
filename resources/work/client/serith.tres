@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("2_86phw")
+name = "serith"
 character = ExtResource("2_s7rmo")
 cards = Array[ExtResource("1_ybau7")]([])
 metadata/_custom_type_script = "uid://b0jof5go2nsd"

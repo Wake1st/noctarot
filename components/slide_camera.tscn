@@ -1,21 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://33oqo18ijqk1"]
+[gd_scene load_steps=7 format=3 uid="uid://33oqo18ijqk1"]
 
 [ext_resource type="Script" uid="uid://cqvt2u7pjuiwe" path="res://components/slide_camera.gd" id="1_4n3u5"]
-
-[sub_resource type="Animation" id="Animation_4n3u5"]
-resource_name = "slide"
-length = 0.8
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.8)
-}
 
 [sub_resource type="Animation" id="Animation_mtc0k"]
 length = 0.001
@@ -30,11 +15,80 @@ tracks/0/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_4n3u5"]
+resource_name = "booth_to_table"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 960, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.8)
+}
+
+[sub_resource type="Animation" id="Animation_5pgmj"]
+resource_name = "booth_to_kitchen"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.2, 0, 0.2, 0, -1500, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0, 0.8)
+}
+
+[sub_resource type="Animation" id="Animation_mqkqd"]
+resource_name = "table_to_kitchen"
+length = 0.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -1500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.266667, 0.8)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(960, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.533333, 0.8)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5pgmj"]
 _data = {
 &"RESET": SubResource("Animation_mtc0k"),
-&"slide": SubResource("Animation_4n3u5")
+&"booth_to_kitchen": SubResource("Animation_5pgmj"),
+&"booth_to_table": SubResource("Animation_4n3u5"),
+&"table_to_kitchen": SubResource("Animation_mqkqd")
 }
 
 [node name="SlideCamera" type="Node2D"]
