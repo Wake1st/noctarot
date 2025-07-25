@@ -4,12 +4,14 @@ extends Node
 
 enum Types {
 	NONE,
+	DECK,
 	HOVERED,
 	SELECTED,
 }
 
 static var Possible: Dictionary[Types, bool] ={
 	Types.NONE: false,
+	Types.DECK: false,
 	Types.HOVERED: false,
 	Types.SELECTED: false,
 }

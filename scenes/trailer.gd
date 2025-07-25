@@ -90,6 +90,8 @@ func _handle_dialogue_enter(args: Array[String]) -> void:
 
 func _handle_dialogue_check(args: Array[String]) -> void:
 	match args[0]:
+		"deck":
+			DialogueChecks.currentCheck = DialogueChecks.Types.DECK
 		"hovered":
 			DialogueChecks.currentCheck = DialogueChecks.Types.HOVERED
 		"selected":

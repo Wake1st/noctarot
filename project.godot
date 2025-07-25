@@ -32,6 +32,7 @@ directories/dch_directory={
 "trainer": "res://dialog/characters/trainer.dch"
 }
 directories/dtl_directory={
+"card_training_deck": "res://dialog/timelines/card_training_deck.dtl",
 "card_training_end": "res://dialog/timelines/card_training_end.dtl",
 "card_training_hover": "res://dialog/timelines/training.dtl",
 "card_training_select": "res://dialog/timelines/card_training_select.dtl",

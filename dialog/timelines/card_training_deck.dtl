@@ -1,0 +1,11 @@
+[signal arg="transition_table"]
+
+join trainer left [animation="Bounce In"]
+trainer: And...
+[signal arg="activate_deck"]
+trainer: Voila!
+trainer: "In front of you are a deck of cards - commonly refered by Mortals as a Tarot deck. To read a clients fate, first, draw 5 cards and place them left to right."
+
+set {next_chapter} = "card_training_hover"
+[signal arg="check_deck"]
+[end_timeline]

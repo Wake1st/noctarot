@@ -6,6 +6,8 @@ signal selected(card: Card)
 
 const CARD = preload("res://cards/card.tscn")
 
+@onready var timer: Timer = $Timer
+
 var cards: Array[Card]
 var focused: bool
 
@@ -24,10 +26,19 @@ func _ready() -> void:
 
 func _input(event) -> void:
 	if focused && event.is_action_pressed("select"):
-		selected.emit(cards.pop_back())
+		DialogueChecks.check_valid(DialogueChecks.Types.DECK)
+		_draw_card()
 
 func _on_area_2d_mouse_entered():
 	focused = true
 
 func _on_area_2d_mouse_exited():
 	focused = false
+
+func _on_timer_timeout():
+	_draw_card()
+
+func _draw_card() -> void:
+	if cards.size() > 0:
+		selected.emit(cards.pop_back())
+		timer.start()
