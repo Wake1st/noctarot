@@ -4,7 +4,7 @@ extends Node2D
 
 signal full
 
-var elements: Array[Element.Types]
+var elements: Array[Element]
 var layers: Array[Sprite2D]
 var index: int = 0
 

@@ -12,3 +12,7 @@ func enter(client: Client) -> void:
 
 func exit() -> void:
 	character.exit()
+
+
+func pulse(score: int) -> void:
+	character.pulse(score)

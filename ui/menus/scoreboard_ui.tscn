@@ -1,0 +1,212 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl5vuawov65bs"]
+
+[ext_resource type="Script" uid="uid://chuxgmiudtqtc" path="res://ui/menus/scoreboard_ui.gd" id="1_c0edj"]
+[ext_resource type="Texture2D" uid="uid://d1uywbi0sq2ln" path="res://assets/scoreboard-background.png" id="1_o2714"]
+[ext_resource type="Texture2D" uid="uid://ct3dvkpgxjbeo" path="res://assets/cards/tarot back.png" id="2_c0edj"]
+[ext_resource type="Texture2D" uid="uid://cebwpl0ybu5nt" path="res://assets/drinks/can o thing.png" id="3_4ladf"]
+
+[sub_resource type="Animation" id="Animation_c0edj"]
+resource_name = "slide"
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(920, -0.2, 0, 0.0333333, -516, 0, -0.233333, -500, 0.2, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_4ladf"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(920, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0nfav"]
+_data = {
+&"RESET": SubResource("Animation_4ladf"),
+&"slide": SubResource("Animation_c0edj")
+}
+
+[node name="ScoreboardUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_c0edj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 920.0
+offset_bottom = 920.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_o2714")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 240
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 240
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Appointment Summary"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="CardContainer" type="HSplitContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+split_offset = 450
+dragging_enabled = false
+
+[node name="Cards" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/CardContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Cards"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/CardContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Card1" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/CardContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_c0edj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Card2" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/CardContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_c0edj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Card3" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/CardContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_c0edj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DrinkContainer" type="HSplitContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+split_offset = 450
+dragging_enabled = false
+
+[node name="Drink" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/DrinkContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Drink"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/DrinkContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Ingredient1" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/DrinkContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("3_4ladf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient2" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/DrinkContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("3_4ladf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Ingredient3" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/DrinkContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("3_4ladf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScoreContainer" type="HSplitContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+split_offset = 652
+dragging_enabled = false
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/ScoreContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Score"
+
+[node name="Score" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/ScoreContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+
+[node name="HSeparator2" type="HSeparator" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="ButtonContainer" type="HSplitContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 400
+split_offset = 260
+dragging_enabled = false
+
+[node name="BtnMenu" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/ButtonContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "MENU"
+
+[node name="BtnNext" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/ButtonContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "NEXT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0nfav")
+}
+
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/ButtonContainer/BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/ButtonContainer/BtnNext" to="." method="_on_btn_next_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

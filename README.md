@@ -18,9 +18,9 @@
 - [x] finalize card selection button
 - [x] test client
 - [x] shader for "unbalanced" cards
+- [x] synopsis
 - [ ] user feedback when drink drank
 	- [ ] audio
 	- [ ] visual
-- [ ] synopsis
 - [ ] better drink tutorial
 - [ ] how to end a day?

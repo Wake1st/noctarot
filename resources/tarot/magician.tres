@@ -1,11 +1,12 @@
-[gd_resource type="Resource" script_class="Tarot" load_steps=2 format=3 uid="uid://c2ldom6tjx6bp"]
+[gd_resource type="Resource" script_class="Tarot" load_steps=3 format=3 uid="uid://c2ldom6tjx6bp"]
 
 [ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_vg5q1"]
+[ext_resource type="Resource" uid="uid://dyysjoy41e1gr" path="res://resources/elements/air.tres" id="1_ws4cc"]
 
 [resource]
 script = ExtResource("1_vg5q1")
 name = "The Magician"
-element = 1
+element = ExtResource("1_ws4cc")
 upright = "willpower, desire, creation, manifestation"
 reversed = "trickery, illusions, out of touch"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

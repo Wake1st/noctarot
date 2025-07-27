@@ -4,6 +4,7 @@ client: Thats my drink. Yum.
 [signal arg="activate_drink"]
 They drink.
 if {score} == 3:
+	[signal arg="activate_boost"]
 	client: That was a 3.
 elif {score} == 2:
 	client: That was a 2.
@@ -22,5 +23,5 @@ leave Emilio [animation="Bounce Out" length="0.3"]
 [signal arg="leave"]
 There they go.
 
-[signal arg="client_end"]
+[signal arg="client_ended"]
 [end_timeline]

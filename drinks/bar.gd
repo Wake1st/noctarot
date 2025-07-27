@@ -2,7 +2,7 @@ class_name Bar
 extends Node2D
 
 
-signal finished(elements: Array[Element.Types])
+signal finished(elements: Array[Element])
 
 @onready var shelf: Shelf = $Shelf
 @onready var drink: Drink = $Drink

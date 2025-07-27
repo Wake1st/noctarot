@@ -14,12 +14,12 @@ signal return_to_start()
 @onready var dialogue_ui: DialogueUI = %DialogueUI
 @onready var title_ui: TitleUI = %TitleUI
 @onready var screen_effects_ui: ScreenEffectsUI = %ScreenEffectsUI
+@onready var scoreboard_ui: ScoreboardUI = %ScoreboardUI
 
 var file: String
 
 var passedTraining: bool
 var daily: DailyQuota
-var drink_elements: Array[Element.Types]
 
 
 func setup(fileName: String) -> void:
@@ -51,6 +51,9 @@ func _ready() -> void:
 	
 	settings_menu.return_selected.connect(_handle_settings_return)
 	settings_menu.setup()
+	
+	scoreboard_ui.next.connect(_handle_scoreboard_next)
+	scoreboard_ui.menu.connect(_handle_scoreboard_menu)
 	
 	camera.transition_finished.connect(_handle_camera_transition_finished)
 	
@@ -119,15 +122,18 @@ func _handle_dialogue_check(args: Array[String]) -> void:
 func _handle_dialogue_client(args: Array[String]) -> void:
 	match args[0]:
 		"ended":
-			# display some kind of score summary
-			pass
+			scoreboard_ui.display(
+				daily.current.challenged,
+				daily.current.elements,
+				daily.current.score
+			)
 
 func _handle_training_ended() -> void:
 	passedTraining = true
 	title_ui.display()
 
 func _handle_dialogue_ended() -> void:
-	print("dialogue ended")
+	pass
 #endregion
 
 
@@ -161,7 +167,7 @@ func _handle_tarots_confirmed(tarots: Array[Tarot]) -> void:
 	
 	daily.current.challenged = tarots
 
-func _handle_drink_finished(elements: Array[Element.Types]) -> void:
+func _handle_drink_finished(elements: Array[Element]) -> void:
 	# change scene
 	camera.to_booth()
 	
@@ -169,7 +175,13 @@ func _handle_drink_finished(elements: Array[Element.Types]) -> void:
 	DialogueChecks.set_valid(DialogueChecks.Types.DRINK)
 	
 	# store elements
-	drink_elements = elements
+	daily.current.elements = elements
+
+func _handle_scoreboard_menu() -> void:
+	return_to_start.emit()
+
+func _handle_scoreboard_next() -> void:
+	dialogue_ui.start(daily.next().chapter)
 #endregion
 
 
@@ -181,7 +193,7 @@ func _consume_drink() -> void:
 		if tarot.balanced:
 			continue
 		
-		var matched = drink_elements.any(func(e): return e == tarot.element)
+		var matched = daily.current.elements.any(func(e): return e == tarot.element)
 		if matched:
 			score += 1
 		else:
@@ -192,6 +204,7 @@ func _consume_drink() -> void:
 	Dialogic.VAR.score = score
 	
 	# user feedback
+	booth.pulse(score)
 
 func _client_checks(args: Array[String]) -> void:
 	match args[0]:

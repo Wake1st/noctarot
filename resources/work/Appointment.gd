@@ -7,6 +7,7 @@ var day: int
 
 var unbalanced: Array[Tarot]
 var challenged: Array[Tarot]
+var elements: Array[Element]
 var score: int
 
 
