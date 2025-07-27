@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_c4cx8")
 name = "The World"
+element = 3
 upright = "fulfillment, harmony, completion"
 reversed = "incompletion, no closure"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

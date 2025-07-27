@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_hergk")
 name = "The Hierophant"
+element = 3
 upright = "tradition, conformity, morality, ethics"
 reversed = "rebellion, subversiveness, new approaches"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_ogdad")
 name = "The Devil"
+element = 3
 upright = "addiction, materialism, playfulness"
 reversed = "freedom, release, restoring control"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

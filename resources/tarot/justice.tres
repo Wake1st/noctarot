@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_br6ma")
 name = "Justice"
+element = 1
 upright = "cause and effect, clarity, truth"
 reversed = "dishonesty, unaccountability, unfairness"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

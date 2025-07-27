@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_s32m5")
 name = "The Hanged Man"
+element = 2
 upright = "sacrifice, release, martyrdom"
 reversed = "stalling, needless sacrifice, fear of sacrifice"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

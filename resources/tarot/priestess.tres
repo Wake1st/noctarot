@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_dtpsb")
 name = "The High Priestess"
+element = 2
 upright = "intuitive, unconscious, inner voice"
 reversed = "lack of center, lost inner voice, repressed feelings"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

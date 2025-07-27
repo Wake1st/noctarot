@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_wggu7")
 name = "The Fool"
+element = 1
 upright = "innocence, new beginnings, free spirit"
 reversed = "recklessness, taken advantage of, inconsideration"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

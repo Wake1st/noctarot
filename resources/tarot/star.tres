@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_ytw84")
 name = "The Star"
+element = 1
 upright = "hope, faith, rejuvenation"
 reversed = "faithlessness, discouragement, insecurity"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

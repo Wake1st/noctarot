@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_hy5y6")
 name = "The Empress"
+element = 3
 upright = "motherhood, fertility, nature"
 reversed = "dependence, smothering, emptiness, nosiness"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

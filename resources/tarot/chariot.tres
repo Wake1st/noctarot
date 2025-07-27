@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_upc5l")
 name = "The Chariot"
+element = 2
 upright = "direction, control, willpower"
 reversed = "lack of control, lack of direction, aggression"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

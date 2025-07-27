@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_dbu48")
 name = "Death"
+element = 2
 upright = "end of cycle, beginnings, change, metamorphosis"
 reversed = "fear of change, holding on, stagnation, decay"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

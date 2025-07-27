@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_05o5j")
 name = "The Lovers"
+element = 1
 upright = "partnerships, duality, union"
 reversed = "loss of balance, one-sidedness, disharmony"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"
