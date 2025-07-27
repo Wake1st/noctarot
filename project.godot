@@ -23,6 +23,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "atlas": "res://dialog/characters/atlas.dch",
+"cards": "res://dialog/characters/cards.dch",
+"cassette": "res://dialog/characters/cassette.dch",
 "client": "res://dialog/characters/client.dch",
 "cosmo": "res://dialog/characters/cosmo.dch",
 "luna": "res://dialog/characters/luna.dch",

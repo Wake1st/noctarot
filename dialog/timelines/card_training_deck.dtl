@@ -1,6 +1,5 @@
 [signal arg="transition_table"]
 
-join trainer left [animation="Bounce In"]
 trainer: And...
 [signal arg="activate_deck"]
 trainer: Voila!

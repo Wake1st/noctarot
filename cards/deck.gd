@@ -45,6 +45,5 @@ func _on_timer_timeout() -> void:
 
 func _draw_card() -> void:
 	if cards.size() > 0:
-		print("card: ", cards.back())
 		drawn.emit(cards.pop_back())
 		timer.start()

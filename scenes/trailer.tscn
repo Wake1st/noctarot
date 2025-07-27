@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dirb08f2akb60"]
+[gd_scene load_steps=11 format=3 uid="uid://dirb08f2akb60"]
 
 [ext_resource type="Script" uid="uid://cevo15rb243uq" path="res://scenes/trailer.gd" id="1_o4ax3"]
 [ext_resource type="PackedScene" uid="uid://c1cwtaih48s5y" path="res://scenes/booth.tscn" id="2_7wnag"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cx2fp4d2uwxha" path="res://ui/menus/settings_menu.tscn" id="5_837no"]
 [ext_resource type="PackedScene" uid="uid://bwfvid5lhnae2" path="res://scenes/kitchen.tscn" id="5_vryr4"]
 [ext_resource type="PackedScene" uid="uid://bf6167nndw3du" path="res://ui/components/title_ui.tscn" id="9_vryr4"]
+[ext_resource type="PackedScene" uid="uid://dfssr71p0hbsj" path="res://ui/components/screen_effects_ui.tscn" id="10_53md7"]
 
 [node name="Trailer" type="Node"]
 script = ExtResource("1_o4ax3")
@@ -35,4 +36,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="TitleUI" parent="CanvasLayer" instance=ExtResource("9_vryr4")]
+unique_name_in_owner = true
+
+[node name="ScreenEffectsUI" parent="CanvasLayer" instance=ExtResource("10_53md7")]
 unique_name_in_owner = true

@@ -39,8 +39,6 @@ func _handle_text_signal(argument: String) -> void:
 			activate.emit(args)
 		"deactivate":
 			deactivate.emit(args)
-		"present":
-			present.emit(args)
 		"enter":
 			enter.emit(args)
 		"leave":

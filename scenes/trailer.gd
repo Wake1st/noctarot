@@ -13,6 +13,7 @@ signal return_to_start()
 @onready var settings_menu: SettingsMenu = %SettingsMenu
 @onready var dialogue_ui: DialogueUI = %DialogueUI
 @onready var title_ui: TitleUI = %TitleUI
+@onready var screen_effects_ui: ScreenEffectsUI = %ScreenEffectsUI
 
 var file: String
 
@@ -28,7 +29,7 @@ func setup(fileName: String) -> void:
 	daily.appointments = WorkBuilder.daily_appointments()
 	
 	daily.next()
-	dialogue_ui.start("client_intro")
+	dialogue_ui.start("intro")
 
 
 func _ready() -> void:
@@ -40,7 +41,6 @@ func _ready() -> void:
 	dialogue_ui.transition.connect(_handle_dialogue_transition)
 	dialogue_ui.activate.connect(_handle_dialogue_activate)
 	dialogue_ui.deactivate.connect(_handle_dialogue_deactivate)
-	dialogue_ui.present.connect(_handle_dialogue_present)
 	dialogue_ui.enter.connect(_handle_dialogue_enter)
 	dialogue_ui.check.connect(_handle_dialogue_check)
 	dialogue_ui.client.connect(_handle_dialogue_client)
@@ -92,18 +92,19 @@ func _handle_dialogue_activate(args: Array[String]) -> void:
 	match args[0]:
 		"drink":
 			_consume_drink()
+		"warp":
+			screen_effects_ui.on()
 
 func _handle_dialogue_deactivate(args: Array[String]) -> void:
-	print("dialogue deactivate: ", args)
-
-func _handle_dialogue_present(args: Array[String]) -> void:
-	print("dialogue present: ", args)
+	match args[0]:
+		"warp":
+			screen_effects_ui.off()
 
 func _handle_dialogue_enter(args: Array[String]) -> void:
-	print("dialogue enter: ", args)
+	booth.enter(daily.current.client)
 
 func _handle_dialogue_leave(args: Array[String]) -> void:
-	print("dialogue leave: ", args)
+	booth.exit()
 
 func _handle_dialogue_check(args: Array[String]) -> void:
 	var command = args[0]

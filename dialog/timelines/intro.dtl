@@ -1,14 +1,15 @@
-join player right [animation="Fade In"]
 A cool summer night breeze pours itself through the open window of my trailer, cooling the sweat on my fur.
 A package slips through the slot in the door, landing on the floor with a thud and a rattle.
-[signal arg="present_casset"]
+
+join cassette center [animation="Slide In Up"]
 I open the package to find only a casset tape and a small note reading, "Play B side first!".
+leave cassette center [animation="Slide Out Down"]
+
 After half of hour of digging through the same 6 boxes, I finally find my old tape player, pop the casset in, and give it a listen...
 [signal arg="activate_warp"]
 A bit of nausia sets in as I feel myself wobble with the room, as one feels the ebb and flow of the sea.
 
 [signal arg="enter_trainer"]
-join trainer left [animation="Bounce In"]
 trainer: Whoop! Easy, just a moment...
 Icy chills grip my soul as a ghostly figure appears before me.
 [signal arg="deactivate_warp"]
@@ -37,11 +38,12 @@ trainer: "some number of specialists helping to build the Great Fabrick of Life.
 	trainer: ...
 
 trainer: Uh, this is where I'm supposed to offer you a deal, but technically, we're not doing those at the moment. We're kind of understaffed, so I'm just supposed to tell you that you're "on the Team", and you're supposed to accept these cards.
-[signal arg="present_cards"]
 
+join cards center [animation="Slide In Up"]
 - *take cards*
 - *take cards*
 - *take cards*
+leave cards center [animation="Slide Out Down"]
 
 trainer: "Great choice! You are now an official member of Moiraily Inc., and are entitled to"...
 *turns more pages*

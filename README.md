@@ -16,6 +16,9 @@
 ## Dev Notes
 
 - [x] finalize card selection button
-- [ ] shader for "unbalanced" cards
-- [ ] user feedback when drink finished
-- [ ] test client
+- [x] test client
+- [x] shader for "unbalanced" cards
+- [ ] user feedback when drink drank
+	- [ ] audio
+	- [ ] visual
+- [ ] synopsis

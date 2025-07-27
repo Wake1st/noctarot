@@ -1,4 +1,3 @@
-join trainer left [animation="Bounce In"]:
 trainer: "Next, notice how some cards look different than others; this is because of your new Moiraily Sponsored Ability: Reader's Sight."
 trainer: Oh! Hold on...
 [signal arg="activate_sight"]

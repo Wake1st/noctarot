@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1cwtaih48s5y"]
+[gd_scene load_steps=3 format=3 uid="uid://c1cwtaih48s5y"]
 
 [ext_resource type="Script" uid="uid://bkr75hgrqnm1t" path="res://scenes/booth.gd" id="1_mwq53"]
+[ext_resource type="PackedScene" uid="uid://ct7db636kbyhv" path="res://components/character/character.tscn" id="2_mwq53"]
 
 [node name="Booth" type="Node2D"]
 script = ExtResource("1_mwq53")
+
+[node name="Character" parent="." instance=ExtResource("2_mwq53")]

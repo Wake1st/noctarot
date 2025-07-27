@@ -1,5 +1,6 @@
 [signal arg="transition_booth"]
-join trainer left [animation="Bounce In"]:
+
+[signal arg="enter_trainer"]
 trainer: Ok! That's basically it. Clients should start arriving soon...
 
 - Am I getting paid for this?
@@ -12,7 +13,6 @@ trainer: Ok! That's basically it. Clients should start arriving soon...
 
 trainer: Welp, I've gotta go.
 [signal arg="activate_warp"]
-join player right [animation="Fade In"]:
 Everything wobbled like it did before.
 trainer: Don't worry - you're gonna do great! Just, try not to mess up too much; you don't want a visit from a Closer.
 [signal arg="deactivate_warp"]
