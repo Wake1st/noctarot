@@ -22,3 +22,5 @@
 	- [ ] audio
 	- [ ] visual
 - [ ] synopsis
+- [ ] better drink tutorial
+- [ ] how to end a day?

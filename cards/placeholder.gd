@@ -35,7 +35,7 @@ func _on_mouse_entered():
 	if card:
 		focused = true
 		card.hover(true)
-		details.open(card.tarot)
+		details.open(card.tarot.name, card.tarot.upright)
 		
 		DialogueChecks.set_valid(DialogueChecks.Types.HOVERED)
 

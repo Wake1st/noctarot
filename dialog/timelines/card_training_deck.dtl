@@ -3,7 +3,7 @@
 trainer: And...
 [signal arg="activate_deck"]
 trainer: Voila!
-trainer: "In front of you are a deck of cards - commonly refered by Mortals as a Tarot deck. To read a clients fate, first, draw 5 cards and place them left to right."
+trainer: "In front of you are a deck of cards - commonly refered by Mortals as a Tarot deck. To read a clients fate, select the deck to draw from it."
 
 set {next_chapter} = "card_training_hover"
 [signal arg="check_training_deck"]

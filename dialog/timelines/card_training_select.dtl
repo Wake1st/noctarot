@@ -1,6 +1,4 @@
 trainer: "Next, notice how some cards look different than others; this is because of your new Moiraily Sponsored Ability: Reader's Sight."
-trainer: Oh! Hold on...
-[signal arg="activate_sight"]
 trainer: "The shimmering cards are 'unbalanced', meaning that person's fate is in need of correction. Try selecting a card now."
 
 set {next_chapter} = "card_training_finalize"

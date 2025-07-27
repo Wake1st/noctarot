@@ -7,10 +7,10 @@ extends Control
 @onready var animation: AnimationPlayer = $AnimationPlayer
 
 
-func open(tarot: Tarot) -> void:
+func open(txt: String, des: String) -> void:
 	# set details
-	title.text = tarot.name
-	description.text = tarot.reversed
+	title.text = txt
+	description.text = des
 	
 	# animate
 	animation.play("display")

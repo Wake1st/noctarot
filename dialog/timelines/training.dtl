@@ -1,6 +1,4 @@
-trainer: "You can read more about a card by hovering the", uh...
-trainer: Mouse?
-trainer: ... "over the card."
+trainer: "You can read more about a card by hovering your mouse over it."
 
 set {next_chapter} = "card_training_select"
 [signal arg="check_training_hovered"]

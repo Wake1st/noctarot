@@ -1,22 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://8j2egssl3aa5"]
+[gd_scene load_steps=4 format=3 uid="uid://8j2egssl3aa5"]
 
 [ext_resource type="Script" uid="uid://bi17sxg1gsi5b" path="res://drinks/shelf.gd" id="1_uxxa7"]
 [ext_resource type="PackedScene" uid="uid://vvkmu82u31a0" path="res://drinks/ingredient.tscn" id="2_35cgi"]
+[ext_resource type="Texture2D" uid="uid://cebwpl0ybu5nt" path="res://assets/drinks/can o thing.png" id="3_35cgi"]
 
 [node name="Shelf" type="Node2D"]
 script = ExtResource("1_uxxa7")
 
 [node name="Ingredient1" parent="." instance=ExtResource("2_35cgi")]
 position = Vector2(-164, -129)
+nickname = "Cinnamon"
+description = "Spicy"
+image = ExtResource("3_35cgi")
 
 [node name="Ingredient2" parent="." instance=ExtResource("2_35cgi")]
 position = Vector2(-168, 140)
 element = 1
+nickname = "Foam"
+description = "Whipped"
+image = ExtResource("3_35cgi")
 
 [node name="Ingredient3" parent="." instance=ExtResource("2_35cgi")]
 position = Vector2(164, -131)
 element = 2
+nickname = "Milk"
+description = "Soothing"
+image = ExtResource("3_35cgi")
 
 [node name="Ingredient4" parent="." instance=ExtResource("2_35cgi")]
 position = Vector2(166, 144)
 element = 3
+nickname = "Coffee"
+description = "Ground"
+image = ExtResource("3_35cgi")

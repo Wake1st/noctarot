@@ -1,7 +1,4 @@
-trainer: "Excellent! 3 card must be selected to progress; click the"...
-*turns pages*
-trainer: 'Finalize' button?
-trainer: ... "when you are ready."
+trainer: "Excellent! 3 card must be selected to progress; click the 'Finalize' button when you're ready."
 
 set {next_chapter} = "card_training_end"
 [signal arg="check_training_finalized"]

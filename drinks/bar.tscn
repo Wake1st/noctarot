@@ -21,3 +21,4 @@ unique_name_in_owner = true
 text = "Is this the drink?"
 deny = "DUMP"
 confirm = "SERVE"
+metadata/_edit_use_anchors_ = true

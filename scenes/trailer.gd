@@ -29,7 +29,7 @@ func setup(fileName: String) -> void:
 	daily.appointments = WorkBuilder.daily_appointments()
 	
 	daily.next()
-	dialogue_ui.start("intro")
+	dialogue_ui.start("client_intro")
 
 
 func _ready() -> void:
@@ -100,10 +100,10 @@ func _handle_dialogue_deactivate(args: Array[String]) -> void:
 		"warp":
 			screen_effects_ui.off()
 
-func _handle_dialogue_enter(args: Array[String]) -> void:
+func _handle_dialogue_enter() -> void:
 	booth.enter(daily.current.client)
 
-func _handle_dialogue_leave(args: Array[String]) -> void:
+func _handle_dialogue_leave() -> void:
 	booth.exit()
 
 func _handle_dialogue_check(args: Array[String]) -> void:
@@ -131,6 +131,7 @@ func _handle_dialogue_ended() -> void:
 #endregion
 
 
+#region ObjectSignals
 func _handle_camera_transition_finished() -> void:
 	dialogue_ui.resume()
 	
@@ -169,6 +170,7 @@ func _handle_drink_finished(elements: Array[Element.Types]) -> void:
 	
 	# store elements
 	drink_elements = elements
+#endregion
 
 
 #region Internals
