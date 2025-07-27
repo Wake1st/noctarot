@@ -4,6 +4,9 @@ class_name Appointment
 var client: Client
 var chapter: String
 var day: int
+
+var unbalanced: Array[Tarot]
+var challenged: Array[Tarot]
 var score: int
 
 
@@ -12,4 +15,4 @@ func _init(cli: Client, d: int, scr: int) -> void:
 	day = d
 	score = scr
 	
-	chapter = "%s_day_%s" % [client.name, day]
+	chapter = "%s_apt_%s" % [client.name, day]

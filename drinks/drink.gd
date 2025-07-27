@@ -4,14 +4,17 @@ extends Node2D
 
 signal full
 
+var elements: Array[Element.Types]
 var layers: Array[Sprite2D]
 var index: int = 0
 
 
-func add(_ingredient: Ingredient) -> void:
+func add(ingredient: Ingredient) -> void:
 	if index < layers.size():
 		layers[index].visible = true
 		index += 1
+		
+		elements.push_back(ingredient.element)
 		
 		if index == layers.size():
 			full.emit()

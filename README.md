@@ -11,3 +11,11 @@
 ### References
 
 - [Tarot Card Meanings](https://labyrinthos.co/blogs/tarot-card-meanings-list?srsltid=AfmBOoobQSKQ3yOKjKcpymnq0k7w8HUjkQtl3BDTnnThmWniPuVFjsr-)
+
+
+## Dev Notes
+
+- [x] finalize card selection button
+- [ ] shader for "unbalanced" cards
+- [ ] user feedback when drink finished
+- [ ] test client

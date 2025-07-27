@@ -10,7 +10,7 @@ const SEP_PREFIX: String = "separator_%s"
 
 @onready var container: VBoxContainer = %VBoxContainer
 @onready var create_file_ui: CreateFileUI = %CreateFileUI
-@onready var confirmation: Confirmation = $Confirmation
+@onready var confirmation: ConfirmationUI = $Confirmation
 @onready var animation: AnimationPlayer= $AnimationPlayer
 
 var file_selection_callable: Callable

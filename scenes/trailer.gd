@@ -6,6 +6,9 @@ signal return_to_start()
 
 @onready var camera: SlideCamera = $SlideCamera
 @onready var booth: Booth = $Booth
+@onready var table: Table = $Table
+@onready var kitchen: Kitchen = $Kitchen
+
 @onready var pause_menu: PauseMenu = %PauseMenu
 @onready var settings_menu: SettingsMenu = %SettingsMenu
 @onready var dialogue_ui: DialogueUI = %DialogueUI
@@ -15,6 +18,7 @@ var file: String
 
 var passedTraining: bool
 var daily: DailyQuota
+var drink_elements: Array[Element.Types]
 
 
 func setup(fileName: String) -> void:
@@ -22,6 +26,9 @@ func setup(fileName: String) -> void:
 	
 	daily = DailyQuota.new()
 	daily.appointments = WorkBuilder.daily_appointments()
+	
+	daily.next()
+	dialogue_ui.start("client_intro")
 
 
 func _ready() -> void:
@@ -47,7 +54,11 @@ func _ready() -> void:
 	
 	camera.transition_finished.connect(_handle_camera_transition_finished)
 	
-	dialogue_ui.start("intro")
+	table.setup(_handle_pause_selected)
+	table.confirmed.connect(_handle_tarots_confirmed)
+	
+	kitchen.setup(_handle_drink_finished)
+
 
 func _process(_delta) -> void:
 	if DialogueChecks.current_passed():
@@ -78,6 +89,9 @@ func _handle_dialogue_transition(args: Array[String]) -> void:
 
 func _handle_dialogue_activate(args: Array[String]) -> void:
 	print("dialogue activate: ", args)
+	match args[0]:
+		"drink":
+			_consume_drink()
 
 func _handle_dialogue_deactivate(args: Array[String]) -> void:
 	print("dialogue deactivate: ", args)
@@ -88,19 +102,23 @@ func _handle_dialogue_present(args: Array[String]) -> void:
 func _handle_dialogue_enter(args: Array[String]) -> void:
 	print("dialogue enter: ", args)
 
+func _handle_dialogue_leave(args: Array[String]) -> void:
+	print("dialogue leave: ", args)
+
 func _handle_dialogue_check(args: Array[String]) -> void:
-	match args[0]:
-		"deck":
-			DialogueChecks.currentCheck = DialogueChecks.Types.DECK
-		"hovered":
-			DialogueChecks.currentCheck = DialogueChecks.Types.HOVERED
-		"selected":
-			DialogueChecks.currentCheck = DialogueChecks.Types.SELECTED
+	var command = args[0]
+	args.remove_at(0)
+	
+	match command:
+		"training":
+			_training_checks(args)
+		"client":
+			_client_checks(args)
 
 func _handle_dialogue_client(args: Array[String]) -> void:
 	match args[0]:
 		"ended":
-			# display some kind of "CHAPTER 1" title screen
+			# display some kind of score summary
 			pass
 
 func _handle_training_ended() -> void:
@@ -114,8 +132,79 @@ func _handle_dialogue_ended() -> void:
 
 func _handle_camera_transition_finished() -> void:
 	dialogue_ui.resume()
-
+	
+	match camera.state:
+		camera.State.BOOTH:
+			pass
+		camera.State.TABLE:
+			table.activate(daily.current.client.cards)
+		camera.State.KITCHEN:
+			pass
 
 func _handle_title_finished() -> void:
 	# start day
-	dialogue_ui.start(daily.appointments.pop_front().chapter)
+	dialogue_ui.start(daily.next().chapter)
+
+func _handle_pause_selected() -> void:
+	pause_menu._toggle_pause()
+
+
+func _handle_tarots_confirmed(tarots: Array[Tarot]) -> void:
+	if !passedTraining:
+		DialogueChecks.set_valid(DialogueChecks.Types.FINALIZED)
+	else:
+		DialogueChecks.set_valid(DialogueChecks.Types.FORTUNE)
+	
+	camera.to_booth()
+	
+	daily.current.challenged = tarots
+
+func _handle_drink_finished(elements: Array[Element.Types]) -> void:
+	# change scene
+	camera.to_booth()
+	
+	# set some check to true for the dialogue
+	DialogueChecks.set_valid(DialogueChecks.Types.DRINK)
+	
+	# store elements
+	drink_elements = elements
+
+
+#region Internals
+func _consume_drink() -> void:
+	# compare each element to each tarot
+	var score: int = 0
+	for tarot in daily.current.challenged:
+		if tarot.balanced:
+			continue
+		
+		var matched = drink_elements.any(func(e): return e == tarot.element)
+		if matched:
+			score += 1
+		else:
+			score -= 1
+	daily.modify_score(score)
+	
+	# notify dialogue
+	Dialogic.VAR.score = score
+	
+	# user feedback
+
+func _client_checks(args: Array[String]) -> void:
+	match args[0]:
+		"fortune":
+			DialogueChecks.currentCheck = DialogueChecks.Types.FINALIZED
+		"drink":
+			DialogueChecks.currentCheck = DialogueChecks.Types.DRINK
+
+func _training_checks(args: Array[String]) -> void:
+	match args[0]:
+		"deck":
+			DialogueChecks.currentCheck = DialogueChecks.Types.DECK
+		"hovered":
+			DialogueChecks.currentCheck = DialogueChecks.Types.HOVERED
+		"selected":
+			DialogueChecks.currentCheck = DialogueChecks.Types.SELECTED
+		"finalized":
+			DialogueChecks.currentCheck = DialogueChecks.Types.FINALIZED
+#endregion

@@ -1,4 +1,4 @@
-class_name Confirmation
+class_name ConfirmationUI
 extends Control
 
 
@@ -15,10 +15,12 @@ signal selection(value: bool)
 
 
 func open() -> void:
+	mouse_filter = Control.MOUSE_FILTER_STOP
 	animation.play("slide")
 
 
 func close() -> void:
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	animation.play_backwards("slide")
 
 

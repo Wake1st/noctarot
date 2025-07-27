@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://chg6u1gbkiecp"]
+
+[ext_resource type="Script" uid="uid://ddgobnc343j68" path="res://ui/components/hud_ui.gd" id="1_obyf7"]
+[ext_resource type="Texture2D" uid="uid://b6n4ga24je2q3" path="res://assets/icon.svg" id="2_m3uxf"]
+
+[sub_resource type="Animation" id="Animation_obyf7"]
+resource_name = "slide"
+length = 0.2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BtnFinished:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-165, -0.1, 0, 0.1, 0, 0, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BtnPaused:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1429, -0.1, 0, 0.1, 0, 1264, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="Animation" id="Animation_m3uxf"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BtnFinished:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-165, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BtnPaused:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1429, -0.1, 0, 0.1, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s025j"]
+_data = {
+&"RESET": SubResource("Animation_m3uxf"),
+&"slide": SubResource("Animation_obyf7")
+}
+
+[node name="HudUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_obyf7")
+
+[node name="BtnFinished" type="Button" parent="."]
+layout_mode = 0
+offset_left = -165.0
+offset_right = -29.0
+offset_bottom = 136.0
+icon = ExtResource("2_m3uxf")
+
+[node name="BtnPaused" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 29.0
+offset_right = 165.0
+offset_bottom = 136.0
+grow_horizontal = 0
+icon = ExtResource("2_m3uxf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_s025j")
+}
+
+[connection signal="pressed" from="BtnFinished" to="." method="_on_btn_finished_pressed"]
+[connection signal="pressed" from="BtnFinished" to="." method="_on_btn_confirm_pressed"]
+[connection signal="pressed" from="BtnPaused" to="." method="_on_btn_paused_pressed"]
+[connection signal="pressed" from="BtnPaused" to="." method="_on_btn_pause_pressed"]

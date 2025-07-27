@@ -13,9 +13,8 @@ const CARD_CAP: int = 5
 @onready var placeholder_5: Placeholder = $Placeholder5
 
 var placeholders: Array[Placeholder]
-var index: int
 var nextPlace: Placeholder
-var isAnimating: bool
+var index: int
 
 
 func setup(selection_callable: Callable) -> void:
@@ -37,7 +36,7 @@ func try_select() -> void:
 
 func place_card(card: Card) -> void:
 	# no more drawns after 5
-	if index == CARD_CAP || isAnimating:
+	if index == CARD_CAP:
 		return
 	
 	# pass card
@@ -51,15 +50,11 @@ func place_card(card: Card) -> void:
 	tween.tween_property(card, "position", Vector2.ZERO, pass_card_duration)
 	tween.tween_callback(_on_placement_finished.bind(card))
 	
-	isAnimating = true
+	#isAnimating = true
+	nextPlace.card = card
+	index += 1
 
 
 func _on_placement_finished(card: Card) -> void:
-	# now the placehold "has" the card
-	nextPlace.card = card
-	
 	# big reveal
 	card.flip()
-	
-	index += 1
-	isAnimating = false

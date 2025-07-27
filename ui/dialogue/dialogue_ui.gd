@@ -7,6 +7,7 @@ signal activate(args: Array[String])
 signal deactivate(args: Array[String])
 signal present(args: Array[String])
 signal enter(args: Array[String])
+signal leave(args: Array[String])
 signal check(args: Array[String])
 signal client(args: Array[String])
 signal training_ended()
@@ -42,6 +43,8 @@ func _handle_text_signal(argument: String) -> void:
 			present.emit(args)
 		"enter":
 			enter.emit(args)
+		"leave":
+			leave.emit(args)
 		"check":
 			check.emit(args)
 		"client":

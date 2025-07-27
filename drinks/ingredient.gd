@@ -4,6 +4,8 @@ extends Node2D
 
 signal selected(ingredient: Ingredient)
 
+@export var element: Element.Types
+
 @onready var details: DetailsPopup = %DetailsPopup
 
 var focused: bool 

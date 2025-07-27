@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://deyxk1a6djmvs" path="res://ui/menus/save_menu.gd" id="1_m414m"]
 [ext_resource type="PackedScene" uid="uid://d0sbgbrbr5er" path="res://ui/components/create_file_ui.tscn" id="2_y4jtn"]
-[ext_resource type="PackedScene" uid="uid://c2ktbd0tvbyst" path="res://ui/components/confirmation.tscn" id="3_u2uk6"]
+[ext_resource type="PackedScene" uid="uid://c2ktbd0tvbyst" path="res://ui/components/confirmation_ui.tscn" id="3_u2uk6"]
 
 [sub_resource type="Animation" id="Animation_0dkrt"]
 length = 0.001

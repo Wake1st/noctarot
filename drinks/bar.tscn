@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c4041bi0uscdx" path="res://drinks/bar.gd" id="1_eai0e"]
 [ext_resource type="PackedScene" uid="uid://8j2egssl3aa5" path="res://drinks/shelf.tscn" id="1_v2vwa"]
 [ext_resource type="PackedScene" uid="uid://bvnlqdhjud110" path="res://drinks/drink.tscn" id="2_eai0e"]
-[ext_resource type="PackedScene" uid="uid://c2ktbd0tvbyst" path="res://ui/components/confirmation.tscn" id="4_0g6c0"]
+[ext_resource type="PackedScene" uid="uid://c2ktbd0tvbyst" path="res://ui/components/confirmation_ui.tscn" id="4_0g6c0"]
 
 [node name="Bar" type="Node2D"]
 script = ExtResource("1_eai0e")
@@ -16,7 +16,7 @@ position = Vector2(-399, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Confirmation" parent="CanvasLayer" instance=ExtResource("4_0g6c0")]
+[node name="ConfirmationUI" parent="CanvasLayer" instance=ExtResource("4_0g6c0")]
 unique_name_in_owner = true
 text = "Is this the drink?"
 deny = "DUMP"

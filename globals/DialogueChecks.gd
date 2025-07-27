@@ -1,5 +1,4 @@
 class_name DialogueChecks
-extends Node
 
 
 enum Types {
@@ -7,6 +6,9 @@ enum Types {
 	DECK,
 	HOVERED,
 	SELECTED,
+	FINALIZED,
+	FORTUNE,
+	DRINK,
 }
 
 static var Possible: Dictionary[Types, bool] ={
@@ -14,12 +16,15 @@ static var Possible: Dictionary[Types, bool] ={
 	Types.DECK: false,
 	Types.HOVERED: false,
 	Types.SELECTED: false,
+	Types.FINALIZED: false,
+	Types.FORTUNE: false,
+	Types.DRINK: false,
 }
 
 static var currentCheck: Types
 
 
-static func check_valid(type: Types) -> void:
+static func set_valid(type: Types) -> void:
 	Possible[type] = true
 
 

@@ -23,6 +23,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "atlas": "res://dialog/characters/atlas.dch",
+"client": "res://dialog/characters/client.dch",
 "cosmo": "res://dialog/characters/cosmo.dch",
 "luna": "res://dialog/characters/luna.dch",
 "player": "res://dialog/characters/player.dch",
@@ -34,18 +35,25 @@ directories/dch_directory={
 directories/dtl_directory={
 "card_training_deck": "res://dialog/timelines/card_training_deck.dtl",
 "card_training_end": "res://dialog/timelines/card_training_end.dtl",
+"card_training_finalize": "res://dialog/timelines/card_training_finalize.dtl",
 "card_training_hover": "res://dialog/timelines/training.dtl",
 "card_training_select": "res://dialog/timelines/card_training_select.dtl",
+"client_fortune": "res://dialog/timelines/client_fortune.dtl",
+"client_intro": "res://dialog/timelines/client_intro.dtl",
+"client_outro": "res://dialog/timelines/client_outro.dtl",
 "end_training": "res://dialog/timelines/end_training.dtl",
 "intro": "res://dialog/timelines/intro.dtl",
-"luna": "res://dialog/timelines/luna.dtl",
-"potion_training": "res://dialog/timelines/potion_training.dtl"
+"luna_apt_1": "res://dialog/timelines/luna_apt_1.dtl",
+"potion_training": "res://dialog/timelines/potion_training.dtl",
+"redd_apt_1": "res://dialog/timelines/redd_apt_1.dtl",
+"rosie_apt_1": "res://dialog/timelines/rosie_apt_1.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style="Default"
 variables={
-"next_chapter": ""
+"next_chapter": "",
+"score": ""
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

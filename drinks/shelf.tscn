@@ -11,9 +11,12 @@ position = Vector2(-164, -129)
 
 [node name="Ingredient2" parent="." instance=ExtResource("2_35cgi")]
 position = Vector2(-168, 140)
+element = 1
 
 [node name="Ingredient3" parent="." instance=ExtResource("2_35cgi")]
 position = Vector2(164, -131)
+element = 2
 
 [node name="Ingredient4" parent="." instance=ExtResource("2_35cgi")]
 position = Vector2(166, 144)
+element = 3

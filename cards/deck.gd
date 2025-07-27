@@ -2,7 +2,7 @@ class_name Deck
 extends Node2D
 
 
-signal selected(card: Card)
+signal drawn(card: Card)
 
 const CARD = preload("res://cards/card.tscn")
 
@@ -12,10 +12,14 @@ var cards: Array[Card]
 var focused: bool
 
 
-func _ready() -> void:
-	# get the tarot types
-	var tarots: Array[Tarot] = Loader.load_tarots()
+func shuffle(tarots: Array[Tarot]) -> void:
+	# clear old deck
+	cards.clear()
+	for child in get_children():
+		if child as Card:
+			remove_child(child)
 	
+	# shuffle new deck
 	for i in tarots.size():
 		var card: Card = CARD.instantiate()
 		card.tarot = tarots[i]
@@ -24,21 +28,23 @@ func _ready() -> void:
 		add_child(card)
 		cards.push_back(card)
 
+
 func _input(event) -> void:
 	if focused && event.is_action_pressed("select"):
-		DialogueChecks.check_valid(DialogueChecks.Types.DECK)
+		DialogueChecks.set_valid(DialogueChecks.Types.DECK)
 		_draw_card()
 
-func _on_area_2d_mouse_entered():
+func _on_area_2d_mouse_entered() -> void:
 	focused = true
 
-func _on_area_2d_mouse_exited():
+func _on_area_2d_mouse_exited() -> void:
 	focused = false
 
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	_draw_card()
 
 func _draw_card() -> void:
 	if cards.size() > 0:
-		selected.emit(cards.pop_back())
+		print("card: ", cards.back())
+		drawn.emit(cards.pop_back())
 		timer.start()

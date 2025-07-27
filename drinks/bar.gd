@@ -2,9 +2,11 @@ class_name Bar
 extends Node2D
 
 
+signal finished(elements: Array[Element.Types])
+
 @onready var shelf: Shelf = $Shelf
 @onready var drink: Drink = $Drink
-@onready var confirmation: Confirmation = %Confirmation
+@onready var confirmation: ConfirmationUI = %ConfirmationUI
 
 
 func _ready() -> void:
@@ -20,6 +22,6 @@ func _handle_drink_full() -> void:
 
 func _handle_confirmation_selection(value: bool) -> void:
 	if value:
-		pass
+		finished.emit(drink.elements)
 	else:
 		drink.empty()
