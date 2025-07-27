@@ -1,0 +1,26 @@
+join client left [animation="Fade In"]
+client: Thats my drink. Yum.
+
+[signal arg="activate_drink"]
+They drink.
+if {score} == 3:
+	client: That was a 3.
+elif {score} == 2:
+	client: That was a 2.
+elif {score} == 1:
+	client: That was a 1.
+elif {score} == -1:
+	client: That was a -1.
+elif {score} == -2:
+	client: That was a -2.
+elif {score} == -3:
+	client: That was a -3.
+else:
+	client: That was a 0.
+
+leave Emilio [animation="Bounce Out" length="0.3"]
+[signal arg="leave"]
+There they go.
+
+[signal arg="client_end"]
+[end_timeline]

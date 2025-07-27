@@ -5,5 +5,5 @@ trainer: Mouse?
 trainer: ... "over the card."
 
 set {next_chapter} = "card_training_select"
-[signal arg="check_hovered"]
+[signal arg="check_training_hovered"]
 [end_timeline]

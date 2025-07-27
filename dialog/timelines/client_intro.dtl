@@ -1,0 +1,9 @@
+A client approaches.
+join client left [animation="Fade In"]
+[signal arg="enter"]
+client: Hello. I want my fortune read.
+
+[signal arg="transition_table"]
+[signal arg="check_client_fortune"]
+set {next_chapter} = "client_fortune"
+[end_timeline]

@@ -4,6 +4,6 @@ trainer: Oh! Hold on...
 [signal arg="activate_sight"]
 trainer: "The shimmering cards are 'unbalanced', meaning that person's fate is in need of correction. Try selecting a card now."
 
-set {next_chapter} = "card_training_end"
-[signal arg="check_selected"]
+set {next_chapter} = "card_training_finalize"
+[signal arg="check_training_selected"]
 [end_timeline]

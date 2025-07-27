@@ -1,0 +1,8 @@
+join client left [animation="Fade In"]
+client: Thats my fortune. Wow.
+
+[signal arg="transition_kitchen"]
+[signal arg="check_client_drink"]
+set {next_chapter} = "client_outro"
+[end_timeline]
+
