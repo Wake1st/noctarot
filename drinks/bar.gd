@@ -9,6 +9,10 @@ signal finished(elements: Array[Element])
 @onready var confirmation: ConfirmationUI = %ConfirmationUI
 
 
+func reset() -> void:
+	drink.reset()
+
+
 func _ready() -> void:
 	shelf.setup(_handle_ingredient_selected)
 	drink.full.connect(_handle_drink_full)
@@ -24,4 +28,4 @@ func _handle_confirmation_selection(value: bool) -> void:
 	if value:
 		finished.emit(drink.elements)
 	else:
-		drink.empty()
+		drink.reset()

@@ -20,7 +20,9 @@ func add(ingredient: Ingredient) -> void:
 			full.emit()
 
 
-func empty() -> void:
+func reset() -> void:
+	elements.clear()
+	
 	for layer in layers:
 		layer.visible = false
 	index = 0

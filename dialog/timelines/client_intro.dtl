@@ -1,5 +1,4 @@
 A client approaches.
-join client left [animation="Fade In"]
 [signal arg="enter"]
 client: Hello. I want my fortune read.
 

@@ -19,6 +19,7 @@ func next() -> Appointment:
 	
 	# unbalance attributes
 	current.client.cards[0].balanced = false
+	current.client.cards[1].balanced = false
 	current.client.cards[4].balanced = false
 	
 	return current

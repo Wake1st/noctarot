@@ -5,6 +5,20 @@
 [ext_resource type="Texture2D" uid="uid://ct3dvkpgxjbeo" path="res://assets/cards/tarot back.png" id="2_c0edj"]
 [ext_resource type="Texture2D" uid="uid://cebwpl0ybu5nt" path="res://assets/drinks/can o thing.png" id="3_4ladf"]
 
+[sub_resource type="Animation" id="Animation_4ladf"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(920, -0.2, 0, 0.2, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_c0edj"]
 resource_name = "slide"
 length = 0.4
@@ -18,20 +32,6 @@ tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(920, -0.2, 0, 0.0333333, -516, 0, -0.233333, -500, 0.2, 0),
 "times": PackedFloat32Array(0, 0.4)
-}
-
-[sub_resource type="Animation" id="Animation_4ladf"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(920, -0.2, 0, 0.2, 0),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0nfav"]

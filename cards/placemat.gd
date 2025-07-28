@@ -55,6 +55,12 @@ func place_card(card: Card) -> void:
 	index += 1
 
 
+func reset() -> void:
+	index = 0
+	for child: Placeholder in get_children():
+		child.reset()
+
+
 func _on_placement_finished(card: Card) -> void:
 	# big reveal
 	card.flip()

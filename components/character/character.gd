@@ -31,16 +31,16 @@ func exit() -> void:
 
 func pulse(value: int) -> void:
 	if value > 0:
-		avatar.set_instance_shader_parameter("strength", b_strength)
-		avatar.set_instance_shader_parameter("size_effect", b_size)
-		avatar.set_instance_shader_parameter("color_gradient", BOOST_GRADIENT)
+		(avatar.material as ShaderMaterial).set_shader_parameter("strength", b_strength * value)
+		(avatar.material as ShaderMaterial).set_shader_parameter("size_effect", b_size * value)
+		(avatar.material as ShaderMaterial).set_shader_parameter("color_gradient", BOOST_GRADIENT)
 		
-		animation.speed_scale = 1.0
+		animation.speed_scale = 0.8 / value
 		animation.play("pulse")
 	elif value < 0:
-		avatar.set_instance_shader_parameter("strength", d_strength)
-		avatar.set_instance_shader_parameter("size_effect", d_size)
-		avatar.set_instance_shader_parameter("color_gradient", DRAIN_GRADIENT)
+		(avatar.material as ShaderMaterial).set_shader_parameter("strength", d_strength * abs(value))
+		(avatar.material as ShaderMaterial).set_shader_parameter("size_effect", d_size * abs(value))
+		(avatar.material as ShaderMaterial).set_shader_parameter("color_gradient", DRAIN_GRADIENT)
 		
-		animation.speed_scale = 0.4
+		animation.speed_scale = 0.6 / abs(value)
 		animation.play_backwards("pulse")

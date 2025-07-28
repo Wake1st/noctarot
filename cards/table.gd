@@ -23,6 +23,11 @@ func activate(tarots: Array[Tarot]) -> void:
 	hud_ui.open()
 
 
+func reset() -> void:
+	placemat.reset()
+	selected.clear()
+
+
 func _ready() -> void:
 	placemat.setup(_handle_card_selected)
 	deck.drawn.connect(_handle_card_drawn)

@@ -20,7 +20,10 @@
 - [x] shader for "unbalanced" cards
 - [x] synopsis
 - [ ] user feedback when drink drank
+	- [x] visual
 	- [ ] audio
-	- [ ] visual
+- [ ] setup appointments data and integrate
+- [ ] save files
 - [ ] better drink tutorial
-- [ ] how to end a day?
+- [ ] display cards in the kitchen
+- [ ] records always available, opens during daily assessment

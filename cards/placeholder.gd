@@ -31,6 +31,15 @@ func select() -> void:
 	card.select(isSelected)
 
 
+func reset() -> void:
+	isSelected = false
+	animation.play("RESET")
+	
+	if card:
+		remove_child(card)
+		card.queue_free()
+
+
 func _on_mouse_entered():
 	if card:
 		focused = true

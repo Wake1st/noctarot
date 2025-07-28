@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Client" load_steps=9 format=3 uid="uid://cj0yb7ogtx23g"]
+[gd_resource type="Resource" script_class="Client" load_steps=10 format=3 uid="uid://cj0yb7ogtx23g"]
 
 [ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_18apo"]
 [ext_resource type="Resource" uid="uid://3gjwart8is6d" path="res://resources/tarot/death.tres" id="2_fu8nv"]
@@ -8,10 +8,12 @@
 [ext_resource type="Resource" uid="uid://h1al614evk6g" path="res://resources/tarot/chariot.tres" id="4_23wfr"]
 [ext_resource type="Resource" uid="uid://dlt7f2c1xd4yo" path="res://resources/tarot/fool.tres" id="5_pikko"]
 [ext_resource type="Resource" uid="uid://bos6h45o0nyg5" path="res://resources/tarot/devil.tres" id="6_ixjrr"]
+[ext_resource type="Texture2D" uid="uid://b6n4ga24je2q3" path="res://assets/icon.svg" id="8_o7v6j"]
 
 [resource]
 script = ExtResource("2_rwjys")
 name = "redd"
 character = ExtResource("2_n0vgi")
+image = ExtResource("8_o7v6j")
 cards = Array[ExtResource("1_18apo")]([ExtResource("2_fu8nv"), ExtResource("3_o7v6j"), ExtResource("4_23wfr"), ExtResource("5_pikko"), ExtResource("6_ixjrr")])
 metadata/_custom_type_script = "uid://b0jof5go2nsd"

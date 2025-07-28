@@ -42,6 +42,7 @@ func _ready() -> void:
 	dialogue_ui.activate.connect(_handle_dialogue_activate)
 	dialogue_ui.deactivate.connect(_handle_dialogue_deactivate)
 	dialogue_ui.enter.connect(_handle_dialogue_enter)
+	dialogue_ui.exit.connect(_handle_dialogue_exit)
 	dialogue_ui.check.connect(_handle_dialogue_check)
 	dialogue_ui.client.connect(_handle_dialogue_client)
 	dialogue_ui.training_ended.connect(_handle_training_ended)
@@ -106,7 +107,7 @@ func _handle_dialogue_deactivate(args: Array[String]) -> void:
 func _handle_dialogue_enter() -> void:
 	booth.enter(daily.current.client)
 
-func _handle_dialogue_leave() -> void:
+func _handle_dialogue_exit() -> void:
 	booth.exit()
 
 func _handle_dialogue_check(args: Array[String]) -> void:
@@ -181,7 +182,12 @@ func _handle_scoreboard_menu() -> void:
 	return_to_start.emit()
 
 func _handle_scoreboard_next() -> void:
-	dialogue_ui.start(daily.next().chapter)
+	# cleanup
+	table.reset()
+	kitchen.reset()
+	
+	#dialogue_ui.start(daily.next().chapter)
+	dialogue_ui.start("client_intro")
 #endregion
 
 

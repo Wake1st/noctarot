@@ -7,3 +7,7 @@ extends Node2D
 
 func setup(finished_callable: Callable) -> void:
 	bar.finished.connect(finished_callable)
+
+
+func reset() -> void:
+	bar.reset()
