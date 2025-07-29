@@ -7,7 +7,7 @@ signal return_to_start()
 @onready var camera: SlideCamera = $SlideCamera
 @onready var booth: Booth = $Booth
 @onready var table: Table = $Table
-@onready var kitchen: Kitchen = $Kitchen
+@onready var bar: Bar = $Bar
 
 @onready var pause_menu: PauseMenu = %PauseMenu
 @onready var settings_menu: SettingsMenu = %SettingsMenu
@@ -30,6 +30,7 @@ func setup(fileName: String) -> void:
 	
 	daily.next()
 	dialogue_ui.start("trainer_intro")
+	#dialogue_ui.start("client_intro")
 
 
 func _ready() -> void:
@@ -62,7 +63,8 @@ func _ready() -> void:
 	table.setup(_handle_pause_selected)
 	table.confirmed.connect(_handle_tarots_confirmed)
 	
-	kitchen.setup(_handle_drink_finished)
+	bar.finished.connect(_handle_drink_finished)
+
 
 
 func _process(_delta) -> void:
@@ -94,7 +96,7 @@ func _handle_dialogue_transition(args: Array[String]) -> void:
 			camera.to_table()
 		"booth":
 			camera.to_booth()
-		"kitchen":
+		"kitchen": # TODO: should be renamed to bar
 			camera.to_kitchen()
 
 func _handle_dialogue_activate(args: Array[String]) -> void:
@@ -154,12 +156,12 @@ func _handle_camera_transition_finished() -> void:
 		camera.State.TABLE:
 			table.activate(daily.current.client.cards)
 		camera.State.KITCHEN:
-			pass
+			bar.flip_cards()
 
 func _handle_title_finished() -> void:
 	# cleanup
 	table.reset()
-	kitchen.reset()
+	bar.reset()
 	
 	# start day
 	if daily.current:
@@ -180,6 +182,7 @@ func _handle_tarots_confirmed(tarots: Array[Tarot]) -> void:
 	camera.to_booth()
 	
 	daily.current.challenged = tarots
+	bar.load_cards(tarots)
 
 func _handle_drink_finished(elements: Array[Element]) -> void:
 	# change scene
@@ -197,7 +200,7 @@ func _handle_scoreboard_menu() -> void:
 func _handle_scoreboard_next() -> void:
 	# cleanup
 	table.reset()
-	kitchen.reset()
+	bar.reset()
 	
 	# check for end of day
 	var apt: Appointment = daily.next()

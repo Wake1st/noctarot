@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://it3n5j7femgi" path="res://cards/table.tscn" id="4_orp6n"]
 [ext_resource type="PackedScene" uid="uid://ctf3cs5jqawcn" path="res://ui/menus/pause_menu.tscn" id="4_usyny"]
 [ext_resource type="PackedScene" uid="uid://cx2fp4d2uwxha" path="res://ui/menus/settings_menu.tscn" id="5_837no"]
-[ext_resource type="PackedScene" uid="uid://bwfvid5lhnae2" path="res://scenes/kitchen.tscn" id="5_vryr4"]
+[ext_resource type="PackedScene" uid="uid://102qrwkosfhk" path="res://drinks/bar.tscn" id="6_phlp8"]
 [ext_resource type="PackedScene" uid="uid://bf6167nndw3du" path="res://ui/components/title_ui.tscn" id="9_vryr4"]
 [ext_resource type="PackedScene" uid="uid://bl5vuawov65bs" path="res://ui/menus/scoreboard_ui.tscn" id="9_wi7l4"]
 [ext_resource type="PackedScene" uid="uid://dfssr71p0hbsj" path="res://ui/components/screen_effects_ui.tscn" id="10_53md7"]
@@ -22,7 +22,7 @@ script = ExtResource("1_o4ax3")
 [node name="Table" parent="." instance=ExtResource("4_orp6n")]
 position = Vector2(0, 960)
 
-[node name="Kitchen" parent="." instance=ExtResource("5_vryr4")]
+[node name="Bar" parent="." instance=ExtResource("6_phlp8")]
 position = Vector2(-1500, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

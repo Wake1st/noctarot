@@ -21,10 +21,11 @@
 - [x] synopsis
 - [x] setup appointments data and integrate
 - [x] dialogue is blocking pause screen functionality
+- [x] display cards in the kitchen
 - [ ] user feedback when drink drank
 	- [x] visual
 	- [ ] audio
-- [ ] display cards in the kitchen
 - [ ] better drink tutorial
 - [ ] save files
 - [ ] records always available, opens during daily assessment
+- [ ] menus should operate during pause cycle
