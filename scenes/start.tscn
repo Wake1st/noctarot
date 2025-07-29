@@ -10,6 +10,7 @@
 script = ExtResource("1_0auqf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 101
 
 [node name="MainMenu" parent="CanvasLayer" instance=ExtResource("2_y16t7")]
 unique_name_in_owner = true

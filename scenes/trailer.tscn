@@ -26,11 +26,9 @@ position = Vector2(0, 960)
 position = Vector2(-1500, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
 
 [node name="DialogueUI" parent="CanvasLayer" instance=ExtResource("3_h23np")]
-unique_name_in_owner = true
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_usyny")]
 unique_name_in_owner = true
 
 [node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("5_837no")]
@@ -43,4 +41,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="ScreenEffectsUI" parent="CanvasLayer" instance=ExtResource("10_53md7")]
+unique_name_in_owner = true
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_usyny")]
 unique_name_in_owner = true

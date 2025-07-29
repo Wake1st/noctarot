@@ -20,10 +20,11 @@
 - [x] shader for "unbalanced" cards
 - [x] synopsis
 - [x] setup appointments data and integrate
+- [x] dialogue is blocking pause screen functionality
 - [ ] user feedback when drink drank
 	- [x] visual
 	- [ ] audio
-- [ ] save files
-- [ ] better drink tutorial
 - [ ] display cards in the kitchen
+- [ ] better drink tutorial
+- [ ] save files
 - [ ] records always available, opens during daily assessment

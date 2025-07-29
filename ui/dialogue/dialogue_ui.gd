@@ -21,6 +21,15 @@ func resume() -> void:
 	Dialogic.paused = false
 
 
+func toggle_pause(value: bool) -> void:
+	Dialogic.paused = value
+	
+	if value:
+		Dialogic.Text.hide_textbox()
+	else:
+		Dialogic.Text.show_textbox()
+
+
 func _ready() -> void:
 	Dialogic.signal_event.connect(_handle_text_signal)
 	Dialogic.timeline_ended.connect(_handle_timeline_ended)

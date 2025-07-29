@@ -35,6 +35,7 @@ func setup(fileName: String) -> void:
 func _ready() -> void:
 	WorkBuilder.load()
 	
+	pause_menu.resume_selected.connect(_handle_pause_selected)
 	pause_menu.settings_selected.connect(_handle_settings_selected)
 	pause_menu.return_selected.connect(_handle_return_selected)
 	
@@ -67,6 +68,11 @@ func _ready() -> void:
 func _process(_delta) -> void:
 	if DialogueChecks.current_passed():
 		dialogue_ui.start(Dialogic.VAR.next_chapter)
+
+
+func _input(event) -> void:
+	if event.is_action_pressed("pause"):
+		dialogue_ui.toggle_pause(pause_menu.toggle_pause())
 
 
 #region SettingsSignals
@@ -162,7 +168,7 @@ func _handle_title_finished() -> void:
 		return_to_start.emit()
 
 func _handle_pause_selected() -> void:
-	pause_menu._toggle_pause()
+	dialogue_ui.toggle_pause(pause_menu.toggle_pause())
 
 
 func _handle_tarots_confirmed(tarots: Array[Tarot]) -> void:

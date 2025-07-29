@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Element" load_steps=2 format=3 uid="uid://g5u0bs2fbhc"]
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://g5u0bs2fbhc"]
 
 [ext_resource type="Script" uid="uid://cu4vl011p4b7e" path="res://resources/Element.gd" id="1_6enab"]
+[ext_resource type="Texture2D" uid="uid://cebwpl0ybu5nt" path="res://assets/drinks/can o thing.png" id="1_8mium"]
 
 [resource]
 script = ExtResource("1_6enab")
 type = 2
+image = ExtResource("1_8mium")
 metadata/_custom_type_script = "uid://cu4vl011p4b7e"

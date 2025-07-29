@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bl5vuawov65bs"]
 
 [ext_resource type="Script" uid="uid://chuxgmiudtqtc" path="res://ui/menus/scoreboard_ui.gd" id="1_c0edj"]
-[ext_resource type="Texture2D" uid="uid://d1uywbi0sq2ln" path="res://assets/scoreboard-background.png" id="1_o2714"]
+[ext_resource type="Texture2D" uid="uid://d1uywbi0sq2ln" path="res://assets/ui/scoreboard-background.png" id="1_o2714"]
 [ext_resource type="Texture2D" uid="uid://ct3dvkpgxjbeo" path="res://assets/cards/tarot back.png" id="2_c0edj"]
 [ext_resource type="Texture2D" uid="uid://cebwpl0ybu5nt" path="res://assets/drinks/can o thing.png" id="3_4ladf"]
 
