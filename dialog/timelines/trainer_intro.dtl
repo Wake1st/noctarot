@@ -9,7 +9,7 @@ After half of hour of digging through the same 6 boxes, I finally find my old ta
 [signal arg="activate_warp"]
 A bit of nausia sets in as I feel myself wobble with the room, as one feels the ebb and flow of the sea.
 
-[signal arg="enter_trainer"]
+[signal arg="enter"]
 trainer: Whoop! Easy, just a moment...
 Icy chills grip my soul as a ghostly figure appears before me.
 [signal arg="deactivate_warp"]

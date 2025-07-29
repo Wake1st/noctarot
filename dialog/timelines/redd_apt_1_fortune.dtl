@@ -1,0 +1,6 @@
+redd: Thats my fortune. Wow.
+
+[signal arg="transition_kitchen"]
+[signal arg="check_client_drink"]
+set {next_chapter} = "redd_apt_1_outro"
+[end_timeline]

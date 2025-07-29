@@ -1,6 +1,5 @@
 [signal arg="transition_booth"]
 
-[signal arg="enter_trainer"]
 trainer: Ok! That's basically it. Clients should start arriving soon...
 
 - Am I getting paid for this?
@@ -15,6 +14,7 @@ trainer: Welp, I've gotta go.
 [signal arg="activate_warp"]
 Everything wobbled like it did before.
 trainer: Don't worry - you're gonna do great! Just, try not to mess up too much; you don't want a visit from a Closer.
+[signal arg="exit"]
 [signal arg="deactivate_warp"]
 They left just as they arrived, but now I felt sick for entirely different reasons.
 player: What's a Closer?

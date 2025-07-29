@@ -29,7 +29,7 @@ func setup(fileName: String) -> void:
 	daily.appointments = WorkBuilder.daily_appointments()
 	
 	daily.next()
-	dialogue_ui.start("client_intro")
+	dialogue_ui.start("trainer_intro")
 
 
 func _ready() -> void:
@@ -131,7 +131,7 @@ func _handle_dialogue_client(args: Array[String]) -> void:
 
 func _handle_training_ended() -> void:
 	passedTraining = true
-	title_ui.display()
+	title_ui.display(TitleUI.Titles.CHAPTER_1)
 
 func _handle_dialogue_ended() -> void:
 	pass
@@ -151,8 +151,15 @@ func _handle_camera_transition_finished() -> void:
 			pass
 
 func _handle_title_finished() -> void:
+	# cleanup
+	table.reset()
+	kitchen.reset()
+	
 	# start day
-	dialogue_ui.start(daily.next().chapter)
+	if daily.current:
+		dialogue_ui.start(daily.next().chapter)
+	else:
+		return_to_start.emit()
 
 func _handle_pause_selected() -> void:
 	pause_menu._toggle_pause()
@@ -186,8 +193,12 @@ func _handle_scoreboard_next() -> void:
 	table.reset()
 	kitchen.reset()
 	
-	#dialogue_ui.start(daily.next().chapter)
-	dialogue_ui.start("client_intro")
+	# check for end of day
+	var apt: Appointment = daily.next()
+	if apt:
+		dialogue_ui.start(apt.chapter)
+	else:
+		title_ui.display(TitleUI.Titles.END_OF_DAY)
 #endregion
 
 
@@ -215,7 +226,7 @@ func _consume_drink() -> void:
 func _client_checks(args: Array[String]) -> void:
 	match args[0]:
 		"fortune":
-			DialogueChecks.currentCheck = DialogueChecks.Types.FINALIZED
+			DialogueChecks.currentCheck = DialogueChecks.Types.FORTUNE
 		"drink":
 			DialogueChecks.currentCheck = DialogueChecks.Types.DRINK
 

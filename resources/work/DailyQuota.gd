@@ -11,16 +11,12 @@ var index: int = 0
 func next() -> Appointment:
 	# no overflow
 	if index == appointments.size():
+		current = null
 		return null
 	
 	# set the current
 	current = appointments[index]
 	index += 1
-	
-	# unbalance attributes
-	current.client.cards[0].balanced = false
-	current.client.cards[1].balanced = false
-	current.client.cards[4].balanced = false
 	
 	return current
 

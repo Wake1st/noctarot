@@ -19,10 +19,10 @@
 - [x] test client
 - [x] shader for "unbalanced" cards
 - [x] synopsis
+- [x] setup appointments data and integrate
 - [ ] user feedback when drink drank
 	- [x] visual
 	- [ ] audio
-- [ ] setup appointments data and integrate
 - [ ] save files
 - [ ] better drink tutorial
 - [ ] display cards in the kitchen

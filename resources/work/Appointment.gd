@@ -11,9 +11,14 @@ var elements: Array[Element]
 var score: int
 
 
-func _init(cli: Client, d: int, scr: int) -> void:
+func _init(cli: Client, d: int, indecies: Array[int]) -> void:
 	client = cli
 	day = d
-	score = scr
 	
-	chapter = "%s_apt_%s" % [client.name, day]
+	chapter = "%s_apt_%s_intro" % [client.name, day]
+	
+	for index in indecies:
+		var unique_tarot = client.cards[index].duplicate()
+		unique_tarot.balanced = false
+		unbalanced.push_back(unique_tarot)
+		client.cards[index] = unique_tarot

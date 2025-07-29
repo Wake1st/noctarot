@@ -38,17 +38,23 @@ directories/dtl_directory={
 "card_training_deck": "res://dialog/timelines/card_training_deck.dtl",
 "card_training_end": "res://dialog/timelines/card_training_end.dtl",
 "card_training_finalize": "res://dialog/timelines/card_training_finalize.dtl",
-"card_training_hover": "res://dialog/timelines/training.dtl",
+"card_training_hover": "res://dialog/timelines/card_training_hover.dtl",
 "card_training_select": "res://dialog/timelines/card_training_select.dtl",
 "client_fortune": "res://dialog/timelines/client_fortune.dtl",
 "client_intro": "res://dialog/timelines/client_intro.dtl",
 "client_outro": "res://dialog/timelines/client_outro.dtl",
 "end_training": "res://dialog/timelines/end_training.dtl",
-"intro": "res://dialog/timelines/intro.dtl",
-"luna_apt_1": "res://dialog/timelines/luna_apt_1.dtl",
+"luna_apt_1_fortune": "res://dialog/timelines/luna_apt_1_fortune.dtl",
+"luna_apt_1_intro": "res://dialog/timelines/luna_apt_1_intro.dtl",
+"luna_apt_1_outro": "res://dialog/timelines/luna_apt_1_outro.dtl",
 "potion_training": "res://dialog/timelines/potion_training.dtl",
-"redd_apt_1": "res://dialog/timelines/redd_apt_1.dtl",
-"rosie_apt_1": "res://dialog/timelines/rosie_apt_1.dtl"
+"redd_apt_1_fortune": "res://dialog/timelines/redd_apt_1_fortune.dtl",
+"redd_apt_1_intro": "res://dialog/timelines/redd_apt_1_intro.dtl",
+"redd_apt_1_outro": "res://dialog/timelines/redd_apt_1_outro.dtl",
+"rosie_apt_1_fortune": "res://dialog/timelines/rosie_apt_1_fortune.dtl",
+"rosie_apt_1_intro": "res://dialog/timelines/rosie_apt_1_intro.dtl",
+"rosie_apt_1_outro": "res://dialog/timelines/rosie_apt_1_outro.dtl",
+"trainer_intro": "res://dialog/timelines/trainer_intro.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]

@@ -4,19 +4,28 @@ extends Control
 
 signal finished()
 
-const CHAPER_1 = preload("res://assets/titles/chaper_1.png")
-const CHAPER_2 = preload("res://assets/titles/chaper_2.png")
-const CHAPER_3 = preload("res://assets/titles/chaper_3.png")
-const CHAPER_4 = preload("res://assets/titles/chaper_4.png")
-const CHAPER_5 = preload("res://assets/titles/chaper_5.png")
+enum Titles {
+	CHAPTER_1,
+	END_OF_DAY,
+}
 
+const CHAPER_1 = preload("res://assets/titles/chaper_1.png")
+const END_OF_DAY = preload("res://assets/titles/end_of_day.png")
+
+@onready var rect: TextureRect = $Sprite2D
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var timer: Timer = $Timer
 
 var isOpening: bool
 
 
-func display() -> void:
+func display(title: Titles) -> void:
+	match title:
+		Titles.CHAPTER_1:
+			rect.texture = CHAPER_1
+		Titles.END_OF_DAY:
+			rect.texture = END_OF_DAY
+	
 	animation.play("bounce_up")
 	isOpening = true
 

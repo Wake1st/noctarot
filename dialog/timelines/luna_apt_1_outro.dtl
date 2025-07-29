@@ -1,0 +1,25 @@
+luna: Thats my drink. Yum.
+
+[signal arg="activate_drink"]
+They drink.
+if {score} == 3:
+	[signal arg="activate_boost"]
+	luna: That was a 3.
+elif {score} == 2:
+	luna: That was a 2.
+elif {score} == 1:
+	luna: That was a 1.
+elif {score} == -1:
+	luna: That was a -1.
+elif {score} == -2:
+	luna: That was a -2.
+elif {score} == -3:
+	luna: That was a -3.
+else:
+	luna: That was a 0.
+
+[signal arg="exit"]
+There they go.
+
+[signal arg="client_ended"]
+[end_timeline]

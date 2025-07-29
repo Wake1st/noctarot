@@ -1,0 +1,8 @@
+A client approaches.
+[signal arg="enter"]
+rosie: Hello. I want my fortune read.
+
+[signal arg="transition_table"]
+[signal arg="check_client_fortune"]
+set {next_chapter} = "rosie_apt_1_fortune"
+[end_timeline]
