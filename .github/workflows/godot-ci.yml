@@ -4,9 +4,31 @@ on: push
 env:
   GODOT_VERSION: 4.4
   EXPORT_NAME: noctarot
-  PROJECT_PATH: tarot-moth
+  PROJECT_PATH: noctarot
+  ITCH_IO_USERNAME: wake1st
+  ITCH_IO_PROJECT: noctarot
+  ITCH_PAGE: https://${ITCH_IO_USERNAME}.itch.io/${ITCH_IO_PROJECT}
 
 jobs:
+  forward-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do nothing
+        run: "true"
+    outputs:
+      itch_page: ${ITCH_PAGE}
+
+  # Determine the version number for this workflow.
+  get-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Determine version number
+        id: tag
+        run: echo "ref=${GITHUB_REF#refs/*/}" >> "${GITHUB_OUTPUT}"
+    outputs:
+      # Use the input from workflow dispatch, or fall back to the git ref.
+      version: ${{ inputs.version || steps.ref.outputs.ref }}
+
   export-windows:
     name: Windows Export
     runs-on: ubuntu-22.04  # Use 22.04 with godot 4
@@ -120,3 +142,38 @@ jobs:
         with:
           name: mac
           path: build/mac
+
+  # Upload all packages to itch.io.
+  upload-to-itch:
+    runs-on: ubuntu-latest
+    needs:
+      - forward-env
+      - get-version
+      - build
+    if: ${{ inputs.upload_to_itch && needs.forward-env.outputs.itch_page != '' }}
+
+    steps:
+      - name: Download all packages
+        uses: actions/download-artifact@v4
+        with:
+          pattern: package-*
+          path: tmp
+
+      - name: Install butler
+        run: |
+          curl -L -o butler.zip 'https://broth.itch.zone/butler/linux-amd64/LATEST/archive/default'
+          unzip butler.zip
+          chmod +x butler
+          ./butler -V
+
+      - name: Upload all packages to itch.io
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+        run: |
+          for channel in $(ls tmp); do
+            ./butler push \
+              --fix-permissions \
+              --userversion='${{ needs.get-version.outputs.version }}' \
+              tmp/"${channel}"/* \
+              '${ITCH_PAGE}':"${channel#package-}"
+          done
