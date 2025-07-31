@@ -1,25 +1,30 @@
-luna: Thats my drink. Yum.
+luna: Ah, at last.
+luna: Bottoms up!
 
 [signal arg="activate_drink"]
-They drink.
+She downs the whole brew in one gulp.
 if {score} == 3:
-	[signal arg="activate_boost"]
-	luna: That was a 3.
+	luna: People who can't accept you are not your family. 
+	luna: I give my love to those who do.
 elif {score} == 2:
-	luna: That was a 2.
+	luna: I'm gonna face my family - there's still a chance they will come around.
 elif {score} == 1:
-	luna: That was a 1.
+	luna: I'm still unsure of what I want, but I think I'm gonna be okay.
 elif {score} == -1:
-	luna: That was a -1.
+	luna: I don't think that worked - I'm move nervous than before.
+	luna: I'm gonna go.
 elif {score} == -2:
-	luna: That was a -2.
+	luna: That's terrible!
+	luna: I feel worse now.
+	luna: You should feel worse for making me feel worse.
 elif {score} == -3:
-	luna: That was a -3.
+	luna: I don't need love. I need stability, and my families connections are my best chance.
 else:
-	luna: That was a 0.
+	luna: I feel exactly the same.
+	luna: I will still pay, but I won't be back.
 
 [signal arg="exit"]
-There they go.
+And then, luna left.
 
 [signal arg="client_ended"]
 [end_timeline]

@@ -10,7 +10,7 @@
 script = ExtResource("1_eai0e")
 
 [node name="Shelf" parent="." instance=ExtResource("1_v2vwa")]
-position = Vector2(382, -133)
+position = Vector2(341, -229)
 
 [node name="Drink" parent="." instance=ExtResource("2_eai0e")]
 position = Vector2(-399, 128)

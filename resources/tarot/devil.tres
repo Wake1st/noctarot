@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="Tarot" load_steps=3 format=3 uid="uid://bos6h45o0nyg5"]
+[gd_resource type="Resource" script_class="Tarot" load_steps=2 format=3 uid="uid://bos6h45o0nyg5"]
 
 [ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_ogdad"]
-[ext_resource type="Resource" uid="uid://blsnva52qjspa" path="res://resources/elements/earth.tres" id="1_x2h03"]
 
 [resource]
 script = ExtResource("1_ogdad")
 name = "The Devil"
-element = ExtResource("1_x2h03")
+element = 4
 upright = "addiction, materialism, playfulness"
 reversed = "freedom, release, restoring control"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

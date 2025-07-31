@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Client" load_steps=10 format=3 uid="uid://c6fgrrr24lxr1"]
 
 [ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_mkahc"]
-[ext_resource type="Resource" uid="uid://cjwjxcvuif8lh" path="res://resources/tarot/hierophant.tres" id="2_e0hja"]
+[ext_resource type="Resource" uid="uid://bba0vmjjnqn1j" path="res://resources/tarot/emperor.tres" id="2_e0hja"]
 [ext_resource type="Script" uid="uid://b0jof5go2nsd" path="res://resources/work/Client.gd" id="2_q5ayr"]
 [ext_resource type="Resource" uid="uid://bi6jtc0jyeyyc" path="res://resources/tarot/lovers.tres" id="3_60ors"]
-[ext_resource type="Resource" uid="uid://bp8hdm70fivdw" path="res://resources/tarot/judgement.tres" id="4_4mup5"]
-[ext_resource type="Resource" uid="uid://cisttsay7ix2y" path="res://resources/tarot/strength.tres" id="5_wbief"]
-[ext_resource type="Resource" uid="uid://bkdsx2wijeg05" path="res://resources/tarot/wheel.tres" id="6_ugrn5"]
+[ext_resource type="Resource" uid="uid://cluooa10ad2sx" path="res://resources/tarot/moon.tres" id="4_60ors"]
+[ext_resource type="Resource" uid="uid://3gjwart8is6d" path="res://resources/tarot/death.tres" id="5_4mup5"]
+[ext_resource type="Resource" uid="uid://dkcdptbcbwr6j" path="res://resources/tarot/empress.tres" id="5_60ors"]
 [ext_resource type="Resource" uid="uid://bqppb20lff5sk" path="res://dialog/characters/luna.dch" id="7_o1rpg"]
 [ext_resource type="Texture2D" uid="uid://b6n4ga24je2q3" path="res://assets/icon.svg" id="8_60ors"]
 
@@ -15,5 +15,5 @@ script = ExtResource("2_q5ayr")
 name = "luna"
 character = ExtResource("7_o1rpg")
 image = ExtResource("8_60ors")
-cards = Array[ExtResource("1_mkahc")]([ExtResource("2_e0hja"), ExtResource("3_60ors"), ExtResource("4_4mup5"), ExtResource("5_wbief"), ExtResource("6_ugrn5")])
+cards = Array[ExtResource("1_mkahc")]([ExtResource("2_e0hja"), ExtResource("3_60ors"), ExtResource("4_60ors"), ExtResource("5_60ors"), ExtResource("5_4mup5")])
 metadata/_custom_type_script = "uid://b0jof5go2nsd"

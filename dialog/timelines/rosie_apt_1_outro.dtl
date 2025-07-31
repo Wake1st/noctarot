@@ -1,25 +1,49 @@
-rosie: Thats my drink. Yum.
+rosie: And this is supposed to fix my problems?
+player: I can't fix problems, I can only adjust your fate.
+rosie: But isn't that the same thing?
+player: It's hard to explain. Why don't give it a go, and tell me how you feel.
 
 [signal arg="activate_drink"]
-They drink.
+She nervously sipps at the potion.
 if {score} == 3:
-	[signal arg="activate_boost"]
-	rosie: That was a 3.
+	rosie: I feel at peace. 
+	rosie: I'm going to tell Sider my feelings, regardless of what happens, I want to be honest and forthcoming. 
+	rosie: I'll trust her to do the same.
+	[signal arg="exit"]
+	Wow. I think I found my calling.
 elif {score} == 2:
-	rosie: That was a 2.
+	rosie: I feel incredible! 
+	rosie: I think I'm going to be okay. I know Sider's just trying to work things out on her end, and I'll do my best to be supportive.
+	[signal arg="exit"]
+	She's gonna be okay - I just hope things work out.
 elif {score} == 1:
-	rosie: That was a 1.
+	rosie: That was nice, thank you. 
+	rosie: I think I'm fine; I'm sure Sider just wants what's best for our child. I can count on her to be there, even though it will be different.
+	[signal arg="exit"]
+	I'm sure things will work out.
 elif {score} == -1:
-	rosie: That was a -1.
+	rosie: I don't think that worked.
+	rosie: In fact, I feel even more worried now.
+	[signal arg="exit"]
+	I have a feeling she'll be back.
 elif {score} == -2:
-	rosie: That was a -2.
+	rosie: That was aweful! You expect me to pay for this?
+	rosie: I have to get home - someone has to take care of our child.
+	[signal arg="exit"]
+	Oof. Not my best.
 elif {score} == -3:
-	rosie: That was a -3.
+	rosie: ...
+	rosie: I don't think you should be doing this.
+	rosie: I feel completely detached and gone.
+	[signal arg="exit"]
+	She might be right - she looked completey empty.
+	I hope she's gonna be alright.
 else:
-	rosie: That was a 0.
-
-[signal arg="exit"]
-There they go.
+	rosie: Well, that was...
+	rosie: ... a drink.
+	rosie: I think I'm gonna go. I appreciate you're trying to help me.
+	[signal arg="exit"]
+	I'm gonna call that a miss.
 
 [signal arg="client_ended"]
 [end_timeline]

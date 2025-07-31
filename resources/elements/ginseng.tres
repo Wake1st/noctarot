@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://bfovavru1nf75"]
+
+[ext_resource type="Texture2D" uid="uid://mu5p5oe0ckje" path="res://assets/drinks/ginseng.png" id="1_2ev7r"]
+[ext_resource type="Script" uid="uid://cu4vl011p4b7e" path="res://resources/Element.gd" id="1_4ox5g"]
+
+[resource]
+script = ExtResource("1_4ox5g")
+type = 3
+image = ExtResource("1_2ev7r")
+nickname = "Ginseng"
+description = ""
+metadata/_custom_type_script = "uid://cu4vl011p4b7e"

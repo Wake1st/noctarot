@@ -1,25 +1,46 @@
-redd: Thats my drink. Yum.
+Redd grabs the drink before I can even set it down.
 
 [signal arg="activate_drink"]
-They drink.
 if {score} == 3:
-	[signal arg="activate_boost"]
-	redd: That was a 3.
+	redd: I see it now... I have to let go.
+	Holy shit!
+	redd: I'm sorry I got upset - my whole life has changed, and I feel completely lost.
+	redd: It hurts having to let go; my whole life - my passion, is gone...
+	redd: But there's a lot of life out there, and plenty of time - hopefully - left to live it.
+	redd: Thank you.
 elif {score} == 2:
-	redd: That was a 2.
+	redd: Damn! That's really good. 
+	redd: I still don't know what I'm gonna do, but I feel better.
+	player: Maybe teaching?
+	redd: Eh, I'm not a people person.
+	redd: But I do have connections, and I still love climbing, so maybe something with that.
+	redd: I really appreciate it. Thanks.
 elif {score} == 1:
-	redd: That was a 1.
+	redd: That was... good I guess.
+	redd: I'm sorry for being so snappy - I have a bad temper.
+	redd: I think I'm gonna head out. See ya.
 elif {score} == -1:
-	redd: That was a -1.
+	redd: Wow.
+	redd: That's shit.
+	redd: I'm not paying for this.
 elif {score} == -2:
-	redd: That was a -2.
+	redd: What the fuck!
+	redd: Is this funny to you?! It's bad enough I can hardly walk.
+	redd: Now, I get fed this pig shit.
+	redd: FUCK YOU!
 elif {score} == -3:
-	redd: That was a -3.
+	Oh, no. He doesn't look so well.
+	redd: ...
+	redd: I'm gonna go.
 else:
-	redd: That was a 0.
+	redd: ...
+	redd: That's it?
+	I don't it worked so well.
+	He starts chuckling.
+	redd: You know what... egg on my face.
+	redd: Can't expect much from a con.
 
 [signal arg="exit"]
-There they go.
 
 [signal arg="client_ended"]
 [end_timeline]

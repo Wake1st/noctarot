@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://bm2xaxadq1kl3"]
+
+[ext_resource type="Script" uid="uid://cu4vl011p4b7e" path="res://resources/Element.gd" id="1_3wmcg"]
+[ext_resource type="Texture2D" uid="uid://c66r6vjm31b6k" path="res://assets/drinks/Lemongrass.png" id="1_024s2"]
+
+[resource]
+script = ExtResource("1_3wmcg")
+type = 1
+image = ExtResource("1_024s2")
+nickname = "Lemon Grass"
+description = ""
+metadata/_custom_type_script = "uid://cu4vl011p4b7e"

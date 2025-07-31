@@ -8,6 +8,7 @@ signal return_to_start()
 @onready var booth: Booth = $Booth
 @onready var table: Table = $Table
 @onready var bar: Bar = $Bar
+@onready var client_sfx: ClientSfx = $ClientSfx
 
 @onready var pause_menu: PauseMenu = %PauseMenu
 @onready var settings_menu: SettingsMenu = %SettingsMenu
@@ -207,7 +208,12 @@ func _handle_scoreboard_next() -> void:
 	if apt:
 		dialogue_ui.start(apt.chapter)
 	else:
-		title_ui.display(TitleUI.Titles.END_OF_DAY)
+		# check score
+		if daily.score > 0:
+			title_ui.display(TitleUI.Titles.END_OF_DAY)
+		else:
+			title_ui.display(TitleUI.Titles.GAME_OVER)
+			client_sfx.over()
 #endregion
 
 
@@ -219,7 +225,7 @@ func _consume_drink() -> void:
 		if tarot.balanced:
 			continue
 		
-		var matched = daily.current.elements.any(func(e): return e == tarot.element)
+		var matched = daily.current.elements.any(func(e): return e.type == tarot.element)
 		if matched:
 			score += 1
 		else:
@@ -231,6 +237,10 @@ func _consume_drink() -> void:
 	
 	# user feedback
 	booth.pulse(score)
+	if score > 0:
+		client_sfx.happy()
+	elif score < 0:
+		client_sfx.sad()
 
 func _client_checks(args: Array[String]) -> void:
 	match args[0]:

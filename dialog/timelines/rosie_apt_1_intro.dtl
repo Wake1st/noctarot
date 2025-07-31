@@ -1,6 +1,15 @@
-A client approaches.
+rosie: Hello? My name is Rosie. I'm here to see some spiritual advice. 
+rosie: I tried contacting you before hand, but there's no number or email or website - is now a good time?
+- Yeah, come in.
+	rosie: Thank you! I promise this won't take long.
+- No, it's terrible.
+	rosie: Well... I promise it won't take long.
+
 [signal arg="enter"]
-rosie: Hello. I want my fortune read.
+rosie: I'll get right to the point. I've been happily married to my best friend for 5 years - we're both mothers of a wonderful little 24 month old! 
+rosie: Things have been bumpy lately, with the cost of childcare, but I feel like we're doing fine. My wife, Sider, doesn't share my resiliance. 
+rosie: She wants to "spread her wings" and invest more time in her career. She says it's to provide for the family, but I can't help but worry that maybe she wants to move on.
+rosie: Could you help me?
 
 [signal arg="transition_table"]
 [signal arg="check_client_fortune"]

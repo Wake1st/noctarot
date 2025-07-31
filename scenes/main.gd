@@ -10,6 +10,8 @@ var trailer: Trailer
 
 
 func _ready() -> void:
+	DataAccess.load_user_data()
+	
 	start = START.instantiate()
 	add_child(start)
 	start.game_selected.connect(_handle_game_start)

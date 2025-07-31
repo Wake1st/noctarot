@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="Tarot" load_steps=3 format=3 uid="uid://3gjwart8is6d"]
 
 [ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_dbu48"]
-[ext_resource type="Resource" uid="uid://g5u0bs2fbhc" path="res://resources/elements/water.tres" id="1_guss7"]
+[ext_resource type="Texture2D" uid="uid://chrvs4y8gkow2" path="res://assets/cards/Death.png" id="2_vqrg3"]
 
 [resource]
 script = ExtResource("1_dbu48")
 name = "Death"
-element = ExtResource("1_guss7")
+element = 3
 upright = "end of cycle, beginnings, change, metamorphosis"
 reversed = "fear of change, holding on, stagnation, decay"
+image = ExtResource("2_vqrg3")
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

@@ -1,35 +1,87 @@
-[gd_scene load_steps=7 format=3 uid="uid://8j2egssl3aa5"]
+[gd_scene load_steps=19 format=3 uid="uid://8j2egssl3aa5"]
 
 [ext_resource type="Script" uid="uid://bi17sxg1gsi5b" path="res://drinks/shelf.gd" id="1_uxxa7"]
 [ext_resource type="PackedScene" uid="uid://vvkmu82u31a0" path="res://drinks/ingredient.tscn" id="2_35cgi"]
-[ext_resource type="Resource" uid="uid://dyysjoy41e1gr" path="res://resources/elements/air.tres" id="3_35cgi"]
-[ext_resource type="Resource" uid="uid://blsnva52qjspa" path="res://resources/elements/earth.tres" id="4_np1u3"]
-[ext_resource type="Resource" uid="uid://g5u0bs2fbhc" path="res://resources/elements/water.tres" id="5_ya68q"]
-[ext_resource type="Resource" uid="uid://cngkmjyfdfuxd" path="res://resources/elements/fire.tres" id="6_07chi"]
+[ext_resource type="Resource" uid="uid://ba0jg0crb6e1e" path="res://resources/elements/chamomile.tres" id="3_07chi"]
+[ext_resource type="Resource" uid="uid://b7qoeh5rpxny2" path="res://resources/elements/cinnamon.tres" id="4_07chi"]
+[ext_resource type="Resource" uid="uid://b0bmyfldlgr40" path="res://resources/elements/clove.tres" id="5_qbo8k"]
+[ext_resource type="Resource" uid="uid://chok477ga63gj" path="res://resources/elements/ginger.tres" id="6_c0d0t"]
+[ext_resource type="Resource" uid="uid://bfovavru1nf75" path="res://resources/elements/ginseng.tres" id="7_m4foi"]
+[ext_resource type="Resource" uid="uid://5qlc6o6rynfp" path="res://resources/elements/jasmine.tres" id="8_f8vsf"]
+[ext_resource type="Resource" uid="uid://cfeio1yrf0c71" path="res://resources/elements/lavender.tres" id="9_lxe03"]
+[ext_resource type="Resource" uid="uid://bm2xaxadq1kl3" path="res://resources/elements/lemongrass.tres" id="10_upoc1"]
+[ext_resource type="Resource" uid="uid://uuusjqntyhcg" path="res://resources/elements/marigold.tres" id="11_58jal"]
+[ext_resource type="Resource" uid="uid://bcm62behd1rhv" path="res://resources/elements/matcha.tres" id="12_x755a"]
+[ext_resource type="Resource" uid="uid://s3saolok3k6e" path="res://resources/elements/mint.tres" id="13_xcsna"]
+[ext_resource type="Resource" uid="uid://c1slkjojcd7vp" path="res://resources/elements/rose.tres" id="14_4vu1n"]
+[ext_resource type="Resource" uid="uid://dfvbjb4lp0xkj" path="res://resources/elements/coffee.tres" id="15_upoc1"]
+[ext_resource type="Resource" uid="uid://d4n8vo4pqkgy" path="res://resources/elements/milk.tres" id="16_58jal"]
+[ext_resource type="Resource" uid="uid://kmguccv1o01i" path="res://resources/elements/sugar.tres" id="17_x755a"]
+[ext_resource type="Resource" uid="uid://j0bdo5pvq0pr" path="res://resources/elements/honey.tres" id="18_xcsna"]
 
 [node name="Shelf" type="Node2D"]
 script = ExtResource("1_uxxa7")
 
-[node name="Ingredient1" parent="." instance=ExtResource("2_35cgi")]
-position = Vector2(-164, -129)
-element = ExtResource("3_35cgi")
-nickname = "Foam"
-description = "Whipped."
+[node name="Ingredient_Chamomile" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(-235, -88)
+element = ExtResource("3_07chi")
 
-[node name="Ingredient2" parent="." instance=ExtResource("2_35cgi")]
-position = Vector2(-168, 140)
-element = ExtResource("4_np1u3")
-nickname = "Coffee"
-description = "Ground."
+[node name="Ingredient_Cinnamon" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(-78, -88)
+element = ExtResource("4_07chi")
 
-[node name="Ingredient3" parent="." instance=ExtResource("2_35cgi")]
-position = Vector2(164, -131)
-element = ExtResource("5_ya68q")
-nickname = "Milk"
-description = "Soothing."
+[node name="Ingredient_Clove" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(80, -88)
+element = ExtResource("5_qbo8k")
 
-[node name="Ingredient4" parent="." instance=ExtResource("2_35cgi")]
-position = Vector2(166, 144)
-element = ExtResource("6_07chi")
-nickname = "Cinnamon"
-description = "Spicy."
+[node name="Ingredient_Ginger" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(237, -88)
+element = ExtResource("6_c0d0t")
+
+[node name="Ingredient_Ginseng" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(-235, 92)
+element = ExtResource("7_m4foi")
+
+[node name="Ingredient_Jasmine" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(-78, 92)
+element = ExtResource("8_f8vsf")
+
+[node name="Ingredient_Lavender" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(80, 92)
+element = ExtResource("9_lxe03")
+
+[node name="Ingredient_LemonGrass" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(237, 92)
+element = ExtResource("10_upoc1")
+
+[node name="Ingredient_Marigold" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(-235, 271)
+element = ExtResource("11_58jal")
+
+[node name="Ingredient_Matcha" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(-78, 271)
+element = ExtResource("12_x755a")
+
+[node name="Ingredient_Mint" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(80, 271)
+element = ExtResource("13_xcsna")
+
+[node name="Ingredient_Rose" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(237, 271)
+element = ExtResource("14_4vu1n")
+
+[node name="Ingredient_Coffee" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(-235, 448)
+element = ExtResource("15_upoc1")
+
+[node name="Ingredient_Milk" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(-78, 448)
+element = ExtResource("16_58jal")
+
+[node name="Ingredient_Sugar" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(80, 448)
+element = ExtResource("17_x755a")
+
+[node name="Ingredient_Honey" parent="." instance=ExtResource("2_35cgi")]
+position = Vector2(237, 448)
+element = ExtResource("18_xcsna")

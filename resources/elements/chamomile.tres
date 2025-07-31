@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://ba0jg0crb6e1e"]
+
+[ext_resource type="Script" uid="uid://cu4vl011p4b7e" path="res://resources/Element.gd" id="1_i3rvh"]
+[ext_resource type="Texture2D" uid="uid://br3xwj4ve5g3s" path="res://assets/drinks/Chamomile.png" id="1_ru2uc"]
+
+[resource]
+script = ExtResource("1_i3rvh")
+type = 2
+image = ExtResource("1_ru2uc")
+nickname = "Chamomile"
+description = ""
+metadata/_custom_type_script = "uid://cu4vl011p4b7e"

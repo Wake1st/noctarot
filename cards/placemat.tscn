@@ -7,15 +7,15 @@
 script = ExtResource("1_ydgr6")
 
 [node name="Placeholder1" parent="." instance=ExtResource("1_bl4ah")]
-position = Vector2(-400, 21)
+position = Vector2(-520, 21)
 
 [node name="Placeholder2" parent="." instance=ExtResource("1_bl4ah")]
-position = Vector2(-200, 12)
+position = Vector2(-260, 12)
 
 [node name="Placeholder3" parent="." instance=ExtResource("1_bl4ah")]
 
 [node name="Placeholder4" parent="." instance=ExtResource("1_bl4ah")]
-position = Vector2(200, 12)
+position = Vector2(260, 12)
 
 [node name="Placeholder5" parent="." instance=ExtResource("1_bl4ah")]
-position = Vector2(400, 21)
+position = Vector2(520, 21)

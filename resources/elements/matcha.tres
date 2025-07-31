@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://bcm62behd1rhv"]
+
+[ext_resource type="Texture2D" uid="uid://iy6vmow0xni6" path="res://assets/drinks/matcha.png" id="1_bg0l4"]
+[ext_resource type="Script" uid="uid://cu4vl011p4b7e" path="res://resources/Element.gd" id="1_g6xm0"]
+
+[resource]
+script = ExtResource("1_g6xm0")
+type = 3
+image = ExtResource("1_bg0l4")
+nickname = "Matcha"
+description = ""
+metadata/_custom_type_script = "uid://cu4vl011p4b7e"

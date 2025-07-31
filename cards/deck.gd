@@ -22,11 +22,11 @@ func shuffle(tarots: Array[Tarot]) -> void:
 	# shuffle new deck
 	for i in tarots.size():
 		var card: Card = CARD.instantiate()
-		card.tarot = tarots[i]
-		card.z_index = i
+		cards.push_back(card)
 		
 		add_child(card)
-		cards.push_back(card)
+		card.setup(tarots[i])
+		card.z_index = i
 
 
 func _input(event) -> void:

@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="Tarot" load_steps=3 format=3 uid="uid://cluooa10ad2sx"]
 
-[ext_resource type="Resource" uid="uid://g5u0bs2fbhc" path="res://resources/elements/water.tres" id="1_d6mgj"]
 [ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_g7rnc"]
+[ext_resource type="Texture2D" uid="uid://cw21afuf4epch" path="res://assets/cards/TheMoonB.png" id="2_0ilqc"]
 
 [resource]
 script = ExtResource("1_g7rnc")
 name = "The Moon"
-element = ExtResource("1_d6mgj")
+element = 3
 upright = "unconscious, illusions, intuition"
 reversed = "confusion, fear, misinterpretation"
+image = ExtResource("2_0ilqc")
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

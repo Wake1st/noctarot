@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://j0bdo5pvq0pr"]
+
+[ext_resource type="Texture2D" uid="uid://c16si1172mh1e" path="res://assets/drinks/honey.png" id="1_oijp1"]
+[ext_resource type="Script" uid="uid://cu4vl011p4b7e" path="res://resources/Element.gd" id="1_tjuvx"]
+
+[resource]
+script = ExtResource("1_tjuvx")
+type = 0
+image = ExtResource("1_oijp1")
+nickname = "Honey"
+description = ""
+metadata/_custom_type_script = "uid://cu4vl011p4b7e"

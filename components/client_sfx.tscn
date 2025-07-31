@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cufyir77cyvcg"]
+
+[ext_resource type="Script" uid="uid://b5cpdh46f6rgk" path="res://components/client_sfx.gd" id="1_4gaqm"]
+
+[node name="ClientSfx" type="AudioStreamPlayer"]
+bus = &"Sfx"
+script = ExtResource("1_4gaqm")

@@ -19,7 +19,6 @@ func load_cards(tarots: Array[Tarot]) -> void:
 	for i in tarots.size():
 		# create card
 		var card: Card = CARD.instantiate()
-		card.tarot = tarots[i]
 		
 		# clear placeholder
 		placeholders[i].reset()
@@ -27,6 +26,8 @@ func load_cards(tarots: Array[Tarot]) -> void:
 		# load placeholder
 		placeholders[i].add_child(card)
 		placeholders[i].card = card
+		
+		card.setup(tarots[i])
 
 
 func flip_cards() -> void:

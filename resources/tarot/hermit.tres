@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="Tarot" load_steps=3 format=3 uid="uid://bnc6lg4cknu5q"]
+[gd_resource type="Resource" script_class="Tarot" load_steps=2 format=3 uid="uid://bnc6lg4cknu5q"]
 
-[ext_resource type="Resource" uid="uid://blsnva52qjspa" path="res://resources/elements/earth.tres" id="1_2ihil"]
 [ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_c6iw6"]
 
 [resource]
 script = ExtResource("1_c6iw6")
 name = "The Hermit"
-element = ExtResource("1_2ihil")
+element = 4
 upright = "contemplation, search for truth, inner guidance"
 reversed = "loneliness, isolation, lost your way"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

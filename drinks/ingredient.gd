@@ -1,3 +1,4 @@
+@tool
 class_name Ingredient
 extends Node2D
 
@@ -5,8 +6,6 @@ extends Node2D
 signal selected(ingredient: Ingredient)
 
 @export var element: Element
-@export var nickname: String
-@export var description: String
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var details: DetailsPopup = %DetailsPopup
@@ -15,6 +14,7 @@ var focused: bool
 
 
 func _ready() -> void:
+	name = "Ingredient_%s" % element.nickname.replace(" ", "")
 	sprite.texture = element.image
 
 func _input(event) -> void:
@@ -23,7 +23,7 @@ func _input(event) -> void:
 
 func _on_area_2d_mouse_entered():
 	focused = true
-	details.open(nickname, description)
+	details.open(element.nickname, element.description)
 
 func _on_area_2d_mouse_exited():
 	focused = false

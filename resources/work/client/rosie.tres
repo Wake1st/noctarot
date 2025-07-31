@@ -5,15 +5,15 @@
 [ext_resource type="Resource" uid="uid://3gjwart8is6d" path="res://resources/tarot/death.tres" id="2_tahbx"]
 [ext_resource type="Resource" uid="uid://dkcdptbcbwr6j" path="res://resources/tarot/empress.tres" id="3_qcowj"]
 [ext_resource type="Resource" uid="uid://bq4bf48bsgchv" path="res://resources/tarot/world.tres" id="4_xij6g"]
-[ext_resource type="Resource" uid="uid://cisttsay7ix2y" path="res://resources/tarot/strength.tres" id="5_qcowj"]
+[ext_resource type="Resource" uid="uid://cluooa10ad2sx" path="res://resources/tarot/moon.tres" id="5_ifbt8"]
 [ext_resource type="Resource" uid="uid://bi6jtc0jyeyyc" path="res://resources/tarot/lovers.tres" id="6_xij6g"]
 [ext_resource type="Resource" uid="uid://r1kebqem4m6a" path="res://dialog/characters/rosie.dch" id="7_kiejj"]
-[ext_resource type="Texture2D" uid="uid://b6n4ga24je2q3" path="res://assets/icon.svg" id="8_xij6g"]
+[ext_resource type="Texture2D" uid="uid://4tskrabhuf0h" path="res://assets/characters/Character_RosieHappy01.png" id="8_xij6g"]
 
 [resource]
 script = ExtResource("2_0asco")
 name = "rosie"
 character = ExtResource("7_kiejj")
 image = ExtResource("8_xij6g")
-cards = Array[ExtResource("1_g2ady")]([ExtResource("2_tahbx"), ExtResource("3_qcowj"), ExtResource("4_xij6g"), ExtResource("5_qcowj"), ExtResource("6_xij6g")])
+cards = Array[ExtResource("1_g2ady")]([ExtResource("2_tahbx"), ExtResource("3_qcowj"), ExtResource("4_xij6g"), ExtResource("5_ifbt8"), ExtResource("6_xij6g")])
 metadata/_custom_type_script = "uid://b0jof5go2nsd"

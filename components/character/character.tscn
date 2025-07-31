@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://ct7db636kbyhv"]
 
-[ext_resource type="Texture2D" uid="uid://b6n4ga24je2q3" path="res://assets/icon.svg" id="1_88t6f"]
 [ext_resource type="Script" uid="uid://bx3pmb0b8744" path="res://components/character/character.gd" id="1_q6bof"]
 [ext_resource type="Shader" uid="uid://vujows36lfri" path="res://components/character/character.gdshader" id="2_wptw5"]
 [ext_resource type="Texture2D" uid="uid://bqv1o6onc8ie8" path="res://components/character/boost_gradient.tres" id="3_ptxnt"]
+[ext_resource type="Texture2D" uid="uid://4tskrabhuf0h" path="res://assets/characters/Character_RosieHappy01.png" id="4_p1osb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ptxnt"]
 shader = ExtResource("2_wptw5")
@@ -108,8 +108,7 @@ d_size = 0.85
 [node name="Avatar" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ptxnt")
 position = Vector2(-1200, 0)
-scale = Vector2(5, 5)
-texture = ExtResource("1_88t6f")
+texture = ExtResource("4_p1osb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

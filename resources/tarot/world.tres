@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="Tarot" load_steps=3 format=3 uid="uid://bq4bf48bsgchv"]
 
 [ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_c4cx8"]
-[ext_resource type="Resource" uid="uid://blsnva52qjspa" path="res://resources/elements/earth.tres" id="1_icpis"]
+[ext_resource type="Texture2D" uid="uid://ce1ruglltewv5" path="res://assets/cards/TheWorld.png" id="2_c36c6"]
 
 [resource]
 script = ExtResource("1_c4cx8")
 name = "The World"
-element = ExtResource("1_icpis")
+element = 4
 upright = "fulfillment, harmony, completion"
 reversed = "incompletion, no closure"
+image = ExtResource("2_c36c6")
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="Tarot" load_steps=3 format=3 uid="uid://bhcubftcvoxpc"]
+[gd_resource type="Resource" script_class="Tarot" load_steps=2 format=3 uid="uid://bhcubftcvoxpc"]
 
-[ext_resource type="Resource" uid="uid://dyysjoy41e1gr" path="res://resources/elements/air.tres" id="1_5wq4m"]
 [ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_ytw84"]
 
 [resource]
 script = ExtResource("1_ytw84")
 name = "The Star"
-element = ExtResource("1_5wq4m")
+element = 2
 upright = "hope, faith, rejuvenation"
 reversed = "faithlessness, discouragement, insecurity"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

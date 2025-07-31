@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://d4n8vo4pqkgy"]
+
+[ext_resource type="Texture2D" uid="uid://dpa5ibtq5rni5" path="res://assets/drinks/milk.png" id="1_bfxyq"]
+[ext_resource type="Script" uid="uid://cu4vl011p4b7e" path="res://resources/Element.gd" id="1_yjp2b"]
+
+[resource]
+script = ExtResource("1_yjp2b")
+type = 0
+image = ExtResource("1_bfxyq")
+nickname = "Milk"
+description = ""
+metadata/_custom_type_script = "uid://cu4vl011p4b7e"

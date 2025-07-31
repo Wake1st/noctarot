@@ -7,10 +7,12 @@ signal finished()
 enum Titles {
 	CHAPTER_1,
 	END_OF_DAY,
+	GAME_OVER
 }
 
-const CHAPER_1 = preload("res://assets/titles/chaper_1.png")
+const CHAPER_1 = preload("res://assets/titles/chapter 1.png")
 const END_OF_DAY = preload("res://assets/titles/end_of_day.png")
+const GAME_OVER = preload("res://assets/titles/game-over.png")
 
 @onready var rect: TextureRect = $Sprite2D
 @onready var animation: AnimationPlayer = $AnimationPlayer
@@ -25,6 +27,8 @@ func display(title: Titles) -> void:
 			rect.texture = CHAPER_1
 		Titles.END_OF_DAY:
 			rect.texture = END_OF_DAY
+		Titles.GAME_OVER:
+			rect.texture = GAME_OVER
 	
 	animation.play("bounce_up")
 	isOpening = true

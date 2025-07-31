@@ -1,4 +1,9 @@
-rosie: Thats my fortune. Wow.
+rosie: Thats my fortune!
+rosie: Okay... so, what now?
+
+player: Now, the real magic begins.
+rosie: ... 
+rosie: Okay.
 
 [signal arg="transition_kitchen"]
 [signal arg="check_client_drink"]

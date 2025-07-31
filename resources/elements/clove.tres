@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://b0bmyfldlgr40"]
+
+[ext_resource type="Texture2D" uid="uid://d0j5m4db338w2" path="res://assets/drinks/clove.png" id="1_cn5yx"]
+[ext_resource type="Script" uid="uid://cu4vl011p4b7e" path="res://resources/Element.gd" id="1_e2h7a"]
+
+[resource]
+script = ExtResource("1_e2h7a")
+type = 3
+image = ExtResource("1_cn5yx")
+nickname = "Clove"
+description = ""
+metadata/_custom_type_script = "uid://cu4vl011p4b7e"

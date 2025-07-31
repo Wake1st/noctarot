@@ -13,6 +13,15 @@ var isAnimating: bool
 var isSelected: bool
 
 
+func setup(t: Tarot) -> void:
+	tarot = t
+	
+	face.texture = t.image.duplicate()
+	face.scale = Vector2(0.5,0.5)
+	shimmer.texture = t.image.duplicate()
+	shimmer.scale = Vector2(0.5,0.5)
+
+
 func hover(on: bool) -> void:
 	# do not interrupt
 	if isAnimating || isSelected:

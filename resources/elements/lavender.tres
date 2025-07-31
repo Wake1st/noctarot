@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://cfeio1yrf0c71"]
+
+[ext_resource type="Script" uid="uid://cu4vl011p4b7e" path="res://resources/Element.gd" id="1_4uft3"]
+[ext_resource type="Texture2D" uid="uid://cog2ii5f5am8n" path="res://assets/drinks/lavender.png" id="1_d7p1v"]
+
+[resource]
+script = ExtResource("1_4uft3")
+type = 1
+image = ExtResource("1_d7p1v")
+nickname = "Lavender"
+description = ""
+metadata/_custom_type_script = "uid://cu4vl011p4b7e"

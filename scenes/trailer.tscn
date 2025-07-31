@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dirb08f2akb60"]
+[gd_scene load_steps=15 format=3 uid="uid://dirb08f2akb60"]
 
 [ext_resource type="Script" uid="uid://cevo15rb243uq" path="res://scenes/trailer.gd" id="1_o4ax3"]
 [ext_resource type="PackedScene" uid="uid://c1cwtaih48s5y" path="res://scenes/booth.tscn" id="2_7wnag"]
@@ -11,19 +11,32 @@
 [ext_resource type="PackedScene" uid="uid://bf6167nndw3du" path="res://ui/components/title_ui.tscn" id="9_vryr4"]
 [ext_resource type="PackedScene" uid="uid://bl5vuawov65bs" path="res://ui/menus/scoreboard_ui.tscn" id="9_wi7l4"]
 [ext_resource type="PackedScene" uid="uid://dfssr71p0hbsj" path="res://ui/components/screen_effects_ui.tscn" id="10_53md7"]
+[ext_resource type="PackedScene" uid="uid://cufyir77cyvcg" path="res://components/client_sfx.tscn" id="12_phlp8"]
+[ext_resource type="Texture2D" uid="uid://dofjc8xao0bb0" path="res://assets/ui/trio all together background.png" id="13_hep1a"]
+[ext_resource type="Texture2D" uid="uid://ce2iuhjcxekxa" path="res://assets/ui/trio all together forground.png" id="14_o1ea8"]
 
 [node name="Trailer" type="Node"]
 script = ExtResource("1_o4ax3")
 
-[node name="SlideCamera" parent="." instance=ExtResource("2_837no")]
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-733, 404)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("13_hep1a")
 
 [node name="Booth" parent="." instance=ExtResource("2_7wnag")]
+
+[node name="Foreground" type="Sprite2D" parent="."]
+position = Vector2(-721, 398)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("14_o1ea8")
 
 [node name="Table" parent="." instance=ExtResource("4_orp6n")]
 position = Vector2(0, 960)
 
 [node name="Bar" parent="." instance=ExtResource("6_phlp8")]
-position = Vector2(-1500, 0)
+position = Vector2(-1455, 14)
+
+[node name="SlideCamera" parent="." instance=ExtResource("2_837no")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
@@ -45,3 +58,5 @@ unique_name_in_owner = true
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_usyny")]
 unique_name_in_owner = true
+
+[node name="ClientSfx" parent="." instance=ExtResource("12_phlp8")]

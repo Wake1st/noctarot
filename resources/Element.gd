@@ -2,6 +2,7 @@ class_name Element
 extends Resource
 
 enum Types {
+	NEUTRAL,
 	FIRE,
 	AIR,
 	WATER,
@@ -10,7 +11,5 @@ enum Types {
 
 @export var type: Types
 @export var image: Texture2D
-
-
-func name() -> String:
-	return Types.keys()[type]
+@export var nickname: String
+@export var description: String

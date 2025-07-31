@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://t8prya4o10i"]
+[gd_scene load_steps=9 format=3 uid="uid://t8prya4o10i"]
 
+[ext_resource type="Script" uid="uid://vko7uwxypksv" path="res://tests/test_cards.gd" id="1_h5blu"]
 [ext_resource type="PackedScene" uid="uid://it3n5j7femgi" path="res://cards/table.tscn" id="1_u3gp4"]
+[ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="2_whlpn"]
+[ext_resource type="Resource" uid="uid://3gjwart8is6d" path="res://resources/tarot/death.tres" id="3_whlpn"]
+[ext_resource type="Resource" uid="uid://bba0vmjjnqn1j" path="res://resources/tarot/emperor.tres" id="4_3j8gf"]
+[ext_resource type="Resource" uid="uid://dkcdptbcbwr6j" path="res://resources/tarot/empress.tres" id="5_8kvat"]
+[ext_resource type="Resource" uid="uid://cluooa10ad2sx" path="res://resources/tarot/moon.tres" id="6_y35e1"]
+[ext_resource type="Resource" uid="uid://bq4bf48bsgchv" path="res://resources/tarot/world.tres" id="7_8wgxq"]
 
 [node name="TestCards" type="Node2D"]
+script = ExtResource("1_h5blu")
+cards = Array[ExtResource("2_whlpn")]([ExtResource("3_whlpn"), ExtResource("4_3j8gf"), ExtResource("5_8kvat"), ExtResource("6_y35e1"), ExtResource("7_8wgxq")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

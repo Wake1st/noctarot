@@ -1,6 +1,27 @@
-A client approaches.
+The door rings with a loud knock.
+player: Come in!
+
 [signal arg="enter"]
-redd: Hello. I want my fortune read.
+redd: Hey. 
+redd: I'm Redd.
+redd: I need you to change my life.
+- That's not exactly how this works.
+	redd: So, you're useless.
+	player: No, I have limited power.
+- I can change you, but I don't have power over everything.
+	redd: As long as you can fix me, I don't care.
+
+player: Why don't you start by telling me about yourself.
+redd: Where to begin?
+player: Wherever you-
+redd: I wasn't asking you.
+This is gonna be rough.
+
+redd: I'm a rock climber.
+redd: I'm paralized. 
+redd: I don't want to be paralized.
+redd: I want my life back.
+redd: Is that enough for you?
 
 [signal arg="transition_table"]
 [signal arg="check_client_fortune"]

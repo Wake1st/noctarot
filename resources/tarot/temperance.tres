@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="Tarot" load_steps=3 format=3 uid="uid://bboida1ultfhf"]
+[gd_resource type="Resource" script_class="Tarot" load_steps=2 format=3 uid="uid://bboida1ultfhf"]
 
 [ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_swvhd"]
-[ext_resource type="Resource" uid="uid://cngkmjyfdfuxd" path="res://resources/elements/fire.tres" id="1_uku4u"]
 
 [resource]
 script = ExtResource("1_swvhd")
 name = "Temperance"
-element = ExtResource("1_uku4u")
+element = 1
 upright = "middle path, patience, finding meaning"
 reversed = "extremes, excess, lack of balance"
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

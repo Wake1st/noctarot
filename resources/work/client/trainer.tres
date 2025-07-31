@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_yu2rb"]
 [ext_resource type="Resource" uid="uid://3gjwart8is6d" path="res://resources/tarot/death.tres" id="2_el1v7"]
 [ext_resource type="Script" uid="uid://b0jof5go2nsd" path="res://resources/work/Client.gd" id="2_lvwqf"]
-[ext_resource type="Resource" uid="uid://dlt7f2c1xd4yo" path="res://resources/tarot/fool.tres" id="3_8mx3y"]
-[ext_resource type="Resource" uid="uid://bp8hdm70fivdw" path="res://resources/tarot/judgement.tres" id="4_wawyp"]
-[ext_resource type="Resource" uid="uid://bkdsx2wijeg05" path="res://resources/tarot/wheel.tres" id="5_gqv4d"]
-[ext_resource type="Resource" uid="uid://cjwjxcvuif8lh" path="res://resources/tarot/hierophant.tres" id="6_5md1q"]
+[ext_resource type="Resource" uid="uid://bba0vmjjnqn1j" path="res://resources/tarot/emperor.tres" id="3_el1v7"]
+[ext_resource type="Resource" uid="uid://dkcdptbcbwr6j" path="res://resources/tarot/empress.tres" id="4_8mx3y"]
+[ext_resource type="Resource" uid="uid://bi6jtc0jyeyyc" path="res://resources/tarot/lovers.tres" id="5_wawyp"]
+[ext_resource type="Resource" uid="uid://cluooa10ad2sx" path="res://resources/tarot/moon.tres" id="6_gqv4d"]
 [ext_resource type="Resource" uid="uid://bxce21lnvuqy7" path="res://dialog/characters/trainer.dch" id="7_rvs74"]
 [ext_resource type="Texture2D" uid="uid://b6n4ga24je2q3" path="res://assets/icon.svg" id="8_cwcll"]
 
@@ -15,5 +15,5 @@ script = ExtResource("2_lvwqf")
 name = "trainer"
 character = ExtResource("7_rvs74")
 image = ExtResource("8_cwcll")
-cards = Array[ExtResource("1_yu2rb")]([ExtResource("2_el1v7"), ExtResource("3_8mx3y"), ExtResource("4_wawyp"), ExtResource("5_gqv4d"), ExtResource("6_5md1q")])
+cards = Array[ExtResource("1_yu2rb")]([ExtResource("2_el1v7"), ExtResource("3_el1v7"), ExtResource("4_8mx3y"), ExtResource("5_wawyp"), ExtResource("6_gqv4d")])
 metadata/_custom_type_script = "uid://b0jof5go2nsd"

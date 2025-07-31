@@ -13,6 +13,7 @@ config_version=5
 config/name="NocTarot"
 run/main_scene="uid://cbqf8jbocvu3m"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/image="uid://bhhyk1n526gbt"
 config/icon="res://assets/icon.svg"
 
 [autoload]

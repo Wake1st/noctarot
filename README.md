@@ -15,6 +15,8 @@
 
 ## Dev Notes
 
+### Game Jam
+
 - [x] finalize card selection button
 - [x] test client
 - [x] shader for "unbalanced" cards
@@ -25,7 +27,20 @@
 - [ ] user feedback when drink drank
 	- [x] visual
 	- [ ] audio
+- [x] fail state
+- [x] add assets
+	- [x] sound
+		- [x] music
+		- [x] sfx
+	- [x] art
+		- [x] cards
+		- [x] ingredients
+		- [x] backgrounds
+- [x] add writing to our clients
 - [ ] better drink tutorial
+
+### Strech
+
 - [ ] save files
 - [ ] records always available, opens during daily assessment
 - [ ] menus should operate during pause cycle

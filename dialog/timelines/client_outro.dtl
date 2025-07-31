@@ -3,7 +3,6 @@ client: Thats my drink. Yum.
 [signal arg="activate_drink"]
 They drink.
 if {score} == 3:
-	[signal arg="activate_boost"]
 	client: That was a 3.
 elif {score} == 2:
 	client: That was a 2.

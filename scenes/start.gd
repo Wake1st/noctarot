@@ -19,7 +19,6 @@ func _ready() -> void:
 	settings_menu.return_selected.connect(_handle_return_selected)
 	credits_menu.return_selected.connect(_handle_return_selected)
 	
-	DataAccess.load_user_data()
 	settings_menu.setup()
 	save_menu.setup(_handle_file_selected, UserData.fileNames)
 

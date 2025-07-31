@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://uuusjqntyhcg"]
+
+[ext_resource type="Texture2D" uid="uid://boatocku6wyns" path="res://assets/drinks/Marigold.png" id="1_2tqna"]
+[ext_resource type="Script" uid="uid://cu4vl011p4b7e" path="res://resources/Element.gd" id="1_pclv0"]
+
+[resource]
+script = ExtResource("1_pclv0")
+type = 1
+image = ExtResource("1_2tqna")
+nickname = "Marigold"
+description = ""
+metadata/_custom_type_script = "uid://cu4vl011p4b7e"

@@ -5,9 +5,9 @@
 [ext_resource type="Resource" uid="uid://dxssb68o82vq7" path="res://dialog/characters/redd.dch" id="2_n0vgi"]
 [ext_resource type="Script" uid="uid://b0jof5go2nsd" path="res://resources/work/Client.gd" id="2_rwjys"]
 [ext_resource type="Resource" uid="uid://bq4bf48bsgchv" path="res://resources/tarot/world.tres" id="3_o7v6j"]
-[ext_resource type="Resource" uid="uid://h1al614evk6g" path="res://resources/tarot/chariot.tres" id="4_23wfr"]
-[ext_resource type="Resource" uid="uid://dlt7f2c1xd4yo" path="res://resources/tarot/fool.tres" id="5_pikko"]
-[ext_resource type="Resource" uid="uid://bos6h45o0nyg5" path="res://resources/tarot/devil.tres" id="6_ixjrr"]
+[ext_resource type="Resource" uid="uid://dkcdptbcbwr6j" path="res://resources/tarot/empress.tres" id="4_23wfr"]
+[ext_resource type="Resource" uid="uid://bba0vmjjnqn1j" path="res://resources/tarot/emperor.tres" id="5_pikko"]
+[ext_resource type="Resource" uid="uid://bi6jtc0jyeyyc" path="res://resources/tarot/lovers.tres" id="6_ixjrr"]
 [ext_resource type="Texture2D" uid="uid://b6n4ga24je2q3" path="res://assets/icon.svg" id="8_o7v6j"]
 
 [resource]

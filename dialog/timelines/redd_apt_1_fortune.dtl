@@ -1,4 +1,14 @@
-redd: Thats my fortune. Wow.
+redd: Cool. What the fuck do I do with these?
+player: These tell me whether your fate is balanced or unbalanced. 
+redd: I'd say it's pretty fucking unbalanced! 
+redd: So what now?
+- Now, I make a drink.
+	redd: And the drink is supposed to fix things.
+	player: That's the idea.
+	redd: ...
+- Now for some potions - some lotions.
+	redd: What?!
+	player: Nothing, just gimme a sec.
 
 [signal arg="transition_kitchen"]
 [signal arg="check_client_drink"]

@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="Tarot" load_steps=3 format=3 uid="uid://dkcdptbcbwr6j"]
 
 [ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="1_hy5y6"]
-[ext_resource type="Resource" uid="uid://blsnva52qjspa" path="res://resources/elements/earth.tres" id="1_jrvqi"]
+[ext_resource type="Texture2D" uid="uid://biel8sgvgoyjp" path="res://assets/cards/𝓣𝓗𝓔 𝓔𝓜𝓟𝓡𝓔𝓢𝓢.png" id="1_jrvqi"]
 
 [resource]
 script = ExtResource("1_hy5y6")
 name = "The Empress"
-element = ExtResource("1_jrvqi")
+element = 4
 upright = "motherhood, fertility, nature"
 reversed = "dependence, smothering, emptiness, nosiness"
+image = ExtResource("1_jrvqi")
 metadata/_custom_type_script = "uid://b6s0y1wkrtt0"

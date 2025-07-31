@@ -1,6 +1,7 @@
-A client approaches.
+luna: Evening. 
 [signal arg="enter"]
-luna: Hello. I want my fortune read.
+luna: I'm Luna.
+luna: I require spiritual assistance.
 
 [signal arg="transition_table"]
 [signal arg="check_client_fortune"]

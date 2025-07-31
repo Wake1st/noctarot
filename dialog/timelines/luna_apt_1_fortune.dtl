@@ -1,4 +1,6 @@
-luna: Thats my fortune. Wow.
+luna: Fascinating.
+luna: What now?
+player: Now, it's brew time!
 
 [signal arg="transition_kitchen"]
 [signal arg="check_client_drink"]

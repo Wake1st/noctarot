@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Element" load_steps=3 format=3 uid="uid://dfvbjb4lp0xkj"]
+
+[ext_resource type="Texture2D" uid="uid://c21xdwdmlc8u0" path="res://assets/drinks/coffee.png" id="1_a7l0p"]
+[ext_resource type="Script" uid="uid://cu4vl011p4b7e" path="res://resources/Element.gd" id="1_ei4r8"]
+
+[resource]
+script = ExtResource("1_ei4r8")
+type = 1
+image = ExtResource("1_a7l0p")
+nickname = "Coffee"
+description = ""
+metadata/_custom_type_script = "uid://cu4vl011p4b7e"
