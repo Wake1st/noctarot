@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbnkykng2c7mw"
-path="res://.godot/imported/caset.png-7dd8a71b4426060da927b8ccf9dbbc43.ctex"
+uid="uid://5v0u8g75wj54"
+path="res://.godot/imported/MenuScreen.png-279355943d3f084d26ffee708d639f00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/caset.png"
-dest_files=["res://.godot/imported/caset.png-7dd8a71b4426060da927b8ccf9dbbc43.ctex"]
+source_file="res://assets/ui/MenuScreen.png"
+dest_files=["res://.godot/imported/MenuScreen.png-279355943d3f084d26ffee708d639f00.ctex"]
 
 [params]
 

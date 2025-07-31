@@ -31,7 +31,7 @@ scale = Vector2(0.76, 0.76)
 texture = ExtResource("14_o1ea8")
 
 [node name="Table" parent="." instance=ExtResource("4_orp6n")]
-position = Vector2(0, 960)
+position = Vector2(0, 850)
 
 [node name="Bar" parent="." instance=ExtResource("6_phlp8")]
 position = Vector2(-1455, 14)

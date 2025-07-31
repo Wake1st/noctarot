@@ -10,7 +10,7 @@ enum Titles {
 	GAME_OVER
 }
 
-const CHAPER_1 = preload("res://assets/titles/chapter 1.png")
+const CHAPTER_1 = preload("res://assets/titles/CHAPTER 1 SCREAAAAAM.png")
 const END_OF_DAY = preload("res://assets/titles/end_of_day.png")
 const GAME_OVER = preload("res://assets/titles/game-over.png")
 
@@ -24,7 +24,7 @@ var isOpening: bool
 func display(title: Titles) -> void:
 	match title:
 		Titles.CHAPTER_1:
-			rect.texture = CHAPER_1
+			rect.texture = CHAPTER_1
 		Titles.END_OF_DAY:
 			rect.texture = END_OF_DAY
 		Titles.GAME_OVER:

@@ -87,6 +87,31 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 48
 
+[node name="LinkButton" type="LinkButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "fenixfables"
+uri = "https://itch.io/profile/fenixfables"
+
+[node name="LinkButton2" type="LinkButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "ashassault"
+uri = "https://ashassault.itch.io/"
+
+[node name="LinkButton3" type="LinkButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "paradoxid"
+uri = "https://itch.io/profile/paradoxid"
+
+[node name="LinkButton4" type="LinkButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "mylo-vanna"
+uri = "https://mylo-vanna.itch.io/"
+
+[node name="LinkButton5" type="LinkButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "wake1st"
+uri = "https://wake1st.itch.io/"
+
 [node name="HSeparator4" type="HSeparator" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 48

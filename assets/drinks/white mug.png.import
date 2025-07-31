@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs8s0k48pw4qf"
-path="res://.godot/imported/cassette.png-b967fd8b1d2cd7409d779ccdfd47f50e.ctex"
+uid="uid://bf7rhshq3fgx6"
+path="res://.godot/imported/white mug.png-c9feda703b7dc8e42599886974a8bffd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cassette.png"
-dest_files=["res://.godot/imported/cassette.png-b967fd8b1d2cd7409d779ccdfd47f50e.ctex"]
+source_file="res://assets/drinks/white mug.png"
+dest_files=["res://.godot/imported/white mug.png-c9feda703b7dc8e42599886974a8bffd.ctex"]
 
 [params]
 

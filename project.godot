@@ -29,6 +29,7 @@ directories/dch_directory={
 "client": "res://dialog/characters/client.dch",
 "cosmo": "res://dialog/characters/cosmo.dch",
 "luna": "res://dialog/characters/luna.dch",
+"note": "res://dialog/characters/note.dch",
 "player": "res://dialog/characters/player.dch",
 "redd": "res://dialog/characters/redd.dch",
 "rosie": "res://dialog/characters/rosie.dch",

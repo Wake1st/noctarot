@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdqjg1ugjmcqn"]
 
 [ext_resource type="Script" uid="uid://cyl3fvpc6xkbl" path="res://ui/menus/main_menu.gd" id="1_t7e0r"]
-[ext_resource type="Texture2D" uid="uid://qrv8k0tk4f6j" path="res://assets/ui/MenuScreen_WIP01.png" id="2_qc8qn"]
+[ext_resource type="Texture2D" uid="uid://5v0u8g75wj54" path="res://assets/ui/MenuScreen.png" id="2_qc8qn"]
 
 [sub_resource type="Animation" id="Animation_qc8qn"]
 length = 0.001
