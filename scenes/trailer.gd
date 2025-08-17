@@ -101,7 +101,6 @@ func _handle_dialogue_transition(args: Array[String]) -> void:
 			camera.to_kitchen()
 
 func _handle_dialogue_activate(args: Array[String]) -> void:
-	print("dialogue activate: ", args)
 	match args[0]:
 		"drink":
 			_consume_drink()
