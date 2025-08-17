@@ -13,6 +13,10 @@ signal selected(ingredient: Ingredient)
 var focused: bool 
 
 
+func get_ingredient_image() -> Texture2D:
+	return sprite.texture
+
+
 func _ready() -> void:
 	name = "Ingredient_%s" % element.nickname.replace(" ", "")
 	sprite.texture = element.image

@@ -15,7 +15,6 @@ var placeholders: Array[Placeholder]
 
 
 func load_cards(tarots: Array[Tarot]) -> void:
-	
 	for i in tarots.size():
 		# create card
 		var card: Card = CARD.instantiate()

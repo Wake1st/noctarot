@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_4ox5g")
-type = 3
+type = 4
 image = ExtResource("1_2ev7r")
 nickname = "Ginseng"
 description = ""

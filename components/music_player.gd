@@ -15,6 +15,6 @@ var songs: Array[AudioStreamMP3] = [
 
 
 func _on_finished():
-	index += (index + 1) % songs.size()
+	index = (index + 1) % songs.size()
 	stream = songs[index]
 	play()

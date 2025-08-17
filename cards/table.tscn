@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://it3n5j7femgi"]
+[gd_scene load_steps=5 format=3 uid="uid://it3n5j7femgi"]
 
 [ext_resource type="Script" uid="uid://ym5p64mu0bdu" path="res://cards/table.gd" id="1_8ut1t"]
 [ext_resource type="PackedScene" uid="uid://chvyuttgmu8ix" path="res://cards/placemat.tscn" id="1_tp2ew"]
 [ext_resource type="PackedScene" uid="uid://cp56oh7japm27" path="res://cards/deck.tscn" id="2_8ut1t"]
 [ext_resource type="PackedScene" uid="uid://chg6u1gbkiecp" path="res://ui/components/hud_ui.tscn" id="4_bsg6m"]
-[ext_resource type="PackedScene" uid="uid://c2ktbd0tvbyst" path="res://ui/components/confirmation_ui.tscn" id="5_4gq7n"]
 
 [node name="Table" type="Node2D"]
 script = ExtResource("1_8ut1t")
@@ -19,13 +18,3 @@ position = Vector2(580, 228)
 
 [node name="HudUI" parent="CanvasLayer" instance=ExtResource("4_bsg6m")]
 unique_name_in_owner = true
-
-[node name="ConfirmationUI" parent="CanvasLayer" instance=ExtResource("5_4gq7n")]
-unique_name_in_owner = true
-offset_left = -80.0
-offset_top = -76.0
-offset_right = -80.0
-offset_bottom = -76.0
-text = "Alter these attributes?"
-deny = "CHANGE"
-confirm = "CONFIRM"

@@ -9,7 +9,6 @@ const SELECTION_CAP: int = 3
 @onready var placemat: Placemat = $Placemat
 @onready var deck: Deck = $Deck
 @onready var hud_ui: HudUI = %HudUI
-@onready var confirmation: ConfirmationUI = %ConfirmationUI
 
 var selected: Array[Card]
 
@@ -33,7 +32,6 @@ func _ready() -> void:
 	deck.drawn.connect(_handle_card_drawn)
 	
 	hud_ui.finished.connect(_handle_finished_selected)
-	confirmation.selection.connect(_handle_confirmed_selected)
 
 func _input(event) -> void:
 	if event.is_action_pressed("select"):
@@ -53,15 +51,10 @@ func _handle_card_selected(placeholder: Placeholder, value: bool) -> void:
 			selected.remove_at(index)
 
 func _handle_finished_selected() -> void:
-	if selected.size() == SELECTION_CAP:
-		confirmation.open()
-
-func _handle_confirmed_selected(value: bool) -> void:
-	if value:
-		hud_ui.close()
-		
-		var tarots: Array[Tarot]
-		for select in selected:
-			tarots.push_back(select.tarot)
-		
-		confirmed.emit(tarots)
+	hud_ui.close()
+	
+	var tarots: Array[Tarot]
+	for select in selected:
+		tarots.push_back(select.tarot)
+	
+	confirmed.emit(tarots)

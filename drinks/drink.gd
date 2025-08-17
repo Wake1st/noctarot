@@ -12,6 +12,7 @@ var index: int = 0
 func add(ingredient: Ingredient) -> void:
 	if index < layers.size():
 		layers[index].visible = true
+		layers[index].texture = ingredient.get_ingredient_image()
 		index += 1
 		
 		elements.push_back(ingredient.element)
@@ -30,4 +31,5 @@ func reset() -> void:
 
 func _ready() -> void:
 	for sprite: Sprite2D in get_children():
-		layers.push_back(sprite)
+		if sprite.is_in_group("ingredient"):
+			layers.push_back(sprite)

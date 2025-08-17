@@ -10,20 +10,20 @@ script = ExtResource("1_xggc7")
 [node name="Mug" type="Sprite2D" parent="."]
 texture = ExtResource("2_td5go")
 
-[node name="Sprite2D1" type="Sprite2D" parent="."]
+[node name="Ingredient1" type="Sprite2D" parent="." groups=["ingredient"]]
 visible = false
 position = Vector2(-67, 168)
-scale = Vector2(2, 1)
+scale = Vector2(0.64, 0.32)
 texture = ExtResource("1_xmqeb")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Ingredient2" type="Sprite2D" parent="." groups=["ingredient"]]
 visible = false
 position = Vector2(-70, 42)
-scale = Vector2(2, 1)
+scale = Vector2(0.64, 0.32)
 texture = ExtResource("1_xmqeb")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="Ingredient3" type="Sprite2D" parent="." groups=["ingredient"]]
 visible = false
 position = Vector2(-74, -87)
-scale = Vector2(2, 1)
+scale = Vector2(0.64, 0.32)
 texture = ExtResource("1_xmqeb")
