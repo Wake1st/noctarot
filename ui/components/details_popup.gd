@@ -7,14 +7,17 @@ extends Control
 @onready var animation: AnimationPlayer = $AnimationPlayer
 
 
-func open(txt: String, des: String) -> void:
+func open(txt: String, des: String, downward: bool = false) -> void:
 	# set details
 	title.text = txt
 	description.text = des
 	
 	# animate
-	animation.play("display")
+	animation.play("down_display")
+	#if downward:
+	#else:
+		#animation.play("display")
 
 
 func close() -> void:
-	animation.play_backwards("display")
+	animation.play_backwards("down_display")

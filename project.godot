@@ -107,8 +107,8 @@ folder_colors={
 "res://drinks/": "yellow",
 "res://globals/": "gray",
 "res://resources/": "gray",
-"res://scenes/": "pink",
-"res://tests/": "purple",
+"res://scenes/": "purple",
+"res://tests/": "red",
 "res://ui/": "orange"
 }
 

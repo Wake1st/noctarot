@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c00eh2jeatrye"]
+[gd_scene load_steps=6 format=3 uid="uid://c00eh2jeatrye"]
 
 [ext_resource type="Script" uid="uid://b3qd7ys018vvv" path="res://ui/components/details_popup.gd" id="1_hfbkv"]
 
@@ -12,7 +12,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(900, -0.1, 0, 0.1, 0),
+"points": PackedFloat32Array(-290, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -23,8 +23,32 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(800, -0.1, 0, 0.1, 0),
+"points": PackedFloat32Array(-118, -0.1, 0, 0.1, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Description:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, -118)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, -290)]
 }
 
 [sub_resource type="Animation" id="Animation_6g2or"]
@@ -54,10 +78,40 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.12, 0.120429, 0.4)
 }
 
+[sub_resource type="Animation" id="Animation_0g3io"]
+resource_name = "down_display"
+length = 0.24
+step = 0.04
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Description:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16, 0.24),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(200, -118), Vector2(200, 107), Vector2(200, 107)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.24),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(200, -290), Vector2(200, -290), Vector2(200, 4)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uiejn"]
 _data = {
 &"RESET": SubResource("Animation_pu1mb"),
-&"display": SubResource("Animation_6g2or")
+&"display": SubResource("Animation_6g2or"),
+&"down_display": SubResource("Animation_0g3io")
 }
 
 [node name="DetailsPopup" type="Control"]
@@ -79,9 +133,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -500.0
-offset_top = 100.0
+offset_top = -1090.0
 offset_right = 500.0
-offset_bottom = 232.0
+offset_bottom = -958.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 96
@@ -98,8 +152,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -500.0
+offset_top = -918.0
 offset_right = 500.0
-offset_bottom = 90.0
+offset_bottom = -828.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32

@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4au0b3vrrin7"]
+[gd_scene load_steps=7 format=3 uid="uid://c4au0b3vrrin7"]
 
 [ext_resource type="PackedScene" uid="uid://102qrwkosfhk" path="res://drinks/bar.tscn" id="1_o5efi"]
+[ext_resource type="Script" uid="uid://coc48alce0kho" path="res://tests/test_drink.gd" id="1_ywvu6"]
+[ext_resource type="Script" uid="uid://b6s0y1wkrtt0" path="res://resources/Tarot.gd" id="2_v6jox"]
+[ext_resource type="Resource" uid="uid://3gjwart8is6d" path="res://resources/tarot/death.tres" id="3_owwnp"]
+[ext_resource type="Resource" uid="uid://dkcdptbcbwr6j" path="res://resources/tarot/empress.tres" id="4_v6jox"]
+[ext_resource type="Resource" uid="uid://bba0vmjjnqn1j" path="res://resources/tarot/emperor.tres" id="5_qgsft"]
 
 [node name="TestDrink" type="Node2D"]
+script = ExtResource("1_ywvu6")
+tarots = Array[ExtResource("2_v6jox")]([ExtResource("3_owwnp"), ExtResource("4_v6jox"), ExtResource("5_qgsft")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

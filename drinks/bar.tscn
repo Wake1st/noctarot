@@ -17,12 +17,15 @@ position = Vector2(-341, 118)
 
 [node name="Placeholder1" parent="." instance=ExtResource("5_v21ft")]
 position = Vector2(-582, -256)
+details_downward = true
 
 [node name="Placeholder2" parent="." instance=ExtResource("5_v21ft")]
 position = Vector2(-403, -254)
+details_downward = true
 
 [node name="Placeholder3" parent="." instance=ExtResource("5_v21ft")]
 position = Vector2(-225, -252)
+details_downward = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

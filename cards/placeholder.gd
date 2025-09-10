@@ -4,6 +4,8 @@ extends Area2D
 
 signal select_attempted(holder: Placeholder, value: bool)
 
+@export var details_downward: bool = false
+
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var details: DetailsPopup = %DetailsPopup
 
@@ -44,7 +46,7 @@ func _on_mouse_entered():
 	if card:
 		focused = true
 		card.hover(true)
-		details.open(card.tarot.name, card.tarot.upright)
+		details.open(card.tarot.name, card.tarot.upright, details_downward)
 		
 		DialogueChecks.set_valid(DialogueChecks.Types.HOVERED)
 
