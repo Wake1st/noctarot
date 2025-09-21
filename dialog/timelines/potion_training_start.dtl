@@ -1,0 +1,21 @@
+[signal arg="transition_kitchen"]
+trainer: Oh, yeah! You've got everything you need!
+trainer: Ok, I don't have the instructions with me, but I kind of remember how it works. A few rules:
+
+trainer: 1) Every potion MUST have 3 ingredients - no more, no less.
+trainer: 2) A successful potion MUST provide the matching elements of the cards you wish to 'invoke'. 
+trainer: Basically, every card represents one of the four elements: fire, air, water, and earth. If you want to alter the fate represented by a card, you need to include said card's 'element' in the potion.
+trainer: 4) A potion which FAILS to match the require element will damage the client's soul. Miss one ingredient, and they suffer a little. Miss all three ingredients, and they suffer a lot - like, you REALLY don't want to miss all three.
+
+- I really don't think I should be making potions without proper training.
+	trainer: You're getting proper training! Now, where was I...
+- Sounds simple enough.
+	trainer: That's the spirit!
+- ...
+	trainer: I hope you're paying attention, cause I'm not repeating these.
+
+trainer: Why don't you try it out for yourself.
+
+set {next_chapter} = "card_training_finalize"
+[signal arg="check_training_ingredients"]
+[end_timeline]

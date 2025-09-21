@@ -13,5 +13,6 @@ trainer: So, I may have forgotten the potions set, and the instructions that com
 
 trainer: It's fine. I mean, there's nothing special about what you're making, as long as you're the one making it. 
 trainer: Wait, you're already got a brewing kit. 
+They indicate to my little barrista's corner - I guess it is like brewing potions.
 
-jump potion_training/
+jump potion_training_start/
