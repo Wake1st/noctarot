@@ -1,13 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://ct7db636kbyhv"]
+[gd_scene load_steps=11 format=3 uid="uid://ct7db636kbyhv"]
 
 [ext_resource type="Script" uid="uid://bx3pmb0b8744" path="res://components/character/character.gd" id="1_q6bof"]
 [ext_resource type="Shader" uid="uid://vujows36lfri" path="res://components/character/character.gdshader" id="2_wptw5"]
-[ext_resource type="Texture2D" uid="uid://bqv1o6onc8ie8" path="res://components/character/boost_gradient.tres" id="3_ptxnt"]
-[ext_resource type="Texture2D" uid="uid://4tskrabhuf0h" path="res://assets/characters/Character_RosieHappy01.png" id="4_p1osb"]
+[ext_resource type="PackedScene" uid="uid://di0g4cjkkp81q" path="res://components/character/character_body.tscn" id="5_uqrhf"]
+[ext_resource type="PackedScene" uid="uid://nhionwp2gh2d" path="res://components/character/character_head.tscn" id="6_cxvbt"]
+[ext_resource type="Texture2D" uid="uid://d2flij4bxaqsk" path="res://assets/characters/rosie/rosie face angry.png" id="7_cxvbt"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ptxnt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uqrhf"]
 shader = ExtResource("2_wptw5")
-shader_parameter/color_gradient = ExtResource("3_ptxnt")
 shader_parameter/size_effect = 0.1
 shader_parameter/speed = 1.0
 shader_parameter/strength = 0.5
@@ -15,87 +15,70 @@ shader_parameter/color_mode_toggle = false
 shader_parameter/is_horizontal = false
 shader_parameter/wave = 0.0
 
-[sub_resource type="Animation" id="Animation_ptxnt"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Avatar:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-1200, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Avatar:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Avatar:material:shader_parameter/wave")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5pm8e"]
+shader = ExtResource("2_wptw5")
+shader_parameter/size_effect = 0.1
+shader_parameter/speed = 1.0
+shader_parameter/strength = 0.5
+shader_parameter/color_mode_toggle = false
+shader_parameter/is_horizontal = false
+shader_parameter/wave = 0.0
 
-[sub_resource type="Animation" id="Animation_wptw5"]
+[sub_resource type="Animation" id="Animation_uqrhf"]
 resource_name = "pulse"
 length = 0.6
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Avatar:material:shader_parameter/wave")
+tracks/0/path = NodePath("CharacterHead:material:shader_parameter/wave")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.10000001, -0.16666667, 0, 0),
 "times": PackedFloat32Array(0, 0.6)
-}
-
-[sub_resource type="Animation" id="Animation_q6bof"]
-resource_name = "slide"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Avatar:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(-1200, -0.25, 0, 0.25, 0, -441.136, -0.142144, 152.136, 0.157856, -168.864, -33.4255, -0.140898, 136.426, 0.0924358, -85.5745, 0, -0.0742308, 95, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6, 0.9, 1)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Avatar:position:y")
+tracks/1/path = NodePath("CharacterBody:material:shader_parameter/wave")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(-185, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, -5.1531, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6, 0.9, 1)
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.10000001, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.6)
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6bof"]
+[sub_resource type="Animation" id="Animation_cxvbt"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterHead:material:shader_parameter/wave")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CharacterBody:material:shader_parameter/wave")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cxvbt"]
 _data = {
-&"RESET": SubResource("Animation_ptxnt"),
-&"pulse": SubResource("Animation_wptw5"),
-&"slide": SubResource("Animation_q6bof")
+&"RESET": SubResource("Animation_cxvbt"),
+&"pulse": SubResource("Animation_uqrhf")
 }
 
 [node name="Character" type="Node2D"]
@@ -105,12 +88,14 @@ b_size = 0.6
 d_strength = 0.9
 d_size = 0.85
 
-[node name="Avatar" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_ptxnt")
-position = Vector2(-1200, 0)
-texture = ExtResource("4_p1osb")
+[node name="CharacterBody" parent="." instance=ExtResource("5_uqrhf")]
+material = SubResource("ShaderMaterial_uqrhf")
+
+[node name="CharacterHead" parent="." instance=ExtResource("6_cxvbt")]
+material = SubResource("ShaderMaterial_5pm8e")
+texture = ExtResource("7_cxvbt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_q6bof")
+&"": SubResource("AnimationLibrary_cxvbt")
 }

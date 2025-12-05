@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterTexture" load_steps=2 format=3 uid="uid://d2ourx5ql7byd"]
+
+[ext_resource type="Script" uid="uid://b4onjujngp0j" path="res://resources/CharacterTexture.gd" id="1_wldke"]
+
+[resource]
+script = ExtResource("1_wldke")
+texture_path = "res://assets/characters/rosie/rosie face sad.png"
+offset = Vector2(-12, -49)
+metadata/_custom_type_script = "uid://b4onjujngp0j"

@@ -13,34 +13,33 @@ const BOOST_GRADIENT = preload("res://components/character/boost_gradient.tres")
 @export_range(-4,4) var d_strength: float = 0.5
 @export_range(-5,5) var d_size: float = 0.1
 
-@onready var avatar: Sprite2D = $Avatar
-@onready var animation: AnimationPlayer = $AnimationPlayer
+@onready var body: Sprite2D = $CharacterBody
+@onready var head: Sprite2D = $CharacterHead
 
 
-func change_avatar(texture: Texture2D) -> void:
-	avatar.texture = texture
+func change_body(data: CharacterTexture) -> void:
+	body.texture = load(data.texture_path)
+	body.offset = data.offset
 
 
-func enter() -> void:
-	animation.play("slide")
-
-
-func exit() -> void:
-	animation.play_backwards("slide")
+func change_head(data: CharacterTexture) -> void:
+	head.texture = load(data.texture_path)
+	head.offset = data.offset
 
 
 func pulse(value: int) -> void:
 	if value > 0:
-		(avatar.material as ShaderMaterial).set_shader_parameter("strength", b_strength * value)
-		(avatar.material as ShaderMaterial).set_shader_parameter("size_effect", b_size * value)
-		(avatar.material as ShaderMaterial).set_shader_parameter("color_gradient", BOOST_GRADIENT)
+		(body.material as ShaderMaterial).set_shader_parameter("strength", b_strength * value)
+		(head.material as ShaderMaterial).set_shader_parameter("strength", b_strength * value)
+		(body.material as ShaderMaterial).set_shader_parameter("size_effect", b_size * value)
+		(head.material as ShaderMaterial).set_shader_parameter("size_effect", b_size * value)
+		(body.material as ShaderMaterial).set_shader_parameter("color_gradient", BOOST_GRADIENT)
+		(head.material as ShaderMaterial).set_shader_parameter("color_gradient", BOOST_GRADIENT)
 		
-		animation.speed_scale = 0.8 / value
-		animation.play("pulse")
 	elif value < 0:
-		(avatar.material as ShaderMaterial).set_shader_parameter("strength", d_strength * abs(value))
-		(avatar.material as ShaderMaterial).set_shader_parameter("size_effect", d_size * abs(value))
-		(avatar.material as ShaderMaterial).set_shader_parameter("color_gradient", DRAIN_GRADIENT)
-		
-		animation.speed_scale = 0.6 / abs(value)
-		animation.play_backwards("pulse")
+		(body.material as ShaderMaterial).set_shader_parameter("strength", d_strength * abs(value))
+		(head.material as ShaderMaterial).set_shader_parameter("strength", d_strength * abs(value))
+		(body.material as ShaderMaterial).set_shader_parameter("size_effect", d_size * abs(value))
+		(head.material as ShaderMaterial).set_shader_parameter("size_effect", d_size * abs(value))
+		(body.material as ShaderMaterial).set_shader_parameter("color_gradient", DRAIN_GRADIENT)
+		(head.material as ShaderMaterial).set_shader_parameter("color_gradient", DRAIN_GRADIENT)
