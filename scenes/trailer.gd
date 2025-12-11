@@ -29,6 +29,7 @@ func setup(fileName: String) -> void:
 	daily = DailyQuota.new()
 	daily.appointments = WorkBuilder.daily_appointments()
 	
+	# TODO: set the character expresion and pose before setting the character
 	daily.next()
 	dialogue_ui.start("trainer_intro")
 	#dialogue_ui.start("client_intro")
@@ -36,6 +37,7 @@ func setup(fileName: String) -> void:
 
 func _ready() -> void:
 	WorkBuilder.load()
+	TextureList.load()
 	
 	pause_menu.resume_selected.connect(_handle_pause_selected)
 	pause_menu.settings_selected.connect(_handle_settings_selected)
@@ -48,6 +50,7 @@ func _ready() -> void:
 	dialogue_ui.exit.connect(_handle_dialogue_exit)
 	dialogue_ui.check.connect(_handle_dialogue_check)
 	dialogue_ui.client.connect(_handle_dialogue_client)
+	dialogue_ui.animate.connect(_handle_animate_character)
 	dialogue_ui.training_ended.connect(_handle_training_ended)
 	dialogue_ui.ended.connect(_handle_dialogue_ended)
 	
@@ -137,6 +140,9 @@ func _handle_dialogue_client(args: Array[String]) -> void:
 				daily.current.score
 			)
 
+func _handle_animate_character(args: Array[String]) -> void:
+	daily.animate_client(args)
+
 func _handle_training_ended() -> void:
 	passedTraining = true
 	title_ui.display(TitleUI.Titles.CHAPTER_1)
@@ -171,7 +177,6 @@ func _handle_title_finished() -> void:
 
 func _handle_pause_selected() -> void:
 	dialogue_ui.toggle_pause(pause_menu.toggle_pause())
-
 
 func _handle_tarots_confirmed(tarots: Array[Tarot]) -> void:
 	if !passedTraining:

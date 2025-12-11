@@ -1,9 +1,71 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1cwtaih48s5y"]
+[gd_scene load_steps=6 format=3 uid="uid://c1cwtaih48s5y"]
 
 [ext_resource type="Script" uid="uid://bkr75hgrqnm1t" path="res://scenes/booth.gd" id="1_mwq53"]
 [ext_resource type="PackedScene" uid="uid://ct7db636kbyhv" path="res://components/character/character.tscn" id="2_mwq53"]
 
+[sub_resource type="Animation" id="Animation_ptxnt"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(-1200, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(-185, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_q6bof"]
+resource_name = "slide"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 0),
+"points": PackedFloat32Array(-1200, 0, 0, 0.23333333, 4.958008, -441, -0.1300215, 190.70299, 0.1334666, -195.75592, -33, -0.12894747, 128.93947, 0.09924853, -99.24237, 0, -0.0674181, 97.70639, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6, 0.90000004, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 0),
+"points": PackedFloat32Array(-185, 0, 0, 0.23333333, -1.2583313, 80, -0.2425718, -0.30874047, 0.28107166, 0.3577423, -5, -0.2750413, 0.12665284, 0.039090395, -0.018000603, 0, -0.06090957, 0.19596002, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6, 0.90000004, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6bof"]
+_data = {
+&"RESET": SubResource("Animation_ptxnt"),
+&"slide": SubResource("Animation_q6bof")
+}
+
 [node name="Booth" type="Node2D"]
 script = ExtResource("1_mwq53")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_q6bof")
+}
+
 [node name="Character" parent="." instance=ExtResource("2_mwq53")]
+position = Vector2(-1200, -185)

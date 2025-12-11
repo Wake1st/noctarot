@@ -24,9 +24,8 @@
 - [x] setup appointments data and integrate
 - [x] dialogue is blocking pause screen functionality
 - [x] display cards in the kitchen
-- [ ] user feedback when drink drank
+- [x] user feedback when drink drank
 	- [x] visual
-	- [ ] audio
 - [x] fail state
 - [x] add assets
 	- [x] sound
@@ -37,10 +36,14 @@
 		- [x] ingredients
 		- [x] backgrounds
 - [x] add writing to our clients
-- [ ] better drink tutorial
 
 ### Strech
 
+- [ ] character animations (WIP)
+- [ ] skip turtorial
+- [ ] better drink tutorial
+- [ ] user feedback when drink drank
+	- [ ] audio
 - [ ] save files
 - [ ] records always available, opens during daily assessment
 - [ ] menus should operate during pause cycle

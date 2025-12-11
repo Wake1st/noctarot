@@ -3,15 +3,18 @@ extends Node2D
 
 
 @onready var character: Character = $Character
+@onready var animation: AnimationPlayer = $AnimationPlayer
 
 
 func enter(client: Client) -> void:
-	character.change_avatar(client.image)
-	character.enter()
+	character.change_body(client.pose)
+	character.change_head(client.expression)
+	
+	animation.play("slide")
 
 
 func exit() -> void:
-	character.exit()
+	animation.play_backwards("slide")
 
 
 func pulse(score: int) -> void:
