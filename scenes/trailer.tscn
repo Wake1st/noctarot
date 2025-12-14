@@ -60,3 +60,16 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="ClientSfx" parent="." instance=ExtResource("12_phlp8")]
+
+[connection signal="appointment_ended" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_appointment_ended"]
+[connection signal="change_expression" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_change_expression"]
+[connection signal="change_pose" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_change_pose"]
+[connection signal="consume_drink" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_consume_drink"]
+[connection signal="ended" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_ended"]
+[connection signal="enter" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_enter"]
+[connection signal="exit" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_exit"]
+[connection signal="goto_booth" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_goto_booth"]
+[connection signal="goto_kitchen" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_goto_kitchen"]
+[connection signal="goto_table" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_goto_table"]
+[connection signal="toggle_warp" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_toggle_warp"]
+[connection signal="training_ended" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_training_ended"]

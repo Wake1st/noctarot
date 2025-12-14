@@ -43,17 +43,6 @@ func _ready() -> void:
 	pause_menu.settings_selected.connect(_handle_settings_selected)
 	pause_menu.return_selected.connect(_handle_return_selected)
 	
-	dialogue_ui.transition.connect(_handle_dialogue_transition)
-	dialogue_ui.activate.connect(_handle_dialogue_activate)
-	dialogue_ui.deactivate.connect(_handle_dialogue_deactivate)
-	dialogue_ui.enter.connect(_handle_dialogue_enter)
-	dialogue_ui.exit.connect(_handle_dialogue_exit)
-	dialogue_ui.check.connect(_handle_dialogue_check)
-	dialogue_ui.client.connect(_handle_dialogue_client)
-	dialogue_ui.animate.connect(_handle_animate_character)
-	dialogue_ui.training_ended.connect(_handle_training_ended)
-	dialogue_ui.ended.connect(_handle_dialogue_ended)
-	
 	title_ui.finished.connect(_handle_title_finished)
 	
 	settings_menu.return_selected.connect(_handle_settings_return)
@@ -68,7 +57,6 @@ func _ready() -> void:
 	table.confirmed.connect(_handle_tarots_confirmed)
 	
 	bar.finished.connect(_handle_drink_finished)
-
 
 
 func _process(_delta) -> void:
@@ -94,61 +82,51 @@ func _handle_return_selected() -> void:
 
 
 #region DialogueSignals
-func _handle_dialogue_transition(args: Array[String]) -> void:
-	match args[0]:
-		"table":
-			camera.to_table()
-		"booth":
-			camera.to_booth()
-		"kitchen": # TODO: should be renamed to bar
-			camera.to_kitchen()
+func _on_dialogue_ui_goto_booth() -> void:
+	camera.to_booth()
 
-func _handle_dialogue_activate(args: Array[String]) -> void:
-	match args[0]:
-		"drink":
-			_consume_drink()
-		"warp":
-			screen_effects_ui.on()
+func _on_dialogue_ui_goto_kitchen() -> void:
+	# TODO: rename kitchen to bar
+	camera.to_kitchen()
 
-func _handle_dialogue_deactivate(args: Array[String]) -> void:
-	match args[0]:
-		"warp":
-			screen_effects_ui.off()
+func _on_dialogue_ui_goto_table() -> void:
+	camera.to_table()
 
-func _handle_dialogue_enter() -> void:
+func _on_dialogue_ui_enter() -> void:
 	booth.enter(daily.current.client)
 
-func _handle_dialogue_exit() -> void:
+func _on_dialogue_ui_exit() -> void:
 	booth.exit()
 
-func _handle_dialogue_check(args: Array[String]) -> void:
-	var command = args[0]
-	args.remove_at(0)
-	
-	match command:
-		"training":
-			_training_checks(args)
-		"client":
-			_client_checks(args)
+func _on_dialogue_ui_ended() -> void:
+	# do we even get here?
+	pass
 
-func _handle_dialogue_client(args: Array[String]) -> void:
-	match args[0]:
-		"ended":
-			scoreboard_ui.display(
-				daily.current.challenged,
-				daily.current.elements,
-				daily.current.score
-			)
+func _on_dialogue_ui_appointment_ended() -> void:
+	scoreboard_ui.display(
+		daily.current.challenged,
+		daily.current.elements,
+		daily.current.score
+		)
 
-func _handle_animate_character(args: Array[String]) -> void:
-	daily.animate_client(args)
+func _on_dialogue_ui_change_pose(client_name: String, pose_name: String) -> void:
+	daily.pose_client(client_name, pose_name)
 
-func _handle_training_ended() -> void:
+func _on_dialogue_ui_change_expression(client_name: String, expression_name: String) -> void:
+	daily.express_client(client_name, expression_name)
+
+func _on_dialogue_ui_consume_drink() -> void:
+	_consume_drink()
+
+func _on_dialogue_ui_toggle_warp(value: bool) -> void:
+	if value:
+		screen_effects_ui.on()
+	else:
+		screen_effects_ui.off()
+
+func _on_dialogue_ui_training_ended() -> void:
 	passedTraining = true
 	title_ui.display(TitleUI.Titles.CHAPTER_1)
-
-func _handle_dialogue_ended() -> void:
-	pass
 #endregion
 
 
@@ -245,22 +223,4 @@ func _consume_drink() -> void:
 		client_sfx.happy()
 	elif score < 0:
 		client_sfx.sad()
-
-func _client_checks(args: Array[String]) -> void:
-	match args[0]:
-		"fortune":
-			DialogueChecks.currentCheck = DialogueChecks.Types.FORTUNE
-		"drink":
-			DialogueChecks.currentCheck = DialogueChecks.Types.DRINK
-
-func _training_checks(args: Array[String]) -> void:
-	match args[0]:
-		"deck":
-			DialogueChecks.currentCheck = DialogueChecks.Types.DECK
-		"hovered":
-			DialogueChecks.currentCheck = DialogueChecks.Types.HOVERED
-		"selected":
-			DialogueChecks.currentCheck = DialogueChecks.Types.SELECTED
-		"finalized":
-			DialogueChecks.currentCheck = DialogueChecks.Types.FINALIZED
 #endregion

@@ -2,14 +2,16 @@ class_name DialogueUI
 extends Control
 
 
-signal transition(args: Array[String])
-signal activate(args: Array[String])
-signal deactivate(args: Array[String])
+signal goto_booth()
+signal goto_table()
+signal goto_kitchen()
+signal consume_drink()
+signal toggle_warp(value: bool)
 signal enter()
 signal exit()
-signal check(args: Array[String])
-signal client(args: Array[String])
-signal animate(args: Array[String])
+signal appointment_ended()
+signal change_pose(client_name: String, pose_name: String)
+signal change_expression(client_name: String, expression_name: String)
 signal training_ended()
 signal ended()
 
@@ -43,24 +45,68 @@ func _handle_text_signal(argument: String) -> void:
 	match command:
 		"transition":
 			Dialogic.paused = true
-			transition.emit(args)
+			
+			match args[0]:
+				"table":
+					goto_table.emit()
+				"booth":
+					goto_booth.emit()
+				"kitchen": # TODO: should be renamed to bar
+					goto_kitchen.emit()
 		"activate":
-			activate.emit(args)
+			match args[0]:
+				"drink":
+					consume_drink.emit()
+				"warp":
+					toggle_warp.emit(true)
 		"deactivate":
-			deactivate.emit(args)
+			match args[0]:
+				"warp":
+					toggle_warp.emit(false)
 		"enter":
 			enter.emit()
 		"exit":
 			exit.emit()
 		"check":
-			check.emit(args)
+			match args[0]:
+				"training":
+					_training_checks(args[1])
+				"client":
+					_client_checks(args[1])
 		"client":
-			client.emit(args)
+			match args[0]:
+				"ended":
+					appointment_ended.emit()
 		"animate":
-			animate.emit(args)
+			match args[1].to_lower(): 
+				"pose":
+					change_pose.emit(args[0].to_lower(), args[2].to_lower())
+				"expression":
+					change_expression.emit(args[0].to_lower(), args[2].to_lower())
 		"training":
 			training_ended.emit()
+
 
 func _handle_timeline_ended() -> void:
 	Dialogic.timeline_ended.disconnect(_handle_timeline_ended)
 	ended.emit()
+
+
+func _client_checks(keyword: String) -> void:
+	match keyword:
+		"fortune":
+			DialogueChecks.currentCheck = DialogueChecks.Types.FORTUNE
+		"drink":
+			DialogueChecks.currentCheck = DialogueChecks.Types.DRINK
+
+
+func _training_checks(keyword: String) -> void:
+	match keyword:
+		"deck":
+			DialogueChecks.currentCheck = DialogueChecks.Types.DECK
+		"hovered":
+			DialogueChecks.currentCheck = DialogueChecks.Types.HOVERED
+		"selected":
+			DialogueChecks.currentCheck = DialogueChecks.Types.SELECTED
+		"finalized":
+			DialogueChecks.currentCheck = DialogueChecks.Types.FINALIZED
