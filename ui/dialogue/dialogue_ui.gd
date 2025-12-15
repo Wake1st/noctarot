@@ -77,12 +77,10 @@ func _handle_text_signal(argument: String) -> void:
 			match args[0]:
 				"ended":
 					appointment_ended.emit()
-		"animate":
-			match args[1].to_lower(): 
-				"pose":
-					change_pose.emit(args[0].to_lower(), args[2].to_lower())
-				"expression":
-					change_expression.emit(args[0].to_lower(), args[2].to_lower())
+		"pose":
+			change_pose.emit(args[0].to_lower(), args[2].to_lower())
+		"express":
+			change_expression.emit(args[0].to_lower(), args[2].to_lower())
 		"training":
 			training_ended.emit()
 
