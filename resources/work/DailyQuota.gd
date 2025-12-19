@@ -33,14 +33,14 @@ func modify_score(scr: int) -> void:
 func pose_client(client_name: String, pose_name: String) -> void:
 	var appointment = _get_appointment(client_name)
 	appointment.client.pose = TextureList.get_character(
-		client_name + "_pose_" + pose_name
+		client_name + "_body_" + pose_name
 	)
 
 
 func express_client(client_name: String, expression_name: String) -> void:
 	var appointment = _get_appointment(client_name)
 	appointment.client.expression = TextureList.get_character(
-		client_name + "_expression_" + expression_name
+		client_name + "_head_" + expression_name
 	)
 
 
