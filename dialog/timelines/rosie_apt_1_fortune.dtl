@@ -1,8 +1,10 @@
 rosie: Thats my fortune!
+[signal arg="express sad"]
 rosie: Okay... so, what now?
 
 player: Now, the real magic begins.
 rosie: ... 
+[signal arg="express happy"]
 rosie: Okay.
 
 [signal arg="transition_kitchen"]

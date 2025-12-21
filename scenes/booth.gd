@@ -6,15 +6,20 @@ extends Node2D
 @onready var animation: AnimationPlayer = $AnimationPlayer
 
 
-func enter(client: Client) -> void:
-	character.change_body(client.pose)
-	character.change_head(client.expression)
-	
+func enter() -> void:
 	animation.play("slide")
 
 
 func exit() -> void:
 	animation.play_backwards("slide")
+
+
+func change_body(text_data: CharacterTexture) -> void:
+	character.change_body(text_data)
+
+
+func change_head(text_data: CharacterTexture) -> void:
+	character.change_head(text_data)
 
 
 func pulse(score: int) -> void:

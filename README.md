@@ -39,7 +39,7 @@
 
 ### Strech
 
-- [ ] character animations (WIP)
+- [x] character animations
 - [ ] skip turtorial
 - [ ] better drink tutorial
 - [ ] user feedback when drink drank

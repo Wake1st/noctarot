@@ -30,18 +30,22 @@ func modify_score(scr: int) -> void:
 	current.client.issues -= scr
 
 
-func animate_client(args: Array[String]) -> void:
-	var full_name: String = args.reduce(func(a,b): 
-		return a + "_" + b
+func pose_client(client_name: String, pose_name: String) -> void:
+	var appointment = _get_appointment(client_name)
+	appointment.client.pose = TextureList.get_character(
+		client_name + "_body_" + pose_name
 	)
-	
+
+
+func express_client(client_name: String, expression_name: String) -> void:
+	var appointment = _get_appointment(client_name)
+	appointment.client.expression = TextureList.get_character(
+		client_name + "_head_" + expression_name
+	)
+
+
+func _get_appointment(client_name: String) -> Appointment:
 	var app_index: int = appointments.find_custom(func(app):
-		return app.client.name.to_lower() == args[0].to_lower()
+		return app.client.name.to_lower() == client_name.to_lower()
 	)
-	var appointment: Appointment = appointments[app_index]
-	
-	match args[1].to_lower():
-		"pose":
-			appointment.client.pose = TextureList.get_character(full_name)
-		"expression":
-			appointment.client.expression = TextureList.get_character(full_name)
+	return appointments[app_index]

@@ -1,4 +1,7 @@
 The door creaks open and a young moth enters.
+
+[signal arg="express happy"]
+[signal arg="pose rested"]
 [signal arg="enter"]
 
 rosie: Hello? My name is Rosie. I'm here to see some spiritual advice. 

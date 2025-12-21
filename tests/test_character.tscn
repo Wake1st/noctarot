@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhb6vvq6umqvl"]
+
+[ext_resource type="Script" uid="uid://euixrmdev1by" path="res://tests/test_character.gd" id="1_gc8q0"]
+[ext_resource type="PackedScene" uid="uid://c1cwtaih48s5y" path="res://scenes/booth.tscn" id="2_t5xmy"]
+[ext_resource type="PackedScene" uid="uid://be8o2604ijvax" path="res://ui/dialogue/dialogue_ui.tscn" id="3_1de2q"]
+
+[node name="TestCharacter" type="Node"]
+script = ExtResource("1_gc8q0")
+client_name = "rosie"
+pulse_value = -2
+
+[node name="Booth" parent="." instance=ExtResource("2_t5xmy")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueUI" parent="CanvasLayer" instance=ExtResource("3_1de2q")]
+
+[connection signal="change_expression" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_change_expression"]
+[connection signal="change_pose" from="CanvasLayer/DialogueUI" to="." method="_on_dialogue_ui_change_pose"]
