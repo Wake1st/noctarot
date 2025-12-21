@@ -2,6 +2,7 @@ extends Node
 
 
 @export var client_name: String
+@export_range(-3,3) var pulse_value: int = 0
 
 @onready var booth: Booth = $Booth
 
@@ -43,3 +44,6 @@ func _input(_event) -> void:
 			"rosie_body_" + poses[pose_index]
 		)
 		booth.change_body(pose)
+	elif Input.is_key_pressed(KEY_5):
+		booth.pulse(pulse_value)
+	
