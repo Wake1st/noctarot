@@ -93,7 +93,7 @@ func _on_dialogue_ui_goto_table() -> void:
 	camera.to_table()
 
 func _on_dialogue_ui_enter() -> void:
-	booth.enter(daily.current.client)
+	booth.enter()
 
 func _on_dialogue_ui_exit() -> void:
 	booth.exit()
